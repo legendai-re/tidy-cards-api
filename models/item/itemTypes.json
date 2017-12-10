@@ -1,0 +1,20 @@
+{
+    "URL": {
+        "id": "URL"
+    },
+    "IMAGE":  {
+        "id": "IMAGE"
+    },
+    "YOUTUBE":  {
+        "id": "YOUTUBE"
+    },
+    "TWEET":  {
+        "id": "TWEET"
+    },
+    "TEXT":  {
+        "id": "TEXT"
+    },
+    "COLLECTION":  {
+        "id": "COLLECTION"
+    }
+}

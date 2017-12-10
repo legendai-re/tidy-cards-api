@@ -1,0 +1,1 @@
+Hey, in order to reset your password, go to this link: {{resetUrl}}.

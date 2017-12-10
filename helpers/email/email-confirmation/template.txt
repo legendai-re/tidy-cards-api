@@ -1,0 +1,1 @@
+Hey, in order to confirm your email: {{user_email}}. Click this link: {{confirmUrl}}.

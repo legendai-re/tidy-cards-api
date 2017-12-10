@@ -1,0 +1,14 @@
+{
+    "ACTIVE":{
+        "id": "ACTIVE"
+    },
+    "ARCHIVED":{
+        "id": "ARCHIVED"
+    },
+    "ARCHIVED_BY_ACCOUNT_DEACTIVATION":{
+    	"id": "ARCHIVED_BY_ACCOUNT_DEACTIVATION"
+    },
+    "DESTROYED":{
+        "id": "DESTROYED"
+    }
+}

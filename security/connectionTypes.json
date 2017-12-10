@@ -1,0 +1,14 @@
+{
+    "LOCAL":{
+        "id": "LOCAL"
+    },
+    "FACEBOOK":{
+        "id": "FACEBOOK"
+    },
+    "TWITTER":{
+        "id": "TWITTER"
+    },
+    "GOOGLE":{
+        "id": "GOOGLE"
+    }
+}

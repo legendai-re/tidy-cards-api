@@ -1,0 +1,14 @@
+{
+    "AVATAR": {
+        "_id": 1,
+        "name": "AVATAR",
+        "path":"avatar",
+        "sizes": [{"x":40, "y":40}, {"x":60, "y":60}, {"x":140, "y":140}]
+    },
+    "COLLECTION_THUMBNAIL": {
+        "_id": 2,
+        "name": "COLLECTION_THUMBNAIL",
+        "path":"col_thumb",
+        "sizes": [{"x":300, "y":250}, {"x":1000, "y":400}]
+    }
+}
