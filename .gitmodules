@@ -1,0 +1,3 @@
+[submodule "tidy-cards-web-app"]
+	path = tidy-cards-web-app
+	url = https://github.com/legendai-re/tidy-cards-web-app
