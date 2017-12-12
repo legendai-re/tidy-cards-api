@@ -54,6 +54,7 @@ __build__/**
 
 # Doc #
 /doc/
+doc
 
 # IDE #
 .idea/

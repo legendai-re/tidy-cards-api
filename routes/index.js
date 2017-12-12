@@ -16,6 +16,7 @@ module.exports = function(app) {
     var devRouter           = require('./devRouter');
 
     app.use('/', express.static(path.resolve(__dirname, '../tidy-cards-web-app/dist')));
+    app.use('/api/doc', express.static(path.resolve(__dirname, '../doc')));
 
     app.use('/auth', authRouter);
 
@@ -36,6 +37,10 @@ module.exports = function(app) {
             next();
         else
             require('./_notWebosRouter/collectionRouter/getOne')(req,res);
+    })
+
+    app.get('api/doc', function(req, res) {
+        res.sendFile(path.resolve(__dirname, '../doc/index.html'));
     })
 
     app.get('/*', function(req, res) {

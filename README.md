@@ -58,4 +58,4 @@ You can now visit the website on `localhost:8080` and open `localhost:1080` to s
 
 ### Generate API documentation
 
-Install `apidoc` globally: `npm install apidoc -g`. Then run `apidoc -i server -o dist/api/doc`. You can now visit the api documentation on `localhost:8080/api/doc`.
+Install `apidoc` globally: `npm install apidoc -g`. Then run `npm run doc`. You can now visit the api documentation on `localhost:8080/api/doc`.
