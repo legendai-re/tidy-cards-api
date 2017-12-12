@@ -2,6 +2,7 @@ module.exports = function getItemSchema(Schema) {
 
     var itemTypes = require('./itemTypes.json');
     var lifeStates = require('../lifeStates.json');
+    var itemDisplayModes = require('./displayModes.json');
 
     return new Schema({
         createdAt: { type: Date },
@@ -10,6 +11,11 @@ module.exports = function getItemSchema(Schema) {
             type: String,
             required: true,
             default: lifeStates.ACTIVE.id
+        },
+        displayMode: {
+            type: String,
+            required: true,
+            default: itemDisplayModes.SMALL.id
         },
         title: {
             type: String,

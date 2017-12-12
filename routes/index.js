@@ -15,7 +15,7 @@ module.exports = function(app) {
     var paymentRouter       = require('./paymentRouter');
     var devRouter           = require('./devRouter');
 
-    app.use('/', express.static(path.resolve(__dirname, '../../tidy-cards-web-app/dist')));
+    app.use('/', express.static(path.resolve(__dirname, '../tidy-cards-web-app/dist')));
 
     app.use('/auth', authRouter);
 
@@ -39,7 +39,7 @@ module.exports = function(app) {
     })
 
     app.get('/*', function(req, res) {
-        res.sendFile(path.resolve(__dirname, '../../tidy-cards-web-app/dist/index.html'));
+        res.sendFile(path.resolve(__dirname, '../tidy-cards-web-app/dist/index.html'));
     })
 
 }

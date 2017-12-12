@@ -1,6 +1,7 @@
 module.exports = function post (req, res) {
 
     var itemTypes       = require('../../models/item/itemTypes.json');
+    var itemDisplayModes = require('../../models/item/displayModes.json');
     var models          = require('../../models');
     var sortTypes       = require('../../models/customSort/sortTypes.json');
     var itemContentHelper = require('../../helpers/item-content');
@@ -10,12 +11,22 @@ module.exports = function post (req, res) {
         res.end();
     }else{
         var item =  new models.Item();
-        if(req.body.description){
+
+        // if a specific displayMode is defined and is OK, update the item
+        if(req.body.displayMode && displayModeOk(req.body.displayMode))
+            item.displayMode = req.body.displayMode.id;
+
+        // if description is defined, update the item
+        if(req.body.description)
             item.description = req.body.description;
-        }
+
+        // if title is defined, update the item
         if(req.body.title)
             item.title = req.body.title;
+
+        // set the type of the item (itemType have been check before so it is safe to use it)
         item.type = req.body.type.id;
+
         models.Collection.findById(req.body._collection, function(err, collection){
             if(err) {console.log(err); res.sendStatus(500); return;}
             if(!collection) {res.status(400).send({ error: "cannot find collection with id: "+req.body._collection }); return;}
@@ -39,6 +50,12 @@ module.exports = function post (req, res) {
 
     function typeOk(reqType){
         if(itemTypes[reqType.id] != null)
+            return true;
+        return false;
+    }
+
+    function displayModeOk(reqDisplayMode){
+        if(itemDisplayModes[reqDisplayMode.id] != null)
             return true;
         return false;
     }

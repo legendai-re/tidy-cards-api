@@ -1,6 +1,7 @@
 module.exports = function put (req, res) {
 
     var itemTypes       = require('../../models/item/itemTypes.json');
+    var itemDisplayModes = require('../../models/item/displayModes.json');
     var sortTypes       = require('../../models/customSort/sortTypes.json');
     var models          = require('../../models');
     var itemContentHelper = require('../../helpers/item-content');
@@ -13,14 +14,20 @@ module.exports = function put (req, res) {
         if(req.body.updatePosition && typeof req.body.position != 'undefined'){
             updatePosition(item, req.body.position)
         }else{
-            if(req.body.description)
+
+            // if a specific displayMode is defined and is OK, update the item
+            if(req.body.displayMode && displayModeOk(req.body.displayMode))
+                item.displayMode = req.body.displayMode.id;
+
+            if(req.body.description || req.body.description == '')
                 item.description = req.body.description;
-            else
-                item.description = '';
+            
             if(req.body.title)
                 item.title = req.body.title;
+
             if(!typeOk(req.body.type))
                 return res.status(400).send({ error: 'bad item type'});
+
             item.type = req.body.type.id;
             itemContentHelper.checkItemContent(item, req, function(err, content){
                 if (err){res.status(400).send({ error: "error while creating item content"}); return;}
@@ -37,6 +44,12 @@ module.exports = function put (req, res) {
 
     function typeOk(reqType){
         if(itemTypes[reqType.id] != null)
+            return true;
+        return false;
+    }
+
+    function displayModeOk(reqDisplayMode){
+        if(itemDisplayModes[reqDisplayMode.id] != null)
             return true;
         return false;
     }
