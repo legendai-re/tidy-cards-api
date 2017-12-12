@@ -46,7 +46,7 @@ Install dependencies `npm install`
 
 Start mongodb server: `mongod --port=2000`
 
-Run `node server.js` to start the server
+Run `npm run start` to start the server
 
 Run `maildev` to catch emails on port 1025. If maildev is not installed on your computer run `npm install maildev -g`
 
