@@ -62,3 +62,7 @@ doc
 
 .awcache
 package-lock.json
+
+# Sublime text #
+*.sublime-project
+*.sublime-workspace

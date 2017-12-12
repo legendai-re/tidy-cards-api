@@ -54,7 +54,7 @@ You can now visit the website on `localhost:8080` and open `localhost:1080` to s
 
 ### Run api tests
 
-`mocha tests`
+Install `mocha` globally: `npm install mocha -g`. Then run `npm run test`.
 
 ### Generate API documentation
 
