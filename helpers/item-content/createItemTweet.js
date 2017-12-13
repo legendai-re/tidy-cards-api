@@ -34,7 +34,7 @@ module.exports = function createItemTweet (url, user, callback) {
             itemTweet._user = user._id;
             itemTweet.save(function(err){
                 if(err)callback(err)
-                callback(null, itemTypes.TWEET, itemTweet)
+                callback(null, itemTypes.TWEET.id, itemTweet)
             })
         });
 

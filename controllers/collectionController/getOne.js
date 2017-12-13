@@ -71,8 +71,8 @@ function getParents(collection, result, callback){
  * Retrieve the Star object related to the collection and the currentcurrentUser
  */
 function getStar(currentUser, collection, callback){
-    m.Star.findOne({_currentUser: currentUser._id, _collection: collection._id}, function(err, star){
-        if(err) {logger.error(err); callback(err, null);}
+    m.Star.findOne({_user: currentUser._id, _collection: collection._id}, function(err, star){
+        if(err) {logger.error(err); return callback(err, null);}
         callback(null, star);
     })
 }

@@ -18,8 +18,8 @@ module.exports = function put (req, res) {
             }
 
             if(req.body.visibility && visibilityOk(req.body.visibility) && collection.depth == 0){
-                collection.visibility = req.body.visibility.id;
-                updateChildsVisibility(collection, req.body.visibility.id);
+                collection.visibility = req.body.visibility;
+                updateChildsVisibility(collection, req.body.visibility);
             }
 
             if(req.body.displayMode && displayModeOk(req.body.displayMode))
@@ -41,7 +41,7 @@ module.exports = function put (req, res) {
     });
 
     function visibilityOk(reqVisibility){
-        if(visibility[reqVisibility.id] != null)
+        if(visibility[reqVisibility] != null)
             return true;
         return false;
     }

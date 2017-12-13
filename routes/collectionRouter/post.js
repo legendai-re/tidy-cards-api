@@ -41,7 +41,7 @@ module.exports = function post (req, res) {
     }
 
     function visibilityOk(reqVisibility){
-        if(visibility[reqVisibility.id] != null)
+        if(visibility[reqVisibility] != null)
             return true;
         return false;
     }
@@ -50,7 +50,7 @@ module.exports = function post (req, res) {
         var collection =  new models.Collection();
         collection.title = req.body.title;
         collection.color = req.body.color;
-        collection.visibility = req.body.visibility.id;
+        collection.visibility = req.body.visibility;
         if(req.body.bio){
             collection.bio = req.body.bio;
         }

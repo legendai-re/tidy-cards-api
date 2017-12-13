@@ -14,7 +14,7 @@ module.exports = function post (req, res) {
 
         // if a specific displayMode is defined and is OK, update the item
         if(req.body.displayMode && displayModeOk(req.body.displayMode))
-            item.displayMode = req.body.displayMode.id;
+            item.displayMode = req.body.displayMode;
 
         // if description is defined, update the item
         if(req.body.description)
@@ -25,7 +25,7 @@ module.exports = function post (req, res) {
             item.title = req.body.title;
 
         // set the type of the item (itemType have been check before so it is safe to use it)
-        item.type = req.body.type.id;
+        item.type = req.body.type;
 
         models.Collection.findById(req.body._collection, function(err, collection){
             if(err) {console.log(err); res.sendStatus(500); return;}
@@ -49,13 +49,13 @@ module.exports = function post (req, res) {
     }
 
     function typeOk(reqType){
-        if(itemTypes[reqType.id] != null)
+        if(itemTypes[reqType] != null)
             return true;
         return false;
     }
 
     function displayModeOk(reqDisplayMode){
-        if(itemDisplayModes[reqDisplayMode.id] != null)
+        if(itemDisplayModes[reqDisplayMode] != null)
             return true;
         return false;
     }

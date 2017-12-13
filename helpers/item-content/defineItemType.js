@@ -14,12 +14,12 @@ module.exports = function defineItemType() {
 
         function getItemType(url){
             if(simpleGetIsImage(url))
-                return itemTypes['IMAGE'];
+                return itemTypes['IMAGE'].id;
             if(getIsTweet(url))
-                return itemTypes['TWEET'];
+                return itemTypes['TWEET'].id;
             if(getIsYoutube(url))
-                return itemTypes['YOUTUBE'];
-            return itemTypes['URL'];
+                return itemTypes['YOUTUBE'].id;
+            return itemTypes['URL'].id;
         }
 
         function simpleGetIsImage(url){

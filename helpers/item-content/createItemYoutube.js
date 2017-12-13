@@ -30,7 +30,7 @@ module.exports = function createItemYoutube (url, user, callback) {
             itemYoutube._user = user._id;
             itemYoutube.save(function(err){
                 if(err)callback(err)
-                callback(null, itemTypes.YOUTUBE, itemYoutube)
+                callback(null, itemTypes.YOUTUBE.id, itemYoutube)
             })
         });
 

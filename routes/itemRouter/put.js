@@ -17,7 +17,7 @@ module.exports = function put (req, res) {
 
             // if a specific displayMode is defined and is OK, update the item
             if(req.body.displayMode && displayModeOk(req.body.displayMode))
-                item.displayMode = req.body.displayMode.id;
+                item.displayMode = req.body.displayMode;
 
             if(req.body.description || req.body.description == '')
                 item.description = req.body.description;
@@ -28,7 +28,7 @@ module.exports = function put (req, res) {
             if(!typeOk(req.body.type))
                 return res.status(400).send({ error: 'bad item type'});
 
-            item.type = req.body.type.id;
+            item.type = req.body.type;
             itemContentHelper.checkItemContent(item, req, function(err, content){
                 if (err){res.status(400).send({ error: "error while creating item content"}); return;}
                 if(!content && !item.description){res.status(400).send({ error: "you must add a description if there is no url"}); return;}
@@ -43,13 +43,13 @@ module.exports = function put (req, res) {
     });
 
     function typeOk(reqType){
-        if(itemTypes[reqType.id] != null)
+        if(itemTypes[reqType] != null)
             return true;
         return false;
     }
 
     function displayModeOk(reqDisplayMode){
-        if(itemDisplayModes[reqDisplayMode.id] != null)
+        if(itemDisplayModes[reqDisplayMode] != null)
             return true;
         return false;
     }

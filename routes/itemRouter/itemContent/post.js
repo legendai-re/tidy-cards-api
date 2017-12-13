@@ -14,7 +14,7 @@ module.exports = function post (req, res, next) {
             res.json({error: false, data: itemContent, itemType: itemType});
         }
 
-        switch(req.itemType.id){
+        switch(req.itemType){
             case 'IMAGE':
                 return itemContentHelper.createItemImage(url, req.user, callback);
             case 'YOUTUBE':

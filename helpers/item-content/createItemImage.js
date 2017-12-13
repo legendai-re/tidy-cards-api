@@ -11,7 +11,7 @@ module.exports = function createItemImage (url, user, callback) {
     itemImage._user = user._id;
     itemImage.save(function(err){
         if(err) return callback(err);
-        return callback(null, itemTypes.IMAGE, itemImage);
+        return callback(null, itemTypes.IMAGE.id, itemImage);
     })
 
 }

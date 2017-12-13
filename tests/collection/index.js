@@ -60,7 +60,7 @@ describe('POST /api/collections (auth)', () => {
         request(server)
             var req = request(server).post('/api/collections');
             req.cookies = common.testUsers.test1.cookies;
-            req.send({title: 'collection0_private_by_test1', color: 'ffffff', visibility: visibility.PRIVATE})
+            req.send({title: 'collection0_private_by_test1', color: 'ffffff', visibility: visibility.PRIVATE.id})
             .expect(200)
             .expect(response => {
                 assert.equal(response.body.data.title, 'collection0_private_by_test1');
@@ -79,7 +79,7 @@ describe('POST /api/collections (auth)', () => {
         request(server)
             var req = request(server).post('/api/collections');
             req.cookies = common.testUsers.test1.cookies;
-            req.send({title: 'collection1_public_by_test1', color: 'ffffff', visibility: visibility.PUBLIC})
+            req.send({title: 'collection1_public_by_test1', color: 'ffffff', visibility: visibility.PUBLIC.id})
             .expect(200)
             .expect(response => {
                 assert.equal(response.body.data.title, 'collection1_public_by_test1');
@@ -133,7 +133,7 @@ describe('GET /api/collections/collection0_private_by_test1 (auth)', () => {
     it('it should get the private collection by user1', (done) => {
         var req = request(server).get('/api/collections/' + common.testUsers.test1.collections[0]._id);
         req.cookies = common.testUsers.test1.cookies;
-        req.send({title: 'collection1_public_by_test1', color: 'ffffff', visibility: visibility.PUBLIC})
+        req.send({title: 'collection1_public_by_test1', color: 'ffffff', visibility: visibility.PUBLIC.id})
         .expect(200)
         .expect(response => {
             assert.equal(response.body.data._id, common.testUsers.test1.collections[0]._id);

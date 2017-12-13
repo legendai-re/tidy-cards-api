@@ -20,7 +20,7 @@ module.exports = function createItemUrl (url, user, callback) {
             itemUrl.title = url;
             itemUrl.save(function(err){
                 if(err) return callback(err)
-                return callback(null, itemTypes.URL, itemUrl)
+                return callback(null, itemTypes.URL.id, itemUrl)
             })
         }else{
 
@@ -61,7 +61,7 @@ module.exports = function createItemUrl (url, user, callback) {
             
             itemUrl.save(function(err){
                 if(err) return callback(err)
-                return callback(null, itemTypes.URL, itemUrl)
+                return callback(null, itemTypes.URL.id, itemUrl)
             })
 
         }
