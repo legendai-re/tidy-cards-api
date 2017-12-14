@@ -188,7 +188,14 @@
         "delete_title": "Supprimer cet objet ?",
         "delete_caption": "Voullez-vous vraiment supprimer cet objet ?",
         "delete_button_yes": "Supprimer cet objet",
-        "markdown_supported": "Mise en page Markdown supportée"
+        "markdown_supported": "Mise en page Markdown supportée",
+        "display_modes": {
+            "SMALL": "Petit",
+            "MEDIUM": "Moyen",
+            "LARGE": "Grand"
+        },
+        "display_tip_title": "Astuce :",
+        "display_tip_desc": "Vous pouvez changer le format d'affichage de cet objet en cliquant sur l'icône du bas qui apparaît lorsque vous le survolez."
     },
     "collection_create": {
         "title_placeholder": "Créer une collection…",

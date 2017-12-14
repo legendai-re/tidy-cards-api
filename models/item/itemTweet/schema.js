@@ -50,4 +50,4 @@ module.exports = function getItemTweetSchema(Schema) {
         _user: { type: String, ref: 'User' }
     });
 
-}
+};

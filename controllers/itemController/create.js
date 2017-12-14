@@ -102,6 +102,8 @@ module.exports = function create (user, collectionId, displayMode, description, 
                 item.type = itemTypes.TEXT.id;
             }
 
+            item.displayMode = itemTypes[item.type].default_display_mode;
+
             collection.addItem(item, function(err, item){
                 if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500));}
                 item._content = itemContent;
@@ -128,7 +130,7 @@ module.exports = function create (user, collectionId, displayMode, description, 
                     $position: 0
                 }
             }},
-            function(err, customSort){
+            function(err){
                 if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500));}
                 sendResponse(item);
             }
@@ -157,7 +159,7 @@ module.exports = function create (user, collectionId, displayMode, description, 
             case itemTypes.URL.id:
                 return content.title;
             case itemTypes.IMAGE.id:
-                return 'image';
+                return 'image - ' + content.host;
             case itemTypes.YOUTUBE.id:
                 return content.snippet.title;
             case itemTypes.TWEET.id:

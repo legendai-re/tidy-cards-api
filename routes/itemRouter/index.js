@@ -1,6 +1,6 @@
 let express         = require('express');
 let isGranted       = require('../../security/isGranted');
-let defineItemTypeMiddleware  = require('../../controllers/itemController/defineTypeMiddleware')
+let defineItemTypeMiddleware  = require('../../controllers/itemController/defineTypeMiddleware');
 let router          = express.Router();
 
 router.route('/content/create')
@@ -24,7 +24,7 @@ router.route('/')
      * @api {post} /api/items Create an item
      * @apiParam {String} _collection The ID of the collection that the item will belong.
      * @apiParam {String} [title] Title of the item.
-     * @apiParam {String} [type] The item type, _content must be defined.
+     * @apiParam {String} [type] The item type, <code>_content</code> must be defined.
      * @apiParam {ItemContent} [_content] An object (ItemYoutube, ItemUrl, ItemTweet, ItemImage), must be defined if <code>description</code> isn't. <code>type</code> must be defined.
      * @apiParam {String} [url] An url, it will be used to generate the item content if <code>_content</code> is not defined.
      * @apiParam {String} [description] A short description about the item, must be defined if <code>_content</code> isn't.

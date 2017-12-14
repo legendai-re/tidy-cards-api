@@ -9,9 +9,9 @@ module.exports = function put (req, res) {
     models.Item.findById(req.params.item_id).populate('_collection').exec(function(err, item){
         if(err) {console.log(err); res.sendStatus(500); return;}
         if(!item) {res.status(404).send({ error: "cannot find item with id: "+req.params.item_id }); return;}
-        if(item._collection._author!=req.user._id) {res.status(401).send({ error: "only the author of the collection can update item" }); return;}
+        if(item._collection._author.toString() !== req.user._id.toString()) {res.status(401).send({ error: "only the author of the collection can update item" }); return;}
 
-        if(req.body.updatePosition && typeof req.body.position != 'undefined'){
+        if(req.body.updatePosition && typeof req.body.position !== 'undefined'){
             updatePosition(item, req.body.position)
         }else{
 
@@ -19,7 +19,7 @@ module.exports = function put (req, res) {
             if(req.body.displayMode && displayModeOk(req.body.displayMode))
                 item.displayMode = req.body.displayMode;
 
-            if(req.body.description || req.body.description == '')
+            if(req.body.description || req.body.description === '')
                 item.description = req.body.description;
             
             if(req.body.title)
@@ -54,10 +54,10 @@ module.exports = function put (req, res) {
         models.CustomSort.findOne({ _collection: item._collection._id, type: sortTypes.COLLECTION_ITEMS.id}, function(err, customSort){
             if (err) {console.log(err); res.sendStatus(500); return;}
             //remove id of item
-            models.CustomSort.update({ _id: customSort._id},{ $pull: { ids: item._id } }, function(err, result){
+            models.CustomSort.update({ _id: customSort._id},{ $pull: { ids: item._id } }, function(err){
                 if (err) {console.log(err); res.sendStatus(500); return;}
                 //add id at the new position
-                models.CustomSort.update({_id: customSort._id}, { $push: { ids: { $each: [ item._id ], $position: newPosition } } }, function(err, result){
+                models.CustomSort.update({_id: customSort._id}, { $push: { ids: { $each: [ item._id ], $position: newPosition } } }, function(err){
                     if (err) {console.log(err); res.sendStatus(500); return;}
                     sendResponse(item);
                 });
@@ -68,4 +68,4 @@ module.exports = function put (req, res) {
     function sendResponse(item){
         res.json({data: item});
     }
-}
+};

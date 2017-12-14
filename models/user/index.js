@@ -1,10 +1,9 @@
 let mongoose    = require('mongoose');
 let roles       = require('../../security/roles.json');
-let visibility  = require('../collection/visibility.json');
 let lifeStates  = require('../lifeStates.json');
 let URLSlugs    = require('../../helpers/user/mongooseSlug');
 let Schema      = mongoose.Schema;
-let algoliaClient = require('../../tools/algolia/algolia')
+let algoliaClient = require('../../tools/algolia/algolia');
 let algoliaUserIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_user');
 
 let UserSchema  = require('./schema')(Schema);
@@ -25,7 +24,7 @@ UserSchema.pre('save', function(next) {
 });
 
 UserSchema.post('save', function(user) {
-    if(process.env.NODE_ENV == 'test')
+    if(process.env.NODE_ENV === 'test')
         return;
     if(user.lifeState === lifeStates.ACTIVE.id) {
         algoliaUserIndex.addObject({
@@ -49,11 +48,11 @@ UserSchema.plugin(URLSlugs('unsafeUsername', {field: 'username', update: true}))
 UserSchema.methods.isGranted = function isGranted(role){
     if(this.haveRole(role)) return true;
     return checkRole(this, role);
-}
+};
 
 UserSchema.methods.haveRole = function haveRole(role){
     return this.roles.indexOf(role) > -1;
-}
+};
 
 function checkRole(user, toFound){
     for(role in roles){
@@ -75,10 +74,10 @@ UserSchema.methods.addRole = function addRole(role, callback) {
     }else{
         callback({success: false, alert: "Role already exist"});
     }
-}
+};
 
 UserSchema.methods.removeRole = function removeRole(role, callback) {
-    if(this.haveRole(role) && role != "ROLE_USER"){
+    if(this.haveRole(role) && role !== "ROLE_USER"){
         let index = this.roles.indexOf(role);
         this.roles.splice(index, 1);
         this.save(function(err){
@@ -88,7 +87,7 @@ UserSchema.methods.removeRole = function removeRole(role, callback) {
     }else{
         callback({success: false, alert: "Role didn't exist or you tryed to remove ROLE_USER"});
     }
-}
+};
 
 UserSchema.methods.addCollection = function addCollection(collection, callback) {
     collection._author = this._id;
@@ -96,7 +95,7 @@ UserSchema.methods.addCollection = function addCollection(collection, callback) 
         if (err) {callback(err, collection); return;}
         callback(false, collection);
     });
-}
+};
 
 User = mongoose.model('User', UserSchema);
 

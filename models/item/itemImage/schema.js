@@ -13,7 +13,11 @@ module.exports = function getItemImageSchema(Schema) {
                 message: '{VALUE} is not an url'
             }
         },
+        host: {
+            type: String,
+            required: false
+        },
         _user: { type: String, ref: 'User' }
     });
 
-}
+};

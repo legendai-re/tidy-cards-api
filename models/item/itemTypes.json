@@ -1,20 +1,45 @@
 {
-    "URL": {
-        "id": "URL"
-    },
-    "IMAGE":  {
-        "id": "IMAGE"
-    },
-    "YOUTUBE":  {
-        "id": "YOUTUBE"
-    },
-    "TWEET":  {
-        "id": "TWEET"
-    },
-    "TEXT":  {
-        "id": "TEXT"
-    },
-    "COLLECTION":  {
-        "id": "COLLECTION"
-    }
+  "URL": {
+    "id": "URL",
+    "available_display_modes": [
+      "SMALL",
+      "MEDIUM",
+      "LARGE"
+    ],
+    "default_display_mode": "MEDIUM"
+  },
+  "IMAGE": {
+    "id": "IMAGE",
+    "available_display_modes": [
+      "SMALL",
+      "LARGE"
+    ],
+    "default_display_mode": "LARGE"
+  },
+  "YOUTUBE": {
+    "id": "YOUTUBE",
+    "available_display_modes": [
+      "SMALL",
+      "LARGE"
+    ],
+    "default_display_mode": "LARGE"
+  },
+  "TWEET": {
+    "id": "TWEET",
+    "available_display_modes": [
+      "SMALL",
+      "LARGE"
+    ],
+    "default_display_mode": "LARGE"
+  },
+  "TEXT": {
+    "id": "TEXT",
+    "available_display_modes": [],
+    "default_display_mode": ""
+  },
+  "COLLECTION": {
+    "id": "COLLECTION",
+    "available_display_modes": [],
+    "default_display_mode": ""
+  }
 }

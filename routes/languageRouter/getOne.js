@@ -23,4 +23,4 @@ module.exports = function getOne (req, res) {
         return JSON.parse(fs.readFileSync('languages/'+langId+'.json', 'utf8'));
     }
 
-}
+};

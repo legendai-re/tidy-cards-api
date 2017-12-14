@@ -1,5 +1,4 @@
-let models         = require('../../models');
-let itemController = require("../../controllers/itemController")
+let itemController = require("../../controllers/itemController");
 
 module.exports = function post (req, res) {
 

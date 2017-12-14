@@ -188,7 +188,14 @@
         "delete_title": "Delete this item?",
         "delete_caption": "Do you really want to delete this item?",
         "delete_button_yes": "Delete this item",
-        "markdown_supported": "Styling with Markdown is supported"
+        "markdown_supported": "Styling with Markdown is supported",
+        "display_modes": {
+            "SMALL": "Small",
+            "MEDIUM": "Medium",
+            "LARGE": "Large"
+        },
+        "display_tip_title": "Pro tip:",
+        "display_tip_desc": "You can change the display format of this item by clicking on the bottom icon that appear when you hover it."
     },
     "collection_create": {
         "title_placeholder": "Create a collection…",

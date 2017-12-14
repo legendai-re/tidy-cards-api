@@ -13,6 +13,6 @@ exports.request = request;
 exports.should = chai.should();
 exports.assert = chai.assert;
 exports.testUsers = {
-    test1: {cookies: null, data: null, collections: []},
-    test2: {cookies: null, data: null, collections: []}
-}
+    test1: {cookies: null, data: null, collection_private: {}, collection_public: {}},
+    test2: {cookies: null, data: null, collection_private: {}, collection_public: {}}
+};
