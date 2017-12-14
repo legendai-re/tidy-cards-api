@@ -15,8 +15,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha tests",
-    "doc": "apidoc -i ./ js -o doc -e node_modules",
-    "postinstall": "npm run start"
+    "doc": "apidoc -i ./ js -o doc -e node_modules"
   },
   "dependencies": {
     "algoliasearch": "^3.24.5",
