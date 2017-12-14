@@ -15,7 +15,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha tests",
-    "doc": "apidoc -i ./ js -o doc -e node_modules"
+    "doc": "apidoc -i ./ js -o doc -e node_modules",
+    "heroku-postbuild": "cd tidy-cards-web-app && npm run build"
   },
   "dependencies": {
     "algoliasearch": "^3.24.5",
