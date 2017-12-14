@@ -1,13 +1,13 @@
-var mongoose    = require('mongoose');
-var roles       = require('../../security/roles.json');
-var visibility  = require('../collection/visibility.json');
-var lifeStates  = require('../lifeStates.json');
-var URLSlugs    = require('../../helpers/user/mongooseSlug');
-var Schema      = mongoose.Schema;
-var algoliaClient = require('../../tools/algolia/algolia')
-var algoliaUserIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_user');
+let mongoose    = require('mongoose');
+let roles       = require('../../security/roles.json');
+let visibility  = require('../collection/visibility.json');
+let lifeStates  = require('../lifeStates.json');
+let URLSlugs    = require('../../helpers/user/mongooseSlug');
+let Schema      = mongoose.Schema;
+let algoliaClient = require('../../tools/algolia/algolia')
+let algoliaUserIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_user');
 
-var UserSchema  = require('./schema')(Schema);
+let UserSchema  = require('./schema')(Schema);
 
 UserSchema.pre('validate', function(next) {
     if(this.name)
@@ -79,7 +79,7 @@ UserSchema.methods.addRole = function addRole(role, callback) {
 
 UserSchema.methods.removeRole = function removeRole(role, callback) {
     if(this.haveRole(role) && role != "ROLE_USER"){
-        var index = this.roles.indexOf(role);
+        let index = this.roles.indexOf(role);
         this.roles.splice(index, 1);
         this.save(function(err){
             if(err)throw err;

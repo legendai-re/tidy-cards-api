@@ -1,7 +1,7 @@
 module.exports = function putComplete(req, res) {
 
-    var bCrypt      = require('bcrypt-nodejs');
-    var models      = require('../../models');
+    let bCrypt      = require('bcrypt-nodejs');
+    let models      = require('../../models');
 
     if(!req.body.reset_token || !req.body.password || req.body.password.length < 3){
         res.status(400).send({ error: 'some required parameters was not provided'});
@@ -23,8 +23,8 @@ module.exports = function putComplete(req, res) {
 
     function isAbleToCompleteReset(user){
         if(user.local.resetRequestDate){
-            var timeDiff = Math.abs(new Date() - user.local.resetRequestDate.getTime());
-            var diffHours = Math.ceil(timeDiff / (1000 * 3600));
+            let timeDiff = Math.abs(new Date() - user.local.resetRequestDate.getTime());
+            let diffHours = Math.ceil(timeDiff / (1000 * 3600));
             if(diffHours>24)
                 return false;
         }

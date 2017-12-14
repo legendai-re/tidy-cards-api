@@ -1,8 +1,8 @@
 module.exports = function putInitiate(req, res) {
 
-    var bCrypt      = require('bcrypt-nodejs');
-    var models      = require('../../models');
-    var passwordResetEmail = require('../../helpers/email/password-reset');
+    let bCrypt      = require('bcrypt-nodejs');
+    let models      = require('../../models');
+    let passwordResetEmail = require('../../helpers/email/password-reset');
 
     if(!req.body.user_id){
         res.status(400).send({ error: 'some required parameters was not provided'});
@@ -25,8 +25,8 @@ module.exports = function putInitiate(req, res) {
         if(!user.local.active || !user.emailConfirmed)
             return false;
         if(user.local.resetRequestDate){
-            var timeDiff = Math.abs(new Date() - user.local.resetRequestDate.getTime());
-            var diffHours = Math.ceil(timeDiff / (1000 * 3600));
+            let timeDiff = Math.abs(new Date() - user.local.resetRequestDate.getTime());
+            let diffHours = Math.ceil(timeDiff / (1000 * 3600));
             if(diffHours<24)
                 return false;
         }

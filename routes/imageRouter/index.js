@@ -1,10 +1,10 @@
-var express    		= require('express');
-var isGranted       = require('../../security/isGranted');
-var imageUploader   = require('../../helpers/image-uploader');
+let express    		= require('express');
+let isGranted       = require('../../security/isGranted');
+let imageUploader   = require('../../helpers/image-uploader');
 
-var router = express.Router();
+let router = express.Router();
 
-var upload = imageUploader.upload.single('file');
+let upload = imageUploader.upload.single('file');
 
 router.route('/')
     .post(isGranted('ROLE_USER'), function (req, res, next) {

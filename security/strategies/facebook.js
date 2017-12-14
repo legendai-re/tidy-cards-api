@@ -1,8 +1,8 @@
 module.exports = function getLocalStrategy(FacebookStrategy){
 
-    var models          = require('../../models');
-    var strategiesHelper = require('./strategiesHelper');
-    var lifeStates      = require('../../models/lifeStates');
+    let models          = require('../../models');
+    let strategiesHelper = require('./strategiesHelper');
+    let lifeStates      = require('../../models/lifeStates');
 
     return new FacebookStrategy({
         clientID: process.env.FACEBOOK_APP_ID,
@@ -30,8 +30,8 @@ module.exports = function getLocalStrategy(FacebookStrategy){
             }
         });
 
-        var linkAccountToFacebook = function(){
-            var user            = req.user;
+        let linkAccountToFacebook = function(){
+            let user            = req.user;
             user.facebook.id    = profile.id;
             user.facebook.token = accessToken;
             user.save(function(err) {

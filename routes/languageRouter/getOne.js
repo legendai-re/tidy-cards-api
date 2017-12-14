@@ -1,9 +1,9 @@
 module.exports = function getOne (req, res) {
 
-    var fs = require('fs');
+    let fs = require('fs');
 
-    var sess = req.session;
-    var langId = (req.params.language_id || 'en');
+    let sess = req.session;
+    let langId = (req.params.language_id || 'en');
 
     switch(langId){
         case 'en':

@@ -1,5 +1,5 @@
-var transporter = require('../transporter');
-var fs = require('fs');
+let transporter = require('../transporter');
+let fs = require('fs');
 
 require.extensions['.txt'] = function (module, filename) {
     module.exports = fs.readFileSync(filename, 'utf8');
@@ -9,7 +9,7 @@ require.extensions['.html'] = function (module, filename) {
     module.exports = fs.readFileSync(filename, 'utf8');
 };
 
-var sendPasswordResetEmail = transporter.templateSender({
+let sendPasswordResetEmail = transporter.templateSender({
     subject: 'Password reset',
     text: require('./template.txt'),
     html: require('./template.html')

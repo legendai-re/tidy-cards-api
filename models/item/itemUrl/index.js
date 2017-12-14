@@ -1,9 +1,11 @@
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
+let mongoose    = require('mongoose');
+let Schema      = mongoose.Schema;
 
-var ItemUrlSchema = require('./schema')(Schema);
+let ItemUrlSchema = require('./schema')(Schema);
 
 ItemUrlSchema.pre('validate', function(next) {
+    if(!this.title)
+        this.title = '';
 	if(this.title)
     	this.title = this.title.substring(0, 500);
 	if(this.url)

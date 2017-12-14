@@ -1,6 +1,6 @@
-var express         = require('express');
+let express         = require('express');
 
-var router = express.Router();
+let router = express.Router();
 
 router.route('/:language_id')
     .get(function(req, res) {

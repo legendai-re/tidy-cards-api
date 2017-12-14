@@ -1,18 +1,18 @@
-var multer          = require('multer')
-var aws             = require('aws-sdk')
-var multerS3        = require('multer-s3')
-var request         = require('request');
-var fs              = require('fs')
-var gm              = require('gm'), imageMagick = gm.subClass({ imageMagick: true });
-var async           = require('async')
-var imagesTypes     = require('../../models/image/imageTypes.json');
-var models          = require('../../models');
+let multer          = require('multer')
+let aws             = require('aws-sdk')
+let multerS3        = require('multer-s3')
+let request         = require('request');
+let fs              = require('fs')
+let gm              = require('gm'), imageMagick = gm.subClass({ imageMagick: true });
+let async           = require('async')
+let imagesTypes     = require('../../models/image/imageTypes.json');
+let models          = require('../../models');
 
 aws.config.region = 'eu-west-1';
 
-var s3 = new aws.S3({params: {Bucket: process.env.S3_BUCKET}});
+let s3 = new aws.S3({params: {Bucket: process.env.S3_BUCKET}});
 
-var upload = multer({
+let upload = multer({
   storage: multerS3({
     s3: s3,
     bucket: process.env.S3_BUCKET+'/'+process.env.IMAGES_FOLDER,
@@ -21,8 +21,8 @@ var upload = multer({
     },
     key: function (req, file, callback) {
 
-        var image = new models.Image();
-        var type = getTypeFromReq(req);
+        let image = new models.Image();
+        let type = getTypeFromReq(req);
         image.type = type.name;
         image.mime = getMimeFromFile(file);
         image._user = req.user._id;
@@ -39,8 +39,8 @@ var upload = multer({
 });
 
 function getTypeFromReq(req){
-    var typeId = req.query.type;
-    for(var key in imagesTypes){
+    let typeId = req.query.type;
+    for(let key in imagesTypes){
         if(imagesTypes[key]._id == typeId)
             return imagesTypes[key];
     }
@@ -61,14 +61,14 @@ function getMimeFromFile(file){
     }
 }
 
-var tmpPath = 'helpers/image-uploader/tmp-uploads/';
+let tmpPath = 'helpers/image-uploader/tmp-uploads/';
 
 /**
  * Get the original image from AWS, then asynchronously crop the image and upload them to
  * AWS with the function awsUpload(). When all images are uploaded, call the callback
  */
 function afterUpload(image, callback){
-    var r = request(image.baseUrl + '/' + imagesTypes[image.type].path + '/s' + 'original' + '/' + image._id + '.' + image.mime)
+    let r = request(image.baseUrl + '/' + imagesTypes[image.type].path + '/s' + 'original' + '/' + image._id + '.' + image.mime)
                 .pipe(fs.createWriteStream(tmpPath +'original/'+ image._id + '.' + image.mime ))
                 .on('error', (e) => {console.log("pipe error");console.log(e); return callback(err);})
 
@@ -76,7 +76,7 @@ function afterUpload(image, callback){
         gm(tmpPath +'original/'+ image._id + '.' +image.mime)
             .identify(function (err, data) {
                 if (err) {console.log(err); return callback(err);}
-                var sizes = imagesTypes[image.type].sizes;
+                let sizes = imagesTypes[image.type].sizes;
                 async.times(sizes.length, function(n, next) {
                     gm(tmpPath +'original/'+ image._id + '.' + image.mime)
                     .thumb(sizes[n].x,sizes[n].y, tmpPath +sizes[n].x+'x'+sizes[n].y+ '/'+ image._id + '.' +image.mime, 70, function(err, stdout, stderr, command){
@@ -100,11 +100,11 @@ function afterUpload(image, callback){
  * Upoad an image to AWS, when upload is finished, call the callback
  */
 function awsUpload(image, size, callback){
-    var imageLocalPath = tmpPath+size+'/'+ image._id + '.' +image.mime;
+    let imageLocalPath = tmpPath+size+'/'+ image._id + '.' +image.mime;
     fs.readFile(imageLocalPath, function(err, data) {
         if(err) return callback(err);
         s3.createBucket({Bucket: process.env.S3_BUCKET}, function() {
-            var params = {Bucket: process.env.S3_BUCKET, Key: process.env.IMAGES_FOLDER+'/'+imagesTypes[image.type].path+'/s'+size+'/'+ image._id + '.' +image.mime, Body: data};
+            let params = {Bucket: process.env.S3_BUCKET, Key: process.env.IMAGES_FOLDER+'/'+imagesTypes[image.type].path+'/s'+size+'/'+ image._id + '.' +image.mime, Body: data};
             s3.putObject(params, function(err, data) {
                 if (err){
                     console.log(err);
@@ -123,7 +123,7 @@ function awsUpload(image, size, callback){
  * Get the image from a social network then call afterUpload()
  */
 function getSocialNetworkAvatar(image, url, callback){
-    var r = request(url)
+    let r = request(url)
                 .pipe(fs.createWriteStream(tmpPath + 'original/'+ image._id + '.' + image.mime ))
                 .on('error', (e) => {console.log("pipe error");console.log(e); return callback(err);})
     r.on('finish', () => {

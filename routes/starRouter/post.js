@@ -1,7 +1,7 @@
 module.exports = function post (req, res) {
 
-    var visibility      = require('../../models/collection/visibility.json');
-    var models          = require('../../models');
+    let visibility      = require('../../models/collection/visibility.json');
+    let models          = require('../../models');
 
     if(!req.body._collection){
         res.status(400).send({ error: 'some required parameters was not provided'});
@@ -24,7 +24,7 @@ module.exports = function post (req, res) {
     }
 
     function createStar(collection, user, callback){
-        var star =  new models.Star();
+        let star =  new models.Star();
         star._collection = collection._id;
         star._user = user._id;
         star.save(function(err){

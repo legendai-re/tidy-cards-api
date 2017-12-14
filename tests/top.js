@@ -4,7 +4,7 @@ function importTest(name, path) {
     });
 }
 
-var common = require("./common");
+let common = require("./common");
 let models  = common.models;
 
 
@@ -23,7 +23,7 @@ describe("", function () {
 		        })
 		    });
 		});
-	})
+	});
 
 	importTest("\n\n||||||||||| AUTH ||||||||||||", './auth');
     importTest("\n\n||||||||||| USERS |||||||||||", './user');

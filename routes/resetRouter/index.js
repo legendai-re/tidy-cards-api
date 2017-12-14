@@ -1,9 +1,9 @@
-var express         = require('express');
-var ExpressBrute    = require('express-brute');
-var isGranted       = require('../../security/isGranted');
-var router          = express.Router();
-var store           = new ExpressBrute.MemoryStore();
-var bruteforce      = new ExpressBrute(store);
+let express         = require('express');
+let ExpressBrute    = require('express-brute');
+let isGranted       = require('../../security/isGranted');
+let router          = express.Router();
+let store           = new ExpressBrute.MemoryStore();
+let bruteforce      = new ExpressBrute(store);
 
 router.route('/initiate')
     .put(function(req,res){

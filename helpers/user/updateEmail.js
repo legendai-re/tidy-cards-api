@@ -1,5 +1,5 @@
-var models      = require('../../models');
-var emailConfirmation = require('../email/email-confirmation');
+let models      = require('../../models');
+let emailConfirmation = require('../email/email-confirmation');
 
 function update(user, email, callback){
     generateToken(function(err, token){

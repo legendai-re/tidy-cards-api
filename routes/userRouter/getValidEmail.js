@@ -1,8 +1,8 @@
 module.exports = function getValidEmail (req, res) {
 
-    var models      = require('../../models');
+    let models      = require('../../models');
 
-    var rq = req.query;
+    let rq = req.query;
 
     if(!rq.email){
         res.status(400).send({ error: 'some required parameters was not provided'});
@@ -12,7 +12,7 @@ module.exports = function getValidEmail (req, res) {
             return res.json({data: {isValid: false}});
 
 
-        var filterObj = req.user ? {email: rq.email.toLowerCase().replace(/\s/g, ''),  _id: { $ne: req.user._id }} : {email: rq.email.toLowerCase().replace(/\s/g, '')};
+        let filterObj = req.user ? {email: rq.email.toLowerCase().replace(/\s/g, ''),  _id: { $ne: req.user._id }} : {email: rq.email.toLowerCase().replace(/\s/g, '')};
 
         models.User.findOne(filterObj, function(err, user){
             if(err) {console.log(err); res.sendStatus(500); return;}

@@ -1,10 +1,10 @@
 module.exports = function put (req, res) {
 
-    var itemTypes       = require('../../models/item/itemTypes.json');
-    var itemDisplayModes = require('../../models/item/displayModes.json');
-    var sortTypes       = require('../../models/customSort/sortTypes.json');
-    var models          = require('../../models');
-    var itemContentHelper = require('../../helpers/item-content');
+    let itemTypes       = require('../../models/item/itemTypes.json');
+    let itemDisplayModes = require('../../models/item/displayModes.json');
+    let sortTypes       = require('../../models/customSort/sortTypes.json');
+    let models          = require('../../models');
+    let itemContentController = require('../../controllers/itemController/itemContentController');
 
     models.Item.findById(req.params.item_id).populate('_collection').exec(function(err, item){
         if(err) {console.log(err); res.sendStatus(500); return;}
@@ -29,8 +29,8 @@ module.exports = function put (req, res) {
                 return res.status(400).send({ error: 'bad item type'});
 
             item.type = req.body.type;
-            itemContentHelper.checkItemContent(item, req, function(err, content){
-                if (err){res.status(400).send({ error: "error while creating item content"}); return;}
+            itemContentController.checkItemContent(req.user, req.body.type, req.body._content, function(err, content){
+                if (err){res.status(400).send({ error: err}); return;}
                 if(!content && !item.description){res.status(400).send({ error: "you must add a description if there is no url"}); return;}
                 if(content)
                     item._content = content._id;
@@ -43,15 +43,11 @@ module.exports = function put (req, res) {
     });
 
     function typeOk(reqType){
-        if(itemTypes[reqType] != null)
-            return true;
-        return false;
+        return itemTypes[reqType] !== null;
     }
 
     function displayModeOk(reqDisplayMode){
-        if(itemDisplayModes[reqDisplayMode] != null)
-            return true;
-        return false;
+        return itemDisplayModes[reqDisplayMode] !== null;
     }
 
     function updatePosition(item, newPosition){

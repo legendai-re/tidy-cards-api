@@ -1,5 +1,5 @@
-var deleteOne = require('./deleteOne');
-var getOne = require('./getOne');
+let deleteOne = require('./deleteOne');
+let getOne = require('./getOne');
 
 function init(itemController){
     deleteOne.init(itemController);    

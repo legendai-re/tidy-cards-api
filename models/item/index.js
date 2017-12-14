@@ -1,7 +1,7 @@
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
+let mongoose    = require('mongoose');
+let Schema      = mongoose.Schema;
 
-var ItemSchema = require('./schema')(Schema);
+let ItemSchema = require('./schema')(Schema);
 
 ItemSchema.pre('validate', function(next) {
 	if(this.title)

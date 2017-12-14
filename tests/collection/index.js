@@ -1,6 +1,6 @@
-var visibility = require('../../models/collection/visibility.json');
-var lifeStates = require('../../models/lifeStates.json');
-var common  = require('../common');
+let visibility = require('../../models/collection/visibility.json');
+let lifeStates = require('../../models/lifeStates.json');
+let common  = require('../common');
 let server  = common.server;
 let models  = common.models;
 let chai    = common.chai;
@@ -58,7 +58,7 @@ describe('DELETE /api/collections/test (no_auth)', () => {
 describe('POST /api/collections (auth)', () => {
     it('it should create a private collection by test1', (done) => {
         request(server)
-            var req = request(server).post('/api/collections');
+            let req = request(server).post('/api/collections');
             req.cookies = common.testUsers.test1.cookies;
             req.send({title: 'collection0_private_by_test1', color: 'ffffff', visibility: visibility.PRIVATE.id})
             .expect(200)
@@ -77,7 +77,7 @@ describe('POST /api/collections (auth)', () => {
 describe('POST /api/collections (auth)', () => {
     it('it should create a public collection by test1', (done) => {
         request(server)
-            var req = request(server).post('/api/collections');
+            let req = request(server).post('/api/collections');
             req.cookies = common.testUsers.test1.cookies;
             req.send({title: 'collection1_public_by_test1', color: 'ffffff', visibility: visibility.PUBLIC.id})
             .expect(200)
@@ -131,7 +131,7 @@ describe('GET /api/collections/collection0_private_by_test1 (no_auth)', () => {
 
 describe('GET /api/collections/collection0_private_by_test1 (auth)', () => {
     it('it should get the private collection by user1', (done) => {
-        var req = request(server).get('/api/collections/' + common.testUsers.test1.collections[0]._id);
+        let req = request(server).get('/api/collections/' + common.testUsers.test1.collections[0]._id);
         req.cookies = common.testUsers.test1.cookies;
         req.send({title: 'collection1_public_by_test1', color: 'ffffff', visibility: visibility.PUBLIC.id})
         .expect(200)

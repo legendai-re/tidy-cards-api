@@ -1,6 +1,6 @@
 module.exports = function post (req, res) {
 
-    var imageUploader = require('../../helpers/image-uploader');
+    let imageUploader = require('../../helpers/image-uploader');
     if(req.image){
         imageUploader.afterUpload(req.image, function(err){
             res.json({data: req.image});

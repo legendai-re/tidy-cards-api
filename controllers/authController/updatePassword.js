@@ -1,6 +1,6 @@
-var logger      = require('../../tools/winston');
-var bCrypt      = require('bcrypt-nodejs');
-var m           = require('../../models');
+let logger      = require('../../tools/winston');
+let bCrypt      = require('bcrypt-nodejs');
+let m           = require('../../models');
 
 module.exports = function updatePassword(params, currentUser, callback) {
 

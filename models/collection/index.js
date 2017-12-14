@@ -1,11 +1,11 @@
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
-var lifeStates  = require('../lifeStates.json');
-var visibility  = require('./visibility.json');
-var algoliaClient = require('../../tools/algolia/algolia')
-var algoliaCollectionIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_collection');
+let mongoose    = require('mongoose');
+let Schema      = mongoose.Schema;
+let lifeStates  = require('../lifeStates.json');
+let visibility  = require('./visibility.json');
+let algoliaClient = require('../../tools/algolia/algolia')
+let algoliaCollectionIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_collection');
 
-var CollectionSchema = require('./schema')(Schema);
+let CollectionSchema = require('./schema')(Schema);
 
 CollectionSchema.pre('validate', function(next) {
     if(this.title)
@@ -49,7 +49,7 @@ CollectionSchema.post('save', function(collection) {
  * @param {requestCallback} callback - The callback that return the item.
  */
 CollectionSchema.methods.addItem = function addItem(item, callback) {
-    var tmpThis = this;
+    let tmpThis = this;
     item._collection = this._id;
     item.save(function(err){
         if (err) {callback(err, item); return;}

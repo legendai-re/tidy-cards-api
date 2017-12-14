@@ -1,9 +1,9 @@
-var logger          = require('../../tools/winston');
-var lifeStates      = require('../../models/lifeStates.json');
-var sortTypes       = require('../../models/customSort/sortTypes.json');
-var itemTypes       = require('../../models/item/itemTypes.json');
-var m               = require('../../models');
-var collectionController = require('../collectionController');
+let logger          = require('../../tools/winston');
+let lifeStates      = require('../../models/lifeStates.json');
+let sortTypes       = require('../../models/customSort/sortTypes.json');
+let itemTypes       = require('../../models/item/itemTypes.json');
+let m               = require('../../models');
+let collectionController = require('../collectionController');
 
 /**
  * Delete an item and decrement the attribute itemsCount of the related collection.
@@ -11,9 +11,9 @@ var collectionController = require('../collectionController');
 module.exports = function deleteOne(currentUser, itemId, callback){
     m.Item.findById(itemId).populate('_collection').exec(function(err, item){
         if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500))}
-        if(!item) {return callback(new m.ApiResponse("cannot find item with id: "+req.params.item_id, 400));}
-        if(item._collection._author!=currentUser._id) {return callback(new m.ApiResponse("only the author of the collection can remove item", 401));}
-        if(item.lifeState == lifeStates.ARCHIVED.id) return callback(new m.ApiResponse(null, 200));
+        if(!item) {return callback(new m.ApiResponse("cannot find item with id: "+itemId, 400));}
+        if(item._collection._author.toString() !== currentUser._id.toString()) {return callback(new m.ApiResponse("only the author of the collection can remove item", 401));}
+        if(item.lifeState === lifeStates.ARCHIVED.id) return callback(new m.ApiResponse(null, 200));
         
         checkIfCollectionType(currentUser, item, function(err){
             if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500));}
@@ -33,13 +33,13 @@ module.exports = function deleteOne(currentUser, itemId, callback){
 
         })
     });
-}
+};
 
 /**
  * Check if the item have COLLECTION as type, if yes then delete the related collection.
  */
 function checkIfCollectionType(currentUser, item, callback){
-    if(item.type == itemTypes.COLLECTION.id){
+    if(item.type === itemTypes.COLLECTION.id){
         collectionController.deleteOne(currentUser, item._content, function(apiResponse){
             callback(apiResponse.err);
         })

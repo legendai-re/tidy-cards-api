@@ -1,6 +1,6 @@
 module.exports = function putConfirmEmail (req, res) {
 
-    var models      = require('../../models');
+    let models      = require('../../models');
 
     models.User.findById(req.user._id).select('+emailConfirmationToken').exec(function(err, user) {
         if(user.emailConfirmationToken === req.params.confirmation_token){

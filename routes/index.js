@@ -1,19 +1,19 @@
 module.exports = function(app) {
 
-    var express             = require('express');
-    var path                = require('path');
-    var userAgentParser     = require('../helpers/user-agent-parser');
-    var authRouter          = require('./authRouter');
-    var userRouter          = require('./userRouter');
-    var collectionRouter    = require('./collectionRouter');
-    var imageRouter         = require('./imageRouter');
-    var itemRouter          = require('./itemRouter');
-    var starRouter          = require('./starRouter');
-    var resetRouter         = require('./resetRouter');
-    var rolesRouter         = require('./rolesRouter');
-    var languageRouter      = require('./languageRouter');
-    var paymentRouter       = require('./paymentRouter');
-    var devRouter           = require('./devRouter');
+    let express             = require('express');
+    let path                = require('path');
+    let userAgentParser     = require('../helpers/user-agent-parser');
+    let authRouter          = require('./authRouter');
+    let userRouter          = require('./userRouter');
+    let collectionRouter    = require('./collectionRouter');
+    let imageRouter         = require('./imageRouter');
+    let itemRouter          = require('./itemRouter');
+    let starRouter          = require('./starRouter');
+    let resetRouter         = require('./resetRouter');
+    let rolesRouter         = require('./rolesRouter');
+    let languageRouter      = require('./languageRouter');
+    let paymentRouter       = require('./paymentRouter');
+    let devRouter           = require('./devRouter');
 
     app.use('/', express.static(path.resolve(__dirname, '../tidy-cards-web-app/dist')));
     app.use('/api/doc', express.static(path.resolve(__dirname, '../doc')));

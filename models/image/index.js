@@ -1,7 +1,7 @@
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
+let mongoose    = require('mongoose');
+let Schema      = mongoose.Schema;
 
-var ImageSchema  = require('./schema')(Schema);
+let ImageSchema  = require('./schema')(Schema);
 
 ImageSchema.pre('save', function(next) {
     if(!this.createdAt)

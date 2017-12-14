@@ -1,9 +1,9 @@
-var authController = require('../../controllers/authController');
-var m              = require('../../models');
+let authController = require('../../controllers/authController');
+let m              = require('../../models');
 
 module.exports = function postSignup(req, res) {
 
-    var params = req.body;
+    let params = req.body;
 
     // get session's language if exist
     params.language = (req.session.language || 'en');

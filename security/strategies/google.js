@@ -1,8 +1,8 @@
 module.exports = function getGoogleStrategy(GoogleStrategy){
 
-    var models          = require('../../models');
-    var strategiesHelper = require('./strategiesHelper');
-    var lifeStates      = require('../../models/lifeStates');
+    let models          = require('../../models');
+    let strategiesHelper = require('./strategiesHelper');
+    let lifeStates      = require('../../models/lifeStates');
 
     return new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
@@ -29,8 +29,8 @@ module.exports = function getGoogleStrategy(GoogleStrategy){
             }
         });
 
-        var linkAccountToGoogle = function(){
-            var user          = req.user;
+        let linkAccountToGoogle = function(){
+            let user          = req.user;
             user.google.id    = profile.id;
             user.google.token = accessToken;
             user.save(function(err) {

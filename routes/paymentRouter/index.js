@@ -1,6 +1,6 @@
-var express         = require('express');
+let express         = require('express');
 
-var router = express.Router();
+let router = express.Router();
 
 router.route('/charge')
     .post(function(req, res) {

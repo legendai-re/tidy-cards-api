@@ -1,9 +1,9 @@
-var authController = require('../../controllers/authController');
-var m              = require('../../models');
+let authController = require('../../controllers/authController');
+let m              = require('../../models');
 
 module.exports = function putUnlinkAccount(req, res) {
 
-    var params = req.body;
+    let params = req.body;
 
     authController.unlinkSocialAccount(params, req.user, function(apiResponse){
         res.status(apiResponse.status).json(apiResponse);

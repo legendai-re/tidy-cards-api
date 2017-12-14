@@ -1,10 +1,10 @@
-var logger          = require('../../tools/winston');
-var bCrypt          = require('bcrypt-nodejs');
-var connectionTypes = require('../../security/connectionTypes.json');
-var m               = require('../../models');
-var sortTypes       = require('../../models/customSort/sortTypes.json');
-var usernameValidator = require('../../helpers/user/usernameValidator');
-var updateEmail     = require('../../helpers/user/updateEmail');
+let logger          = require('../../tools/winston');
+let bCrypt          = require('bcrypt-nodejs');
+let connectionTypes = require('../../security/connectionTypes.json');
+let m               = require('../../models');
+let sortTypes       = require('../../models/customSort/sortTypes.json');
+let usernameValidator = require('../../helpers/user/usernameValidator');
+let updateEmail     = require('../../helpers/user/updateEmail');
 
 module.exports = function localSignup(params, callback) {
 
@@ -17,23 +17,23 @@ module.exports = function localSignup(params, callback) {
         return callback(new m.ApiResponse('username is not valid', 422));    
 
     // check if the username or the email is already used
-    var regex = new RegExp(["^", params.username, "$"].join(""), "i");
-    m.User.findOne({ $or: [{username: regex}, {email: params.email.toLowerCase()}] }, function(err, user){
+    let regex = new RegExp(["^", params.username, "$"].join(""), "i");
+    m.User.findOne({ $or: [{username: regex}, {email: params.email.toLowerCase()}] }, function(err, foundedUser){
         if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500));}
 
         // stop if username or email already used 
-        if(user)
+        if(foundedUser)
             return callback(new m.ApiResponse('email/username already taken', 422));
         
         //  create user object
-        var user = createUserObject(params);
+        let user = createUserObject(params);
 
         // save user to db
         user.save(function(err, user){
             if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500))}
 
             // create customSort object, the one used to store user's collections
-            var myCollectionSort = createMyCollectionCustomSortObject(user);
+            let myCollectionSort = createMyCollectionCustomSortObject(user);
 
             // save customSort object to db
             myCollectionSort.save(function(err){
@@ -69,7 +69,7 @@ function requiredParamsOk(params){
  * Create a user object using params data, it do not save the user to db
  */
 function createUserObject(params){
-    var user =  new m.User();
+    let user =  new m.User();
     user.email = params.email.toLowerCase();
     user.unsafeUsername = params.username;
     user.username = params.username;
@@ -88,7 +88,7 @@ function createUserObject(params){
  * this is why we use the type MY_COLLECTIONS
  */
 function createMyCollectionCustomSortObject(user){
-    var myCollectionSort = new m.CustomSort();
+    let myCollectionSort = new m.CustomSort();
     myCollectionSort.type = sortTypes.MY_COLLECTIONS.id;
     myCollectionSort._user = user._id;
 

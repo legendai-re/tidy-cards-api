@@ -1,12 +1,12 @@
 module.exports = function(app) {
 
-    var passport        = require('passport');
-    var FacebookStrategy = require('passport-facebook').Strategy;
-    var TwitterStrategy = require('passport-twitter').Strategy;
-    var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-    var LocalStrategy   = require('passport-local').Strategy;
-    var models          = require('../models');
-    var lifeStates      = require('../models/lifeStates');
+    let passport        = require('passport');
+    let FacebookStrategy = require('passport-facebook').Strategy;
+    let TwitterStrategy = require('passport-twitter').Strategy;
+    let GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+    let LocalStrategy   = require('passport-local').Strategy;
+    let models          = require('../models');
+    let lifeStates      = require('../models/lifeStates');
 
     app.use(passport.initialize());
 

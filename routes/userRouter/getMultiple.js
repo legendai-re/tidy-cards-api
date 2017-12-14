@@ -1,15 +1,15 @@
 module.exports = function getMultiple (req, res) {
 
-    var isGranted   = require('../../security/isGranted');
-    var models      = require('../../models');
-    var algoliaClient = require('../../tools/algolia/algolia')
-    var algoliaUserIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_user');
-    var lifeStates  = require('../../models/lifeStates.json');
+    let isGranted   = require('../../security/isGranted');
+    let models      = require('../../models');
+    let algoliaClient = require('../../tools/algolia/algolia')
+    let algoliaUserIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_user');
+    let lifeStates  = require('../../models/lifeStates.json');
 
-    var rq = req.query;
+    let rq = req.query;
 
     getQueryFiler(rq, req, function(filterObj){
-        var q = models.User.find(filterObj).sort({'createdAt': 1}).limit(20);
+        let q = models.User.find(filterObj).sort({'createdAt': 1}).limit(20);
 
         if(!(rq.allStates && req.user && req.user.isGranted('ROLE_ADMIN')))
             q.where('lifeState').equals(lifeStates.ACTIVE.id);
@@ -25,7 +25,7 @@ module.exports = function getMultiple (req, res) {
             q.limit(parseInt(rq.limit));
 
         if(rq.sort_field && rq.sort_dir && (parseInt(rq.sort_dir)==1 || parseInt(rq.sort_dir)==-1)){
-            var sortObj = {};
+            let sortObj = {};
             sortObj[rq.sort_field] = rq.sort_dir;
             q.sort(sortObj);
         }
@@ -37,7 +37,7 @@ module.exports = function getMultiple (req, res) {
     })
 
     function getQueryFiler(rq, req, callback){
-        var filterObj = {};
+        let filterObj = {};
 
         if(rq.search){
             algoliaGetUserIds(decodeURIComponent(rq.search), function(ids){                
@@ -63,8 +63,8 @@ module.exports = function getMultiple (req, res) {
               console.error(err);
               callback([]);
             }
-            var usersIds = [];
-            for (var h in content.hits) {
+            let usersIds = [];
+            for (let h in content.hits) {
                 usersIds.push(content.hits[h].objectID)
             }
             callback(usersIds);

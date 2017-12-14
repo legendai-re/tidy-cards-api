@@ -1,12 +1,12 @@
-var express         = require('express');
-var isGranted       = require('../../security/isGranted');
-var defineItemType  = require('../../helpers/item-content/defineItemType')
-var router          = express.Router();
+let express         = require('express');
+let isGranted       = require('../../security/isGranted');
+let defineItemTypeMiddleware  = require('../../controllers/itemController/defineTypeMiddleware')
+let router          = express.Router();
 
 router.route('/content/create')
     /**
      * @api {post} /api/items/content/create Create item's content
-     * @apiParam {String} url A valid url.
+     * @apiParam {String} url An url.
      * @apiParam {Object} itemType An object that contain de id of the item type.
      * @apiPermission ROLE_USER
      * @apiName CreateItemContent
@@ -15,7 +15,7 @@ router.route('/content/create')
      * @apiSuccess {ItemContent} data An object (ItemYoutube, ItemUrl, ItemTweet, ItemImage).
      * @apiSuccess {ItemType} itemType An object that contain de id of the item type.
      */
-    .post(isGranted('ROLE_USER'), defineItemType(), function(req, res){
+    .post(isGranted('ROLE_USER'), defineItemTypeMiddleware(), function(req, res){
        require('./itemContent/post')(req, res);
     });
 
@@ -24,8 +24,9 @@ router.route('/')
      * @api {post} /api/items Create an item
      * @apiParam {String} _collection The ID of the collection that the item will belong.
      * @apiParam {String} [title] Title of the item.
-     * @apiParam {Object} type An object that contain de id of the item type.
-     * @apiParam {ItemContent} [_content] An object (ItemYoutube, ItemUrl, ItemTweet, ItemImage), must be defined if <code>description</code> isn't.
+     * @apiParam {String} [type] The item type, _content must be defined.
+     * @apiParam {ItemContent} [_content] An object (ItemYoutube, ItemUrl, ItemTweet, ItemImage), must be defined if <code>description</code> isn't. <code>type</code> must be defined.
+     * @apiParam {String} [url] An url, it will be used to generate the item content if <code>_content</code> is not defined.
      * @apiParam {String} [description] A short description about the item, must be defined if <code>_content</code> isn't.
      * @apiPermission ROLE_USER
      * @apiName CreateItem

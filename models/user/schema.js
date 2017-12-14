@@ -1,6 +1,6 @@
 module.exports = function getUserSchema(Schema) {
 
-    var lifeStates = require('../lifeStates.json');
+    let lifeStates = require('../lifeStates.json');
 
 	return new Schema({
 		createdAt: { type: Date },

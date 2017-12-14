@@ -1,27 +1,24 @@
+let https    = require('https');
+let models   = require('../../../models');
+let itemTypes = require('../../../models/item/itemTypes.json');
+
 module.exports = function createItemTweet (url, user, callback) {
 
-    var fs       = require("fs");
-    var https    = require('https');
-    var models   = require('../../models');
-    var itemTypes = require('../../models/item/itemTypes.json');
-
-    var tweetUrl = url;
-
-    var options = {
+    let options = {
       host: 'publish.twitter.com',
-      path: '/oembed?format=json&url='+ encodeURI(tweetUrl)
+      path: '/oembed?format=json&url='+ encodeURI(url)
     };
 
-    var twCallback = function(response) {
-        var str = '';
+    let twCallback = function(response) {
+        let str = '';
 
         response.on('data', function (chunk) {
             str += chunk;
         });
 
         response.on('end', function () {
-            var response = JSON.parse(str);
-            var itemTweet = new models.ItemTweet();
+            let response = JSON.parse(str);
+            let itemTweet = new models.ItemTweet();
             itemTweet.url = response.url;
             itemTweet.html = response.html;
             itemTweet.author_name = response.author_name;
@@ -33,7 +30,7 @@ module.exports = function createItemTweet (url, user, callback) {
             itemTweet.version = response.version;
             itemTweet._user = user._id;
             itemTweet.save(function(err){
-                if(err)callback(err)
+                if(err)callback(err);
                 callback(null, itemTypes.TWEET.id, itemTweet)
             })
         });
@@ -45,4 +42,4 @@ module.exports = function createItemTweet (url, user, callback) {
 
    https.request(options, twCallback).end();
 
-}
+};

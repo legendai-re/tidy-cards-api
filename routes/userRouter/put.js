@@ -1,10 +1,10 @@
 module.exports = function put (req, res) {
 
-    var bCrypt      = require('bcrypt-nodejs');
-    var models      = require('../../models');
-    var usernameValidator = require('../../helpers/user/usernameValidator');
-    var updateEmail = require('../../helpers/user/updateEmail');
-    var availableLanguages = require('../../languages/availableLanguages.json');
+    let bCrypt      = require('bcrypt-nodejs');
+    let models      = require('../../models');
+    let usernameValidator = require('../../helpers/user/usernameValidator');
+    let updateEmail = require('../../helpers/user/updateEmail');
+    let availableLanguages = require('../../languages/availableLanguages.json');
 
 	models.User.findById(req.params.user_id, function(err, user) {
         if (err) {console.log(err); res.sendStatus(500); return;}

@@ -1,15 +1,15 @@
-var logger      = require('../../tools/winston');
-var visibility  = require('../../models/collection/visibility.json');
-var lifeStates  = require('../../models/lifeStates.json');
-var m           = require('../../models');
-var mongodbid   = require('../../helpers/mongodbid');
+let logger      = require('../../tools/winston');
+let visibility  = require('../../models/collection/visibility.json');
+let lifeStates  = require('../../models/lifeStates.json');
+let m           = require('../../models');
+let mongodbid   = require('../../helpers/mongodbid');
 
 module.exports = function getOne(collection_id, params, currentUser, callback) {
 
     if(!mongodbid.isMongoId(collection_id))
         return callback(new m.ApiResponse(collection_id + ' is not a mongodb id', 404));
 
-	var q = m.Collection.findById(collection_id);
+	let q = m.Collection.findById(collection_id);
 
 	q.populate('_thumbnail');
     q.populate({
@@ -21,7 +21,7 @@ module.exports = function getOne(collection_id, params, currentUser, callback) {
         if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500))}
         if(!collection) {return callback(new m.ApiResponse('cannot find collection with id: '+collection_id, 404));}
 
-        var _authorId = collection._author._id ? collection._author._id : collection._author;
+        let _authorId = collection._author._id ? collection._author._id : collection._author;
 
         // if collection no more active or private, and current currentUser is not the author
         if((collection.lifeState != lifeStates.ACTIVE.id) ||  (collection.visibility == visibility.PRIVATE.id && (!currentUser || String(currentUser._id)!=_authorId))){

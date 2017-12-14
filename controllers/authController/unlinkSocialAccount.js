@@ -1,5 +1,5 @@
-var logger          = require('../../tools/winston');
-var m               = require('../../models');
+let logger          = require('../../tools/winston');
+let m               = require('../../models');
 
 module.exports = function unlinkSocialAccount(params, currentUser, callback) {
 

@@ -1,12 +1,12 @@
 module.exports = function getMultiple (req, res) {
 
-    var itemTypes       = require('../../models/item/itemTypes.json');
-    var lifeStates      = require('../../models/lifeStates.json');
-    var models          = require('../../models');
-    var sortTypes       = require('../../models/customSort/sortTypes.json');
-    var visibility      = require('../../models/collection/visibility.json');
+    let itemTypes       = require('../../models/item/itemTypes.json');
+    let lifeStates      = require('../../models/lifeStates.json');
+    let models          = require('../../models');
+    let sortTypes       = require('../../models/customSort/sortTypes.json');
+    let visibility      = require('../../models/collection/visibility.json');
 
-    var rq = req.query;
+    let rq = req.query;
 
     if(!rq._collection && (!req.user || !req.user.isGranted('ROLE_ADMIN'))){
         res.status(400).send({ error: "you must select a collection to get items (_collection) "});
@@ -31,12 +31,12 @@ module.exports = function getMultiple (req, res) {
     }
 
     function manageCustomSort(){
-        var skip = rq.skip ? parseInt(rq.skip) : 0;
-        var limit = rq.limit ? parseInt(rq.limit) : 8;
+        let skip = rq.skip ? parseInt(rq.skip) : 0;
+        let limit = rq.limit ? parseInt(rq.limit) : 8;
         models.CustomSort.findOne({ _collection: rq._collection, type: sortTypes.COLLECTION_ITEMS.id},{ ids : { $slice : [skip , limit] } }, function(err, customSort){
             if(err) {console.log(err); res.sendStatus(500); return;}
             if(!customSort) { res.sendStatus(400); return;}
-            var q = models.Item.find({_id: {$in: customSort.ids}, lifeState: lifeStates.ACTIVE.id });
+            let q = models.Item.find({_id: {$in: customSort.ids}, lifeState: lifeStates.ACTIVE.id });
 
             if(rq.populate){
                 q.populate(rq.populate);
@@ -44,7 +44,7 @@ module.exports = function getMultiple (req, res) {
 
             q.exec(function(err, items){
                 if (err) {console.log(err); res.sendStatus(500); return;}
-                for(var i in items){
+                for(let i in items){
                     items[i].position = customSort.ids.indexOf(items[i]._id) + skip;
                 }
                 if(items.length < 1) { res.json({data: []}); return};
@@ -57,7 +57,7 @@ module.exports = function getMultiple (req, res) {
 
     function manageNormalSort(){
         getQueryFiler(rq, req, function(filterObj){
-            var q = models.Item.find(filterObj).sort({'createdAt': 1}).limit(20);
+            let q = models.Item.find(filterObj).sort({'createdAt': 1}).limit(20);
             q.where('lifeState').equals(lifeStates.ACTIVE.id);
 
             if(rq.populate){
@@ -71,7 +71,7 @@ module.exports = function getMultiple (req, res) {
                 q.limit(parseInt(rq.limit));
 
             if(rq.sort_field && rq.sort_dir && (parseInt(rq.sort_dir)==1 || parseInt(rq.sort_dir)==-1)){
-                var sortObj = {};
+                let sortObj = {};
                 sortObj[rq.sort_field] = rq.sort_dir;
                 q.sort(sortObj);
             }
@@ -87,7 +87,7 @@ module.exports = function getMultiple (req, res) {
     }
 
     function getQueryFiler(rq, req, callback){
-        var filterObj = {};
+        let filterObj = {};
 
         if(rq.search)
             filterObj.title = { $regex:  '.*'+rq.search+'.*', $options: 'i'};
@@ -156,7 +156,7 @@ module.exports = function getMultiple (req, res) {
                 });
                 break;
             case itemTypes.COLLECTION.id:
-                var q = models.Collection.findById(items[i]._content);
+                let q = models.Collection.findById(items[i]._content);
                 q.populate('_thumbnail');
                 q.populate({
                     path: '_author',

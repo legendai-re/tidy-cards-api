@@ -1,4 +1,4 @@
-var m = require('../../models');
+let m = require('../../models');
 
 module.exports = function postLogin (req, res) {
 

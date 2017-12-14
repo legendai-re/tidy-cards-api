@@ -50,4 +50,4 @@ module.exports = function getItemUrlSchema(Schema) {
         _user: { type: String, ref: 'User' }
     });
 
-}
+};

@@ -1,6 +1,6 @@
 module.exports = function impersonate() {
 
-	var models = require('../models');
+	let models = require('../models');
 
 	return function(req, res, next) {
 		if (!req.isAuthenticated() || !req.user.isGranted('ROLE_ADMIN')) return next();

@@ -1,7 +1,7 @@
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
+let mongoose    = require('mongoose');
+let Schema      = mongoose.Schema;
 
-var ItemImageSchema = require('./schema')(Schema);
+let ItemImageSchema = require('./schema')(Schema);
 
 ItemImageSchema.pre('validate', function(next) {
 	if(this.url)

@@ -1,7 +1,7 @@
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
+let mongoose    = require('mongoose');
+let Schema      = mongoose.Schema;
 
-var StarSchema = require('./schema')(Schema);
+let StarSchema = require('./schema')(Schema);
 
 StarSchema.pre('save', function(next) {
     if(!this.createdAt)

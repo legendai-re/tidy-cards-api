@@ -1,13 +1,13 @@
 module.exports = function getOne (req, res) {
 
-    var models      = require('../../models');
-    var mongodbid   = require('../../helpers/mongodbid');
-    var lifeStates  = require('../../models/lifeStates.json');
+    let models      = require('../../models');
+    let mongodbid   = require('../../helpers/mongodbid');
+    let lifeStates  = require('../../models/lifeStates.json');
 
-    var rq = req.query;
-    var q = null;
+    let rq = req.query;
+    let q = null;
 
-    var noCaseUsernameRegex = new RegExp(["^", req.params.user_id, "$"].join(""), "i");
+    let noCaseUsernameRegex = new RegExp(["^", req.params.user_id, "$"].join(""), "i");
 
     if(mongodbid.isMongoId(req.params.user_id))
         q = models.User.findById(req.params.user_id);
@@ -21,7 +21,7 @@ module.exports = function getOne (req, res) {
     }
 
     if(rq.sort_field && rq.sort_dir && (parseInt(rq.sort_dir)==1 || parseInt(rq.sort_dir)==-1)){
-        var sortObj = {};
+        let sortObj = {};
         sortObj[rq.sort_field] = rq.sort_dir;
         q.sort(sortObj);
     }

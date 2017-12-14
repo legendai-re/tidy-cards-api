@@ -1,11 +1,11 @@
-var express    		= require('express');
-var passport		= require('passport');
-var ExpressBrute    = require('express-brute');
-var isGranted       = require('../../security/isGranted');
-var impersonate     = require('../../security/impersonate');
-var router          = express.Router();
-var store           = new ExpressBrute.MemoryStore();
-var bruteforce      = new ExpressBrute(store);
+let express    		= require('express');
+let passport		= require('passport');
+let ExpressBrute    = require('express-brute');
+let isGranted       = require('../../security/isGranted');
+let impersonate     = require('../../security/impersonate');
+let router          = express.Router();
+let store           = new ExpressBrute.MemoryStore();
+let bruteforce      = new ExpressBrute(store);
 
 router.route('/facebook')
     /**
@@ -16,7 +16,7 @@ router.route('/facebook')
      * @apiDescription Passport facebook authentication entry.
      */
     .get(function(req, res, next){
-        var sess=req.session;
+        let sess=req.session;
         sess.next = (req.query.next || '/dashboard');
         next();
     },passport.authenticate('facebook', {scope:['email']}))
@@ -43,7 +43,7 @@ router.route('/twitter')
      * @apiDescription Passport twitter authentication entry.
      */
     .get(function(req, res, next){
-        var sess=req.session;
+        let sess=req.session;
         sess.next = (req.query.next || '/dashboard');
         next();
     },passport.authenticate('twitter'))
@@ -70,7 +70,7 @@ router.route('/google')
      * @apiDescription Passport google authentication entry.
      */
     .get(function(req, res, next){
-        var sess=req.session;
+        let sess=req.session;
         sess.next = (req.query.next || '/dashboard');
         next();
     }, passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/userinfo.email'] }))

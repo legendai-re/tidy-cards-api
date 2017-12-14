@@ -1,10 +1,10 @@
-var async           = require('async');
-var logger          = require('../../tools/winston');
-var lifeStates      = require('../../models/lifeStates.json');
-var sortTypes       = require('../../models/customSort/sortTypes.json');
-var itemTypes       = require('../../models/item/itemTypes.json');
-var m               = require('../../models');
-var itemController  = require('../itemController');
+let async           = require('async');
+let logger          = require('../../tools/winston');
+let lifeStates      = require('../../models/lifeStates.json');
+let sortTypes       = require('../../models/customSort/sortTypes.json');
+let itemTypes       = require('../../models/item/itemTypes.json');
+let m               = require('../../models');
+let itemController  = require('../itemController');
 
 function init(_itemController){
     itemController = _itemController;
@@ -25,7 +25,7 @@ function deleteOne(currentUser, collectionId, callback){
         collection.save(function(err){
             if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500));}
 
-            var isRoot = (collection.depth == 0);
+            let isRoot = (collection.depth == 0);
 
             if(!isRoot)
                 deleteRelatedItem(currentUser, collection);

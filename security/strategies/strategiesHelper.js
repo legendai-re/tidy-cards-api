@@ -1,15 +1,15 @@
-var slug               = require('slug');
-var models             = require('../../models');
-var imagesTypes        = require('../../models/image/imageTypes.json');
-var sortTypes          = require('../../models/customSort/sortTypes.json');
-var forbiddenUsernames = require('../../helpers/user/forbiddenUsernames.json');
-var imageUpdloader     = require('../../helpers/image-uploader');
-var updateEmail        = require('../../helpers/user/updateEmail');
+let slug               = require('slug');
+let models             = require('../../models');
+let imagesTypes        = require('../../models/image/imageTypes.json');
+let sortTypes          = require('../../models/customSort/sortTypes.json');
+let forbiddenUsernames = require('../../helpers/user/forbiddenUsernames.json');
+let imageUpdloader     = require('../../helpers/image-uploader');
+let updateEmail        = require('../../helpers/user/updateEmail');
 
-var createUser = function(req, profile, accessToken, strategy, callback){
-    var sess = req.session;
-    var newUser = new models.User();
-    var profileEmail;
+let createUser = function(req, profile, accessToken, strategy, callback){
+    let sess = req.session;
+    let newUser = new models.User();
+    let profileEmail;
     if(profile.emails && profile.emails.length > 0)
         profileEmail = profile.emails[0].value;
     else
@@ -24,7 +24,7 @@ var createUser = function(req, profile, accessToken, strategy, callback){
         newUser[strategy].token = accessToken;
 
         if(profile.displayName){
-            var slugDdisplayName = slug(profile.displayName, '-');
+            let slugDdisplayName = slug(profile.displayName, '-');
             newUser.unsafeUsername = (forbiddenUsernames.indexOf(slugDdisplayName.toLowerCase()) > -1 ) ? 'forbidden-name' : slugDdisplayName;
         }else{
             newUser.unsafeUsername = 'anonyme';
@@ -34,7 +34,7 @@ var createUser = function(req, profile, accessToken, strategy, callback){
         newUser.language = (sess.language || 'en');
 
         createAvatar(newUser, profile, function(image){
-            var avatar = image;
+            let avatar = image;
             newUser._avatar = avatar._id;
 
             newUser.save(function(err){
@@ -71,7 +71,7 @@ var createUser = function(req, profile, accessToken, strategy, callback){
 }
 
 function createMyCollectionSort(newUser, callback){
-    var myCollectionSort = new models.CustomSort();
+    let myCollectionSort = new models.CustomSort();
     myCollectionSort.type = sortTypes.MY_COLLECTIONS.id;
     myCollectionSort._user = newUser._id;
     myCollectionSort.save(function(err){
@@ -80,7 +80,7 @@ function createMyCollectionSort(newUser, callback){
 }
 
 function createAvatar(newUser, profile, callback){
-    var image = new models.Image();
+    let image = new models.Image();
     image.type = imagesTypes.AVATAR.name;
     image.mime = 'jpg';
     image._user = newUser._id;

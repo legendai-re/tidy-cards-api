@@ -1,19 +1,20 @@
-if(process.env.NODE_ENV != "production"){
+if(process.env.NODE_ENV !== "production"){
     require('dotenv').config();
 }
 
-var express      = require('express');
-var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var session      = require('express-session');
-var MongoStore   = require('connect-mongo')(session);
-var sslRedirect  = require('heroku-ssl-redirect');
-var path         = require('path');
-var db           = require('./tools/mongoose');
-var logger       = require('./tools/winston');
-var controllers  = require('./controllers');
+let express      = require('express');
+let cookieParser = require('cookie-parser');
+let bodyParser   = require('body-parser');
+let session      = require('express-session');
+let MongoStore   = require('connect-mongo')(session);
+let sslRedirect  = require('heroku-ssl-redirect');
+let path         = require('path');
+let db           = require('./tools/mongoose');
+let logger       = require('./tools/winston');
+let controllers  = require('./controllers');
 
-var app = express();
+let app = express();
+
 app.set('port', (process.env.PORT || 2016));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
@@ -23,14 +24,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(sslRedirect(['production']));
 
-var sess = {
+let sess = {
     store: new MongoStore({mongooseConnection: db.connection}),
     secret: process.env.SESSION_SECRET,
     name: process.env.SESSION_NAME,
     resave: false,
     saveUninitialized: true,
     cookie: {}
-}
+};
 
 if(app.get('env') === 'production'){
     app.set('trust proxy', 1);
@@ -45,6 +46,6 @@ require('./routes')(app);
 
 app.listen(app.get('port'), function() {
     logger.log('info', 'TidyCards is running on port', app.get('port'));
-})
+});
 
 module.exports = app;

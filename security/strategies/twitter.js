@@ -1,8 +1,8 @@
 module.exports = function getTwitterStrategy(TwitterStrategy){
 
-    var models          = require('../../models');
-    var strategiesHelper = require('./strategiesHelper');
-    var lifeStates      = require('../../models/lifeStates');
+    let models          = require('../../models');
+    let strategiesHelper = require('./strategiesHelper');
+    let lifeStates      = require('../../models/lifeStates');
 
     return new TwitterStrategy({
         consumerKey: process.env.TWITTER_CONSUMER_KEY,
@@ -30,8 +30,8 @@ module.exports = function getTwitterStrategy(TwitterStrategy){
             }
         });
 
-        var linkAccountToTwitter = function(){
-            var user           = req.user;
+        let linkAccountToTwitter = function(){
+            let user           = req.user;
             user.twitter.id    = profile.id;
             user.twitter.token = accessToken;
             user.save(function(err) {

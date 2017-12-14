@@ -1,8 +1,8 @@
 module.exports = function getItemSchema(Schema) {
 
-    var itemTypes = require('./itemTypes.json');
-    var lifeStates = require('../lifeStates.json');
-    var itemDisplayModes = require('./displayModes.json');
+    let itemTypes = require('./itemTypes.json');
+    let lifeStates = require('../lifeStates.json');
+    let itemDisplayModes = require('./displayModes.json');
 
     return new Schema({
         createdAt: { type: Date },

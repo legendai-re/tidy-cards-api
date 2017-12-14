@@ -1,9 +1,9 @@
 module.exports = function put (req, res) {
 
-    var visibility  = require('../../models/collection/visibility.json');
-    var sortTypes   = require('../../models/customSort/sortTypes.json');
-    var displayMode = require('../../models/collection/displayMode.json');
-    var models      = require('../../models');
+    let visibility  = require('../../models/collection/visibility.json');
+    let sortTypes   = require('../../models/customSort/sortTypes.json');
+    let displayMode = require('../../models/collection/displayMode.json');
+    let models      = require('../../models');
 
     q = models.Collection.findById(req.params.collection_id);
 

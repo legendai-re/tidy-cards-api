@@ -1,8 +1,8 @@
 module.exports = function getCollectionSchema(Schema) {
 
-	var visibility = require('./visibility.json');
-    var displayMode = require('./displayMode.json');
-    var lifeStates = require('../lifeStates.json');
+	let visibility = require('./visibility.json');
+    let displayMode = require('./displayMode.json');
+    let lifeStates = require('../lifeStates.json');
 
 	return new Schema({
 		createdAt: { type: Date },

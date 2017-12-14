@@ -1,10 +1,10 @@
 module.exports = function putActivate(req, res) {
 
-    var async       = require('async');
-    var models      = require('../../models');
-    var mongodbid   = require('../../helpers/mongodbid');
-    var lifeStates  = require('../../models/lifeStates.json');
-    var collectionController = require('../../controllers/collectionController');
+    let async       = require('async');
+    let models      = require('../../models');
+    let mongodbid   = require('../../helpers/mongodbid');
+    let lifeStates  = require('../../models/lifeStates.json');
+    let collectionController = require('../../controllers/collectionController');
 
     models.User.findById(req.params.user_id, function(err, user) {
         if (err) {console.log(err); res.sendStatus(500); return;}
@@ -14,7 +14,7 @@ module.exports = function putActivate(req, res) {
         user.save(function(err){
             if(err) { return res.sendStatus(500); }
 
-            var collectionFilterObj = {
+            let collectionFilterObj = {
                 _author: user._id,
                 lifeState: lifeStates.ARCHIVED_BY_ACCOUNT_DEACTIVATION.id,
             }
@@ -26,14 +26,14 @@ module.exports = function putActivate(req, res) {
                     collections[n].lifeState = lifeStates.ACTIVE.id;
                     collections[n].save(function(err){
 
-                        var itemFilterObj = {
+                        let itemFilterObj = {
                             _collection: collections[n]._id,
                             lifeState: lifeStates.ARCHIVED_BY_ACCOUNT_DEACTIVATION.id,
                         }
                         models.Item.find(itemFilterObj).exec(function(err, items){
                             if(err) { console.log(err); return; }
 
-                            for(var i in items){
+                            for(let i in items){
                                 items[i].lifeState = lifeStates.ACTIVE.id;
                                 items[i].save(function(err){
                                 })

@@ -1,7 +1,7 @@
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
+let mongoose    = require('mongoose');
+let Schema      = mongoose.Schema;
 
-var CustomSortSchema  = require('./schema')(Schema);
+let CustomSortSchema  = require('./schema')(Schema);
 
 CustomSortSchema.pre('save', function(next) {
     if(!this.createdAt)

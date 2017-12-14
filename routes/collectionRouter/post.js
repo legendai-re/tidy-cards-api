@@ -1,8 +1,8 @@
 module.exports = function post (req, res) {
 
-    var visibility      = require('../../models/collection/visibility.json');
-    var sortTypes       = require('../../models/customSort/sortTypes.json');
-    var models          = require('../../models');
+    let visibility      = require('../../models/collection/visibility.json');
+    let sortTypes       = require('../../models/customSort/sortTypes.json');
+    let models          = require('../../models');
 
 	if(!req.body.title || !req.body.color || !req.body.visibility || !visibilityOk(req.body.visibility)){
         res.status(400).send({ error: 'some required parameters was not provided'});
@@ -47,7 +47,7 @@ module.exports = function post (req, res) {
     }
 
     function createCollection(callback){
-        var collection =  new models.Collection();
+        let collection =  new models.Collection();
         collection.title = req.body.title;
         collection.color = req.body.color;
         collection.visibility = req.body.visibility;
@@ -98,7 +98,7 @@ module.exports = function post (req, res) {
     }
 
     function createItemCustomSort(collection){
-        var itemCustomSort = new models.CustomSort();
+        let itemCustomSort = new models.CustomSort();
         itemCustomSort.type = sortTypes.COLLECTION_ITEMS.id;
         itemCustomSort._user = req.user._id;
         itemCustomSort._collection = collection._id;

@@ -1,4 +1,4 @@
-var common  = require('../common');
+let common  = require('../common');
 let server  = common.server;
 let models  = common.models;
 let chai    = common.chai;
@@ -96,7 +96,7 @@ describe('POST /auth/signup', () => {
 
 describe('GET /auth/currentuser', () => {
     it('it should return the currentuser', (done) => {
-        var req = request(server).get('/auth/currentuser');
+        let req = request(server).get('/auth/currentuser');
         req.cookies = common.testUsers.test2.cookies;
         req.expect(200)
         .expect(response => {
@@ -111,7 +111,7 @@ describe('GET /auth/currentuser', () => {
 
 describe('GET /auth/logout', () => {
     it('it should logout test2', (done) => {
-        var req = request(server).get('/auth/logout');
+        let req = request(server).get('/auth/logout');
         req.cookies = common.testUsers.test2.cookies;
         req.expect(200, done);
     });
@@ -119,7 +119,7 @@ describe('GET /auth/logout', () => {
 
 describe('GET /auth/currentuser', () => {
     it('it should return nothing', (done) => {
-        var req = request(server).get('/auth/currentuser');
+        let req = request(server).get('/auth/currentuser');
         req.cookies = common.testUsers.test2.cookies;
         req.expect(200)
         .expect(response => {
@@ -148,7 +148,7 @@ describe('POST /auth/login', () => {
 describe('PUT /auth/password/update', () => {
     it('it should make 400 error', (done) => {
         setTimeout(() =>{
-            var req = request(server).put('/auth/password/update');
+            let req = request(server).put('/auth/password/update');
             req.cookies = common.testUsers.test1.cookies;
             req.send({password: '', newPassword: ''})
             .expect(400)
@@ -160,7 +160,7 @@ describe('PUT /auth/password/update', () => {
 describe('PUT /auth/password/update', () => {
     it('it should make 401 error', (done) => {
         setTimeout(() =>{
-            var req = request(server).put('/auth/password/update');
+            let req = request(server).put('/auth/password/update');
             req.cookies = common.testUsers.test1.cookies;
             req.send({password: 'hello', newPassword: 'hello'})
             .expect(401)
@@ -172,7 +172,7 @@ describe('PUT /auth/password/update', () => {
 describe('PUT /auth/password/update', () => {
     it('it should update the password', (done) => {
         setTimeout(() =>{
-            var req = request(server).put('/auth/password/update');
+            let req = request(server).put('/auth/password/update');
             req.cookies = common.testUsers.test1.cookies;
             req.send({password: 'test1', newPassword: 'test1updated'})
             .expect(200)
@@ -184,7 +184,7 @@ describe('PUT /auth/password/update', () => {
 describe('PUT /auth/password/update', () => {
     it('it should re update the password', (done) => {
         setTimeout(() =>{
-            var req = request(server).put('/auth/password/update');
+            let req = request(server).put('/auth/password/update');
             req.cookies = common.testUsers.test1.cookies;
             req.send({password: 'test1updated', newPassword: 'test1'})
             .expect(200)

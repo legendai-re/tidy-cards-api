@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
-var forbiddenUsernames = require('./forbiddenUsernames');
-var mongodbid   = require('../mongodbid');
+let mongoose = require('mongoose');
+let forbiddenUsernames = require('./forbiddenUsernames');
+let mongodbid   = require('../mongodbid');
 
-var isValid = function(username){
+let isValid = function(username){
     return (isValidFormat(username) && !isForbidden(username) && !mongodbid.isMongoId(username))
 }
 

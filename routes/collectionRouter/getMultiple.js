@@ -1,29 +1,29 @@
 module.exports = function getMultiple (req, res) {
 
-    var async       = require('async');
-	var visibility  = require('../../models/collection/visibility.json');
-    var sortTypes   = require('../../models/customSort/sortTypes.json');
-    var lifeStates  = require('../../models/lifeStates.json');
-    var models      = require('../../models');
-    var algoliaClient = require('../../tools/algolia/algolia')
-    var algoliaCollectionIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_collection');
+    let async       = require('async');
+	let visibility  = require('../../models/collection/visibility.json');
+    let sortTypes   = require('../../models/customSort/sortTypes.json');
+    let lifeStates  = require('../../models/lifeStates.json');
+    let models      = require('../../models');
+    let algoliaClient = require('../../tools/algolia/algolia')
+    let algoliaCollectionIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_collection');
     
-	var rq = req.query;
+	let rq = req.query;
 
     if(rq._author && rq.custom_sort){
-        var skip = rq.skip ? parseInt(rq.skip) : 0;
-        var limit = rq.limit ? parseInt(rq.limit) : 8;
+        let skip = rq.skip ? parseInt(rq.skip) : 0;
+        let limit = rq.limit ? parseInt(rq.limit) : 8;
         models.CustomSort.findOne({ _user: rq._author, type: sortTypes.MY_COLLECTIONS.id},{ ids : { $slice : [skip , limit] } }, function(err, customSort){
             if(err || !customSort)
                 return res.status(500).json({error: "cannot find customSort related to user: "+rq._author})
-            var q = models.Collection.find({_id: {$in: customSort.ids}, lifeState: lifeStates.ACTIVE.id });
+            let q = models.Collection.find({_id: {$in: customSort.ids}, lifeState: lifeStates.ACTIVE.id });
             q.populate('_thumbnail');
             q.populate({
                 path: '_author',
                 populate: { path: '_avatar' }
             });
             q.exec(function(err, collections){
-                for(var i in collections){
+                for(let i in collections){
                     collections[i].position = customSort.ids.indexOf(collections[i]._id) + skip;
                 }
                 if(req.user){
@@ -36,11 +36,11 @@ module.exports = function getMultiple (req, res) {
             });
         })
     }else if (rq._starredBy){
-        var filterObj = {};
-        var skip = rq.skip ? parseInt(rq.skip) : 0;
-        var limit = rq.limit ? parseInt(rq.limit) : 8;
+        let filterObj = {};
+        let skip = rq.skip ? parseInt(rq.skip) : 0;
+        let limit = rq.limit ? parseInt(rq.limit) : 8;
 
-        var q = models.Star.find({_user: rq._starredBy}).limit(limit).skip(skip).sort({createdAt: -1});
+        let q = models.Star.find({_user: rq._starredBy}).limit(limit).skip(skip).sort({createdAt: -1});
 
         q.populate({
             path: '_collection',
@@ -58,7 +58,7 @@ module.exports = function getMultiple (req, res) {
 
         q.exec(function(err, stars){
             if (err) {console.log(err); res.sendStatus(500); return;}
-            var collections = [];
+            let collections = [];
             stars.forEach(function(star) {
                 collections.push(star._collection)
             });
@@ -73,7 +73,7 @@ module.exports = function getMultiple (req, res) {
 
     }else{
     	getQueryFiler(rq, req, function(filterObj){
-    		var q = models.Collection.find(filterObj).limit(20);
+    		let q = models.Collection.find(filterObj).limit(20);
             q.where('lifeState').equals(lifeStates.ACTIVE.id);
 
     		q.populate('_thumbnail');
@@ -83,7 +83,7 @@ module.exports = function getMultiple (req, res) {
             });
 
             if(rq.sort_field && rq.sort_dir && (parseInt(rq.sort_dir)==1 || parseInt(rq.sort_dir)==-1)){
-                var sortObj = {};
+                let sortObj = {};
                 sortObj[rq.sort_field] = parseInt(rq.sort_dir);
                 q.sort(sortObj);
             }
@@ -108,7 +108,7 @@ module.exports = function getMultiple (req, res) {
     }
 
 	function getQueryFiler(rq, req, callback){
-		var filterObj = {};
+		let filterObj = {};
 
         if(!rq.search)
             filterObj.depth = 0;
@@ -147,8 +147,8 @@ module.exports = function getMultiple (req, res) {
               console.error(err);
               callback([]);
             }
-            var collectionsIds = [];
-            for (var h in content.hits) {
+            let collectionsIds = [];
+            for (let h in content.hits) {
                 collectionsIds.push(content.hits[h].objectID)
             }
             callback(collectionsIds);
@@ -162,7 +162,7 @@ module.exports = function getMultiple (req, res) {
                 else next(err, null);
             })
         }, function(err, results) {
-            for(var i in results){
+            for(let i in results){
                 collections[i]._star = results[i];
             }
            callback(collections);

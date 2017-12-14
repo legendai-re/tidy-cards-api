@@ -1,7 +1,7 @@
-var extend = require('extend');
+let extend = require('extend');
 
 function defaultURLSlugGeneration(text, separator) {
-  var slug = text.toLowerCase().replace(/([^a-z0-9\-\_]+)/g, separator).replace(new RegExp(separator + '{2,}', 'g'), separator);
+  let slug = text.toLowerCase().replace(/([^a-z0-9\-\_]+)/g, separator).replace(new RegExp(separator + '{2,}', 'g'), separator);
   if (slug.substr(-1) === separator) {
     slug = slug.substr(0, slug.length - 1);
   }
@@ -10,7 +10,7 @@ function defaultURLSlugGeneration(text, separator) {
 
 function removeDiacritics(str) {
 
-  var defaultDiacriticsRemovalMap = [
+  let defaultDiacriticsRemovalMap = [
     {base: 'A', letters: /[\u0041\u24B6\uFF21\u00C0\u00C1\u00C2\u1EA6\u1EA4\u1EAA\u1EA8\u00C3\u0100\u0102\u1EB0\u1EAE\u1EB4\u1EB2\u0226\u01E0\u00C4\u01DE\u1EA2\u00C5\u01FA\u01CD\u0200\u0202\u1EA0\u1EAC\u1EB6\u1E00\u0104\u023A\u2C6F]/g},
     {base: 'AA', letters: /[\uA732]/g},
     {base: 'AE', letters: /[\u00C6\u01FC\u01E2]/g},
@@ -97,14 +97,14 @@ function removeDiacritics(str) {
     {base: 'z', letters: /[\u007A\u24E9\uFF5A\u017A\u1E91\u017C\u017E\u1E93\u1E95\u01B6\u0225\u0240\u2C6C\uA763]/g}
   ];
 
-  for (var i = 0; i < defaultDiacriticsRemovalMap.length; i++) {
+  for (let i = 0; i < defaultDiacriticsRemovalMap.length; i++) {
     str = str.replace(defaultDiacriticsRemovalMap[i].letters, defaultDiacriticsRemovalMap[i].base);
   }
 
   return str;
 }
 
-var defaultOptions = {
+let defaultOptions = {
   field: 'slug',
   addField: true,
   generator: defaultURLSlugGeneration,
@@ -129,14 +129,14 @@ module.exports = function(slugFields, options) {
 
   return (function(schema) {
     if (options.addField) {
-      var schemaField = {};
+      let schemaField = {};
       schemaField[options.field] = {type: options.index_type, default: options.index_default, trim: options.index_trim, index: options.index, unique: options.index_unique, required: options.index_required, sparse: options.index_sparse};
       schema.add(schemaField);
     }
 
     schema.methods.ensureUniqueSlug = function(slug, cb) {
       if (!options.index_unique) return cb(null, slug);
-      var doc = this,
+      let doc = this,
           model = doc.constructor,
           slugLimited = (options.maxLength && slug.length === options.maxLength),
           q = {},
@@ -149,9 +149,9 @@ module.exports = function(slugFields, options) {
         if (e) return cb(e);
         else if (!docs.length) return cb(null, slug);
         else {
-          var max = docs.reduce(function(max, doc) {
-            var docSlug = doc.get(options.field, String);
-            var count = 1;
+          let max = docs.reduce(function(max, doc) {
+            let docSlug = doc.get(options.field, String);
+            let count = 1;
             if (docSlug !== slug) {
               count = docSlug.match(new RegExp((slugLimited ? slug.substr(0, slug.length - 2) : slug) + options.separator + '([0-9]+)$'));
               count = ((count instanceof Array) ? parseInt(count[1]) : 0) + 1;
@@ -161,7 +161,7 @@ module.exports = function(slugFields, options) {
 
           if (max === 1) max++; // avoid slug-1, rather do slug-2
 
-          var suffix = options.separator + max;
+          let suffix = options.separator + max;
 
           if (options.maxLength) return cb(null, slug.substr(0, options.maxLength - suffix.length) + suffix);
           else return cb(null, slug + suffix);
@@ -170,23 +170,23 @@ module.exports = function(slugFields, options) {
     };
 
     schema.statics.findBySlug = function(slug, fields, additionalOptions, cb) {
-      var q = {};
+      let q = {};
       q[options.field] = slug;
       return this.findOne(q, fields, additionalOptions, cb);
     };
 
     schema.pre('validate', function(next) {
-      var doc = this;
-      var currentSlug = doc.get(options.field, String);
+      let doc = this;
+      let currentSlug = doc.get(options.field, String);
       if (!doc.isNew && !options.update && currentSlug) return next();
 
-      var slugFieldsModified = doc.isNew;
-      var toSlugify = '';
+      let slugFieldsModified = doc.isNew;
+      let toSlugify = '';
       if (slugFields instanceof Array) {
-        for (var i = 0; i < slugFields.length; i++) {
-          var slugField = slugFields[i];
+        for (let i = 0; i < slugFields.length; i++) {
+          let slugField = slugFields[i];
           if (doc.isModified(slugField)) slugFieldsModified = true;
-          var slugPart = doc.get(slugField, String);
+          let slugPart = doc.get(slugField, String);
           if (slugPart) toSlugify += slugPart + ' ';
         }
         toSlugify = toSlugify.substr(0, toSlugify.length - 1);
@@ -197,7 +197,7 @@ module.exports = function(slugFields, options) {
 
       if (!slugFieldsModified && currentSlug) return next();
 
-      var newSlug = options.generator(removeDiacritics(toSlugify), options.separator);
+      let newSlug = options.generator(removeDiacritics(toSlugify), options.separator);
 
       if (!newSlug.length && options.index_sparse) {
         doc.set(options.field, undefined);
