@@ -16,7 +16,7 @@
     "start": "node server.js",
     "test": "mocha tests",
     "doc": "apidoc -i ./ js -o doc -e node_modules",
-    "heroku-postbuild": "cd tidy-cards-web-app && npm run build"
+    "heroku-postbuild": "cd tidy-cards-web-app && npm run ng build --env=prod"
   },
   "dependencies": {
     "algoliasearch": "^3.24.5",
