@@ -29,6 +29,7 @@
     "connect-mongo": "^2.0.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^2.0.0",
+    "ejs": "^2.5.7",
     "exports-loader": "^0.6.4",
     "express": "^4.16.2",
     "express-brute": "^0.7.0-beta.0",
