@@ -4,10 +4,10 @@ let models          = require('../../../models');
 module.exports = function checkItemContent(user, itemType, itemContent, finalCallback){
 
     if(!(itemTypes[itemType] !== null)) {
-        return callback("unknown type", null);
+        return finalCallback("unknown type", null);
 
     }else if(itemType === itemTypes.TEXT.id || !itemContent) {
-        return callback(null, null);
+        return finalCallback(null, null);
 
     }else {
         checkItemByType(user, itemType, itemContent, function (err, user, itemContent){
