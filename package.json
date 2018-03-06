@@ -16,7 +16,7 @@
     "start": "node server.js",
     "test": "mocha tests",
     "doc": "apidoc -i ./ js -o doc -e node_modules",
-    "postinstall": "npm run start"
+    "heroku-postbuild": "cd tidy-cards-web-app && npm install"
   },
   "dependencies": {
     "algoliasearch": "^3.24.5",
@@ -29,6 +29,7 @@
     "connect-mongo": "^2.0.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^2.0.0",
+    "ejs": "^2.5.7",
     "exports-loader": "^0.6.4",
     "express": "^4.16.2",
     "express-brute": "^0.7.0-beta.0",
