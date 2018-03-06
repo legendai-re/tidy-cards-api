@@ -98,7 +98,8 @@
         "favorite_collections_title": "Mes collections favorites"
     },
     "profile_public":{
-        "no_bio": "Cet utilisateur n'a pas encore de description…"
+        "no_bio": "Cet utilisateur n'a pas encore de description…",
+        "empty": "Désolé, mais il n'y a rien a afficher. Cet utilisateur n'a aucune collections publiques…"
     },
     "profile_private": {
         "bio_placeholder": "Ajouter une description ici…",

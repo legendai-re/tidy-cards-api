@@ -98,7 +98,8 @@
         "favorite_collections_title": "My favorite collections"
     },
     "profile_public":{
-        "no_bio": "This user doesn't have a description yet…"
+        "no_bio": "This user doesn't have a description yet…",
+        "empty": "Sorry, there is nothing to show. This user has no public collections…"
     },
     "profile_private": {
         "bio_placeholder": "Your description here…",
