@@ -2,7 +2,7 @@ module.exports = function getMultiple (req, res) {
 
     let isGranted   = require('../../security/isGranted');
     let models      = require('../../models');
-    let algoliaClient = require('../../tools/algolia/algolia')
+    let algoliaClient = require('../../tools/algolia/algolia');
     let algoliaUserIndex = algoliaClient.initIndex('ts_'+process.env.ALGOLIA_INDEX_PREFIX+'_user');
     let lifeStates  = require('../../models/lifeStates.json');
 
@@ -34,7 +34,7 @@ module.exports = function getMultiple (req, res) {
             if (err) {console.log(err); res.sendStatus(500); return;}
             res.json({data: users});
         });
-    })
+    });
 
     function getQueryFiler(rq, req, callback){
         let filterObj = {};
@@ -70,4 +70,4 @@ module.exports = function getMultiple (req, res) {
             callback(usersIds);
         });
     }
-}
+};

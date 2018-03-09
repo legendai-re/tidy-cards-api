@@ -35,4 +35,4 @@ module.exports = function getOne (req, res) {
     function isEmail(email){
         return new RegExp('.+@.+\\..+').test(email);;
     }
-}
+};
