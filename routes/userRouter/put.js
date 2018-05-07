@@ -71,4 +71,4 @@ module.exports = function put (req, res) {
     function sendResponse(user){
         res.json({data: user});
     }
-}
+};

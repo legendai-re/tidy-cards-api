@@ -14,4 +14,4 @@ module.exports = function putConfirmEmail (req, res) {
             res.json({success: false});
         }
     })
-}
+};

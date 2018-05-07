@@ -17,7 +17,7 @@ module.exports = function putActivate(req, res) {
             let collectionFilterObj = {
                 _author: user._id,
                 lifeState: lifeStates.ARCHIVED_BY_ACCOUNT_DEACTIVATION.id,
-            }
+            };
 
             models.Collection.find(collectionFilterObj).exec(function(err, collections){
                 if(err) { console.log(err); return; }
@@ -29,7 +29,7 @@ module.exports = function putActivate(req, res) {
                         let itemFilterObj = {
                             _collection: collections[n]._id,
                             lifeState: lifeStates.ARCHIVED_BY_ACCOUNT_DEACTIVATION.id,
-                        }
+                        };
                         models.Item.find(itemFilterObj).exec(function(err, items){
                             if(err) { console.log(err); return; }
 
@@ -55,4 +55,4 @@ module.exports = function putActivate(req, res) {
         })
 
     });
-}
+};
