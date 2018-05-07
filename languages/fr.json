@@ -133,11 +133,12 @@
         "google_unlink_button": "Révoquer Google",
         "security_title": "Sécurité",
         "security_subtitle": "Modifier mes paramètres de sécurité.",
-        "security_change_pwd": "Modifier mon mot de passe",
+        "security_change_pwd": "Mot de passe",
+        "security_change_pwd_desc": "Modifiez votre mot de passe ou récupérez votre mot de passe actuel.",
         "security_current_pwd": "Mot de passe actuel",
         "security_new_pwd": "Nouveau mot de passe",
-        "security_re_new_pwd": "Répéter le nouveau mot de passe",
-        "security_recover_pwd": "Récupérer mon mot de passe",
+        "security_re_new_pwd": "Vérifiez le mot de passe",
+        "security_recover_pwd": "Mot de passe oublié ?",
         "security_set_pwd": "Définir un mot de passe"
     },
     "collection": {

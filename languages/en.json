@@ -133,11 +133,12 @@
         "google_unlink_button": "Unlink Google",
         "security_title": "Security",
         "security_subtitle": "Change my security settings",
-        "security_change_pwd": "Change my password",
+        "security_change_pwd": "Password",
+        "security_change_pwd_desc": "Change your password or recover your current one.",
         "security_current_pwd": "Current password",
         "security_new_pwd": "New password",
-        "security_re_new_pwd": "Repeat new password",
-        "security_recover_pwd": "Recover my password",
+        "security_re_new_pwd": "Verify password",
+        "security_recover_pwd": "Forgot your password?",
         "security_set_pwd": "Set a password"
     },
     "collection": {
