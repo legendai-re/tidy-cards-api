@@ -7,8 +7,8 @@
         "search_result_for": "Résultats pour",
         "search_no_result_for": "Désolé, nous n'avons trouvé aucun résultat pour",
         "search_no_idea_row_1": "Pas d'idée ?",
-        "search_no_idea_row_2": "Vous pouvez visiter la page",
-        "search_no_idea_row_3": "Découvrir",
+        "search_no_idea_row_2": "Vous pouvez visiter la",
+        "search_no_idea_row_3": "page Découvrir",
         "dashboard_title": "Tableau de bord",
         "discover_title": "Découvrir",
         "about_title": "À propos",
@@ -95,7 +95,7 @@
     },
     "dashboard": {
         "my_collections_title": "Mes collections",
-        "favorite_collections_title": "Mes collections favorites"
+        "favorite_collections_title": "Favoris"
     },
     "profile_public":{
         "no_bio": "Cet utilisateur n'a pas encore de description…",
@@ -211,7 +211,7 @@
         "user_plur": "Utilisateurs"
     },
     "action": {
-        "see_all": "Voir toutes",
+        "see_all": "Voir plus",
         "save": "Enregister",
         "add": "Ajouter",
         "cancel": "Annuler",
@@ -232,7 +232,7 @@
     "page":{
         "about":{
             "title": "À propos",
-            "content": "##### [TidyCards](https://www.tidy.cards) est une application web qui vous permet d’organiser et de partager facilement vos liens ! Que ce soient des articles, des vidéos, des tweets ou toutes sortes de contenus.\n\nVous avez des dizaines de dossiers de favoris et vous ne vous y retrouvez plus ? Créez une collection : ajoutez-lui un titre, une description et une image puis ajoutez vos liens. Vous pouvez également leur ajouter un commentaire. Ainsi vous retrouverez facilement vos sites préférés.\n\nMais pourquoi se donner tant de mal ? [TidyCards](https://www.tidy.cards) ce n'est pas que pour soi. Vous pouvez également partager vos collections avec le reste du monde.\n\nLe cœur de [TidyCards](https://www.tidy.cards) c'est le partage du savoir, une sorte de veille collective : partagez vos recherches, vos trouvailles, vos passions et même ce qui vous fait vibrer ou vous révolte.\n\nCe partage fonctionne dans les deux sens grâce à la recherche et à la page [Découvrir](https://www.tidy.cards/discover) où vous trouverez les collections créées par des personnes passionnées à l'autre bout du monde.\n\nSur [TidyCards](https://www.tidy.cards) plus besoin de rechercher pendant des heures les sites les plus pertinents sur votre thème préféré, quelqu’un a sans doute déjà creusé le sujet.\n\nEt si ce n’est pas le cas, [rejoignez-nous](https://www.tidy.cards/signin;mode=signup) dès maintenant et créez une collection."
+            "content": "<h3 class='mb-4' style='text-align:center;'>TidyCards, c'est quoi ?</h3><p class='lead'>[TidyCards](https://www.tidy.cards) est une application web qui vous permet d’organiser et de partager facilement vos liens ! Que ce soient des articles, des vidéos, des tweets ou toutes sortes de contenus.</p>\n\nVous avez des dizaines de dossiers de favoris et vous ne vous y retrouvez plus ? Créez une collection : ajoutez-lui un titre, une description et une image puis ajoutez vos liens. Vous pouvez également leur ajouter un commentaire. Ainsi vous retrouverez facilement vos sites préférés.\n\nMais pourquoi se donner tant de mal ? [TidyCards](https://www.tidy.cards) ce n'est pas que pour soi. Vous pouvez également partager vos collections avec le reste du monde.\n\nLe cœur de [TidyCards](https://www.tidy.cards) c'est le partage du savoir, une sorte de veille collective : partagez vos recherches, vos trouvailles, vos passions et même ce qui vous fait vibrer ou vous révolte.\n\nCe partage fonctionne dans les deux sens grâce à la recherche et à la page [Découvrir](https://www.tidy.cards/discover) où vous trouverez les collections créées par des personnes passionnées à l'autre bout du monde.\n\nSur [TidyCards](https://www.tidy.cards) plus besoin de rechercher pendant des heures les sites les plus pertinents sur votre thème préféré, quelqu’un a sans doute déjà creusé le sujet.\n\nEt si ce n’est pas le cas, [rejoignez-nous](https://www.tidy.cards/signin;mode=signup) dès maintenant et créez une collection."
         },
         "contact": {
             "title": "Contactez-nous",

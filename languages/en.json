@@ -8,7 +8,7 @@
         "search_no_result_for": "Sorry. There is no results for",
         "search_no_idea_row_1": "No idea?",
         "search_no_idea_row_2": "You can visit the",
-        "search_no_idea_row_3": "discover page",
+        "search_no_idea_row_3": "Discover page",
         "dashboard_title": "Dashboard",
         "discover_title": "Discover",
         "about_title": "About",
@@ -95,7 +95,7 @@
     },
     "dashboard": {
         "my_collections_title": "My collections",
-        "favorite_collections_title": "My favorite collections"
+        "favorite_collections_title": "Favorites"
     },
     "profile_public":{
         "no_bio": "This user doesn't have a description yet…",
@@ -211,7 +211,7 @@
         "user_plur": "Users"
     },
     "action": {
-        "see_all": "See all",
+        "see_all": "See more",
         "save": "Save",
         "add": "Add",
         "cancel": "Cancel",
@@ -232,7 +232,7 @@
     "page":{
         "about": {
             "title": "About",
-            "content": "##### [TidyCards](https://www.tidy.cards) is a web application that allows you to easily organize and share your links! Whether articles, videos, tweets or any kinds of content.\n\nYou have dozens of folders of bookmarks and it's a mess? Create a collection: set a title, a description, an image and then add your links. You can also add a comment. So you will easily find back your favorite sites.\n\nBut why go through so many steps? [TidyCards](https://www.tidy.cards) is not only about yourself. You can also share your collections with the whole world.\n\nThe heart of [TidyCards](https://www.tidy.cards) is the knowledge sharing, a kind of collective intelligence: share your research, your discoveries, your hobbies even things that shock or revolt you.\n\nThis sharing works in both ways: thanks to the search feature and the [Discover](https://www.tidy.cards/discover) page, where you will find the collections created by passionate people on the other side of the world.\n\nOn [TidyCards](https://www.tidy.cards) you don't have to search for hours the most relevant websites about your favorite theme, someone has probably already dug the topic.\n\nAnd if not, [join us](https://www.tidy.cards/signin;mode=signup) now and create a collection."
+            "content": "<h3 class='mb-4' style='text-align:center;'>What is TidyCards?</h3><p class='lead'>[TidyCards](https://www.tidy.cards) is a web application that allows you to easily organize and share your links! Whether articles, videos, tweets or any kinds of content.</p>\n\nYou have dozens of folders of bookmarks and it's a mess? Create a collection: set a title, a description, an image and then add your links. You can also add a comment. So you will easily find back your favorite sites.\n\nBut why go through so many steps? [TidyCards](https://www.tidy.cards) is not only about yourself. You can also share your collections with the whole world.\n\nThe heart of [TidyCards](https://www.tidy.cards) is the knowledge sharing, a kind of collective intelligence: share your research, your discoveries, your hobbies even things that shock or revolt you.\n\nThis sharing works in both ways: thanks to the search feature and the [Discover](https://www.tidy.cards/discover) page, where you will find the collections created by passionate people on the other side of the world.\n\nOn [TidyCards](https://www.tidy.cards) you don't have to search for hours the most relevant websites about your favorite theme, someone has probably already dug the topic.\n\nAnd if not, [join us](https://www.tidy.cards/signin;mode=signup) now and create a collection."
         },
         "contact": {
             "title": "Contact us",
