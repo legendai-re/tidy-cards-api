@@ -148,9 +148,9 @@
         "popular_title": "Collections tendances",
         "last_title": "Dernières collections",
         "last_public_title": "Dernières collections publiques",
-        "favorite_title": "Collections favorites",
-        "my_favorite_title": "Mes collections favorites",
-        "favorite_by_title": "Les collections favorites de {0}",
+        "favorite_title": "Favoris",
+        "my_favorite_title": "Favoris",
+        "favorite_by_title": "{0} collections favorites",
         "visibility":{
             "title": "Visibilité",
             "PRIVATE":{

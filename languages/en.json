@@ -148,8 +148,8 @@
         "popular_title": "Trending collections",
         "last_title": "Last collections",
         "last_public_title": "Last public collections",
-        "favorite_title": "Favorite collections",
-        "my_favorite_title": "My favorite collections",
+        "favorite_title": "Favorites",
+        "my_favorite_title": "Favorites",
         "favorite_by_title": "{0}'s favorite collections",
         "visibility":{
             "title": "Visibility",
