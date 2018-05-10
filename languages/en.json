@@ -98,7 +98,7 @@
         "favorite_collections_title": "Favorites"
     },
     "profile_public":{
-        "no_bio": "This user doesn't have a description yet…",
+        "no_bio": "This user doesn’t have a description yet…",
         "empty": "Sorry, there is nothing to show. This user has no public collections…"
     },
     "profile_private": {
@@ -142,15 +142,30 @@
         "security_set_pwd": "Set a password"
     },
     "collection": {
+        "modal": {
+          "title_placeholder": "Title",
+          "caption_placeholder": "Enter a caption here to describe the collection. Keep it simple and short…",
+          "visibility_dropdown_title": "Who should see this?"
+        },
+        "action": {
+          "new": "New collection",
+          "edit": "Edit collection",
+          "upload_img": "Upload an image",
+          "replace_img": "Remplace image",
+          "remove_img": "Remove image"
+        },
+        "card_form": {
+          "title_placeholder": "Create a collection…"
+        },
         "my_title": "My collections",
-        "belongs_to_title": "{0}'s collections",
+        "belongs_to_title": "{0}’s collections",
         "featured_title": "Featured",
         "popular_title": "Trending collections",
         "last_title": "Last collections",
         "last_public_title": "Last public collections",
         "favorite_title": "Favorites",
         "my_favorite_title": "Favorites",
-        "favorite_by_title": "{0}'s favorite collections",
+        "favorite_by_title": "{0}’s favorite collections",
         "visibility":{
             "title": "Visibility",
             "PRIVATE":{
@@ -171,7 +186,7 @@
         "new_item_button": "New item",
         "first_item_button": "Add my first item",
         "first_item_caption": "Use the button bellow to add an item to your collection. It can be a link or a caption without link.",
-        "by_title": "A collection by",
+        "by_title": "Created by",
         "empty_title": "Whoops, this collection is empty",
         "empty_caption": "Unfortunately there is nothing in this collection yet, please make a try later.",
         "list_end": "You’ve reached the end of the list…",
@@ -180,13 +195,13 @@
         "delete_caption": "Do you really want to delete this collection?",
         "delete_button_yes": "Delete this collection"
     },
-    "item":{
+    "item": {
         "caption": "Caption",
         "no_title": "No title",
         "new_title": "Add an item to your collection",
         "update_title": "Update an item",
         "new_placeholder_title": "Title",
-        "new_placeholder_description": "Paste your link or start writing...",
+        "new_placeholder_description": "Paste your link or start writing…",
         "delete_title": "Delete this item?",
         "delete_caption": "Do you really want to delete this item?",
         "delete_button_yes": "Delete this item",
@@ -200,9 +215,11 @@
         "display_tip_desc": "You can change the display format of this item by clicking on the bottom icon that appear when you hover it."
     },
     "collection_create": {
-        "title_placeholder": "Create a collection…",
+        "modal_title": "New collection",
+        "create_title_placeholder": "",
+        "title_placeholder": "Title",
         "caption_placeholder": "Enter a caption here to describe the collection. Keep it simple and short…",
-        "visibility_dropdow_title": "Who should see this?"
+        "visibility_dropdown_title": "Who should see this?"
     },
     "object":{
         "collection": "Collection",
@@ -213,12 +230,14 @@
     "action": {
         "see_all": "See more",
         "save": "Save",
+        "update": "Update",
         "add": "Add",
         "cancel": "Cancel",
         "update": "Update",
         "create": "Create",
         "edit": "Edit",
         "delete": "Delete",
+        "archive": "Archive",
         "loading": "Loading…",
         "load_more": "Load more…"
     },
@@ -232,11 +251,11 @@
     "page":{
         "about": {
             "title": "About",
-            "content": "<h3 class='mb-4' style='text-align:center;'>What is TidyCards?</h3><p class='lead'>[TidyCards](https://www.tidy.cards) is a web application that allows you to easily organize and share your links! Whether articles, videos, tweets or any kinds of content.</p>\n\nYou have dozens of folders of bookmarks and it's a mess? Create a collection: set a title, a description, an image and then add your links. You can also add a comment. So you will easily find back your favorite sites.\n\nBut why go through so many steps? [TidyCards](https://www.tidy.cards) is not only about yourself. You can also share your collections with the whole world.\n\nThe heart of [TidyCards](https://www.tidy.cards) is the knowledge sharing, a kind of collective intelligence: share your research, your discoveries, your hobbies even things that shock or revolt you.\n\nThis sharing works in both ways: thanks to the search feature and the [Discover](https://www.tidy.cards/discover) page, where you will find the collections created by passionate people on the other side of the world.\n\nOn [TidyCards](https://www.tidy.cards) you don't have to search for hours the most relevant websites about your favorite theme, someone has probably already dug the topic.\n\nAnd if not, [join us](https://www.tidy.cards/signin;mode=signup) now and create a collection."
+            "content": "<h3 class=’mb-4’ style=’text-align:center;’>What is TidyCards?</h3><p class=’lead’>[TidyCards](https://www.tidy.cards) is a web application that allows you to easily organize and share your links! Whether articles, videos, tweets or any kinds of content.</p>\n\nYou have dozens of folders of bookmarks and it’s a mess? Create a collection: set a title, a description, an image and then add your links. You can also add a comment. So you will easily find back your favorite sites.\n\nBut why go through so many steps? [TidyCards](https://www.tidy.cards) is not only about yourself. You can also share your collections with the whole world.\n\nThe heart of [TidyCards](https://www.tidy.cards) is the knowledge sharing, a kind of collective intelligence: share your research, your discoveries, your hobbies even things that shock or revolt you.\n\nThis sharing works in both ways: thanks to the search feature and the [Discover](https://www.tidy.cards/discover) page, where you will find the collections created by passionate people on the other side of the world.\n\nOn [TidyCards](https://www.tidy.cards) you don’t have to search for hours the most relevant websites about your favorite theme, someone has probably already dug the topic.\n\nAnd if not, [join us](https://www.tidy.cards/signin;mode=signup) now and create a collection."
         },
         "contact": {
             "title": "Contact us",
-            "content": "#### Contact us\nYou'd like to share your ideas, report a bug or just say hello?",
+            "content": "#### Contact us\nYou’d like to share your ideas, report a bug or just say hello?",
             "contact_btn": "hi@tidy.cards"
         },
         "team": {
