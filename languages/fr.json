@@ -145,11 +145,20 @@
         "modal": {
           "title_placeholder": "Titre",
           "caption_placeholder": "Ajouter une courte légende pour décrire votre collection…",
-          "visibility_dropdown_title": "Qui peut la voir ?"
+          "visibility_dropdown_title": "Qui peut la voir ?",
+          "new": {
+            "title": "Nouvelle collection"
+          },
+          "edit": {
+            "title": "Modifier la collection"
+          },
+          "delete": {
+            "title": "Supprimer la collection?",
+            "caption": "Voulez-vous vraiment supprimer cette collection ?",
+            "button": "Supprimer la collection"
+          }
         },
         "action": {
-          "new": "Nouvelle collection",
-          "edit": "Modifier la collection",
           "upload_img": "Importer une image",
           "replace_img": "Remplacer l’image",
           "remove_img": "Supprimer l’image"
@@ -190,20 +199,21 @@
         "empty_title": "Oups, cette collection est vide",
         "empty_caption": "Malheureusement il n’y a rien dans cette collection pour le moment, réessayez plus tard.",
         "list_end": "Vous avez atteint la fin de cette liste…",
-        "item_list_end": "Vous avez atteint la fin de cette collection…",
-        "delete_title": "Supprimer cette collection ?",
-        "delete_caption": "Voullez-vous vraiment supprimer cette collection ?",
-        "delete_button_yes": "Supprimer cette collection"
+        "item_list_end": "Vous avez atteint la fin de cette collection…"
     },
     "item":{
         "caption": "Légende",
         "no_title": "Sans titre",
         "new_title": "Ajouter un objet à votre collection",
-        "update_title": "Mettre à jour un objet",
+        "update_title": "Modifier l’objet",
+        "fetching_preview": "Récupération de l’aperçu…",
+        "invalid_url": "URL invalide",
+        "preview_title": "Prévisualisation",
+        "display_mode_title": "Format",
         "new_placeholder_title": "Titre",
         "new_placeholder_description": "Collez un lien ou commencez à écrire...",
         "delete_title": "Supprimer cet objet ?",
-        "delete_caption": "Voullez-vous vraiment supprimer cet objet ?",
+        "delete_caption": "Voulez-vous vraiment supprimer cet objet ?",
         "delete_button_yes": "Supprimer cet objet",
         "markdown_supported": "Mise en page Markdown supportée",
         "display_modes": {
@@ -212,7 +222,7 @@
             "LARGE": "Grand"
         },
         "display_tip_title": "Astuce :",
-        "display_tip_desc": "Vous pouvez changer le format d’affichage de cet objet en cliquant sur l’icône du bas qui apparaît lorsque vous le survolez."
+        "display_tip_desc": "Vous pouvez changer le format d’affichage de cet objet en cliquant sur les boutons de format qui apparaissent lorsque vous le survolez."
     },
     "collection_create": {
         "modal_title": "Nouvelle collection",

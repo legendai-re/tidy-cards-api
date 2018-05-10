@@ -145,11 +145,20 @@
         "modal": {
           "title_placeholder": "Title",
           "caption_placeholder": "Enter a caption here to describe the collection. Keep it simple and short…",
-          "visibility_dropdown_title": "Who should see this?"
+          "visibility_dropdown_title": "Who should see this?",
+          "new": {
+            "title": "New collection"
+          },
+          "edit": {
+            "title": "Edit collection"
+          },
+          "delete": {
+            "title": "Delete this collection?",
+            "caption": "Do you really want to delete this collection?",
+            "button": "Delete this collection"
+          }
         },
         "action": {
-          "new": "New collection",
-          "edit": "Edit collection",
           "upload_img": "Upload an image",
           "replace_img": "Remplace image",
           "remove_img": "Remove image"
@@ -190,16 +199,17 @@
         "empty_title": "Whoops, this collection is empty",
         "empty_caption": "Unfortunately there is nothing in this collection yet, please make a try later.",
         "list_end": "You’ve reached the end of the list…",
-        "item_list_end": "You reached the end of the collection…",
-        "delete_title": "Delete this collection?",
-        "delete_caption": "Do you really want to delete this collection?",
-        "delete_button_yes": "Delete this collection"
+        "item_list_end": "You reached the end of the collection…"
     },
     "item": {
         "caption": "Caption",
         "no_title": "No title",
         "new_title": "Add an item to your collection",
-        "update_title": "Update an item",
+        "update_title": "Edit item",
+        "fetching_preview": "Fetching preview…",
+        "invalid_url": "Invalid URL",
+        "preview_title": "Item preview",
+        "display_mode_title": "Format",
         "new_placeholder_title": "Title",
         "new_placeholder_description": "Paste your link or start writing…",
         "delete_title": "Delete this item?",
@@ -212,7 +222,7 @@
             "LARGE": "Large"
         },
         "display_tip_title": "Pro tip:",
-        "display_tip_desc": "You can change the display format of this item by clicking on the bottom icon that appear when you hover it."
+        "display_tip_desc": "You can change the display format of this item by clicking on the format buttons that appear when you hover it."
     },
     "collection_create": {
         "modal_title": "New collection",
