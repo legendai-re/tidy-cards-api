@@ -2,6 +2,56 @@
     "lang_id": "fr",
     "app_name": "tidycards",
     "app_name_capitals": "TidyCards",
+    "icon": {
+        "info": {
+            "filled": "info",
+            "border": "info"
+        },
+        "more": {
+            "filled": "more_vert",
+            "border": "more_vert"
+        },
+        "favorite": {
+            "filled": "star",
+            "border": "star_border"
+        },
+        "comment": {
+            "filled": "mode_comment",
+            "border": "mode_comment"
+        },
+        "featured": {
+            "filled": "stars",
+            "border": "stars"
+        },
+        "play": {
+            "filled": "play_circle_filled",
+            "border": "play_circle_outline"
+        },
+        "visibility": {
+            "filled": "visibility",
+            "border": "visibility"
+        },
+        "private_collection": {
+            "filled": "lock",
+            "border": "lock"
+        },
+        "unindexed_collection": {
+            "filled": "visibility_off",
+            "border": "visibility_off"
+        },
+        "upload": {
+            "filled": "cloud_upload",
+            "border": "cloud_upload"
+        },
+        "done": {
+            "filled": "done",
+            "border": "done_outline"
+        },
+        "waiting": {
+            "filled": "loop",
+            "border": "loop"
+        }
+    },
     "header": {
         "search_placeholder": "Rechercher sur TidyCards…",
         "search_result_for": "Résultats pour",
@@ -89,7 +139,7 @@
         }
     },
     "discover": {
-        "featured_title": "Sélection",
+        "featured_title": "En vedette",
         "popular_title": "Collections tendances",
         "last_title": "Dernières collections"
     },
@@ -168,7 +218,7 @@
         },
         "my_title": "Mes collections",
         "belongs_to_title": "Les collections de {0}",
-        "featured_title": "Sélection",
+        "featured_title": "En vedette",
         "popular_title": "Collections tendances",
         "last_title": "Dernières collections",
         "last_public_title": "Dernières collections publiques",
