@@ -235,7 +235,9 @@
         "collection": "Collection",
         "collection_plur": "Collections",
         "user": "Utilisateur",
-        "user_plur": "Utilisateurs"
+        "user_plur": "Utilisateurs",
+        "favorite": "Favori",
+        "favorite_plur": "Favoris"
     },
     "action": {
         "see_all": "Voir plus",
@@ -274,7 +276,6 @@
         "terms": {
             "title": "Conditions d’utilisation",
             "title_short": "C.G.U."
-        }
         },
         "privacy": {
             "title": "Politique de confidentialité",

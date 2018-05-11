@@ -235,7 +235,9 @@
         "collection": "Collection",
         "collection_plur": "Collections",
         "user": "User",
-        "user_plur": "Users"
+        "user_plur": "Users",
+        "favorite": "Favorite",
+        "favorite_plur": "Favorites"
     },
     "action": {
         "see_all": "See more",
