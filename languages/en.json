@@ -210,7 +210,7 @@
         },
         "action": {
           "upload_img": "Upload an image",
-          "replace_img": "Remplace image",
+          "replace_img": "Replace image",
           "remove_img": "Remove image"
         },
         "card_form": {
