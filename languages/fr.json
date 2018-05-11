@@ -315,6 +315,7 @@
             "title": "Il n’y a rien ici…",
             "what_happened": "Que s’est-il passé ?",
             "content_not_found": "Il n’y a aucune collection avec l’id :",
+            "content_not_found_user": "Il n’y a aucun utilisateur avec le pseudonyme :",
             "content_not_found_fav": "Cette collection n’existe plus ou est maintenant privée… Vous pouvez la supprimer de vos favoris si vous le souhaitez.",
             "button": {
               "back_dashboard": "Retour sur le Tableau de bord",

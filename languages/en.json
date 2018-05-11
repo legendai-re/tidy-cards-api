@@ -315,6 +315,7 @@
             "title": "There is nothing here…",
             "what_happened": "What happened?",
             "content_not_found": "There is no collection with id:",
+            "content_not_found_user": "There is no user with username:",
             "content_not_found_fav": "This collection doesn’t exist anymore or is now private… You can delete it from your favorites if you want.",
             "button": {
               "back_dashboard": "Back to the Dashboard",
