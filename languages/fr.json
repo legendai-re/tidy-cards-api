@@ -272,7 +272,13 @@
             "title": "L’équipe"
         },
         "terms": {
-            "title": "Conditions d’utilisation"
+            "title": "Conditions d’utilisation",
+            "title_short": "C.G.U."
+        }
+        },
+        "privacy": {
+            "title": "Politique de confidentialité",
+            "title_short": "Confidentialité"
         }
     }
 }

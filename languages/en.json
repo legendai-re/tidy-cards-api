@@ -272,7 +272,12 @@
             "title": "Team"
         },
         "terms": {
-            "title": "Terms"
+            "title": "Terms of Service",
+            "title_short": "Terms"
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "title_short": "Privacy"
         }
     }
 }
