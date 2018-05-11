@@ -147,7 +147,7 @@
         "my_collections_title": "Mes collections",
         "favorite_collections_title": "Favoris"
     },
-    "profile_public":{
+    "profile_public": {
         "no_bio": "Cet utilisateur n’a pas encore de description…",
         "empty": "Désolé, mais il n’y a rien a afficher. Cet utilisateur n’a aucune collections publiques…"
     },
@@ -225,17 +225,17 @@
         "favorite_title": "Favoris",
         "my_favorite_title": "Favoris",
         "favorite_by_title": "{0} collections favorites",
-        "visibility":{
+        "visibility": {
             "title": "Visibilité",
-            "PRIVATE":{
+            "PRIVATE": {
                 "title": "Moi uniquement",
                 "subtitle": "Moi uniquement"
             },
-            "PUBLIC":{
+            "PUBLIC": {
                 "title": "Public",
                 "subtitle": "Visible par tout le monde"
             },
-            "UNINDEXED":{
+            "UNINDEXED": {
                 "title": "Non indexée",
                 "subtitle": "Seulement les personnes possédant le lien"
             }
@@ -251,7 +251,7 @@
         "list_end": "Vous avez atteint la fin de cette liste…",
         "item_list_end": "Vous avez atteint la fin de cette collection…"
     },
-    "item":{
+    "item": {
         "caption": "Légende",
         "no_title": "Sans titre",
         "new_title": "Ajouter un objet à votre collection",
@@ -281,7 +281,7 @@
         "caption_placeholder": "Ajouter une courte légende pour décrire votre collection…",
         "visibility_dropdown_title": "Qui peut la voir ?"
     },
-    "object":{
+    "object": {
         "collection": "Collection",
         "collection_plur": "Collections",
         "user": "Utilisateur",
@@ -310,8 +310,19 @@
         "whoops_exclamation": "Oups !",
         "congrats": "Bravo"
     },
-    "page":{
-        "about":{
+    "page": {
+        "error": {
+            "title": "Il n’y a rien ici…",
+            "what_happened": "Que s’est-il passé ?",
+            "content_not_found": "Il n’y a aucune collection avec l’id :",
+            "content_not_found_fav": "Cette collection n’existe plus ou est maintenant privée… Vous pouvez la supprimer de vos favoris si vous le souhaitez.",
+            "button": {
+              "back_dashboard": "Retour sur le Tableau de bord",
+              "back_discover": "Voir la page Découvrir",
+              "remove_fav": "Supprimer des favoris"
+            }
+        },
+        "about": {
             "title": "À propos",
             "content": "<h3 class=’mb-4’ style=’text-align:center;’>TidyCards, c’est quoi ?</h3><p class=’lead’>[TidyCards](https://www.tidy.cards) est une application web qui vous permet d’organiser et de partager facilement vos liens ! Que ce soient des articles, des vidéos, des tweets ou toutes sortes de contenus.</p>\n\nVous avez des dizaines de dossiers de favoris et vous ne vous y retrouvez plus ? Créez une collection : ajoutez-lui un titre, une description et une image puis ajoutez vos liens. Vous pouvez également leur ajouter un commentaire. Ainsi vous retrouverez facilement vos sites préférés.\n\nMais pourquoi se donner tant de mal ? [TidyCards](https://www.tidy.cards) ce n’est pas que pour soi. Vous pouvez également partager vos collections avec le reste du monde.\n\nLe cœur de [TidyCards](https://www.tidy.cards) c’est le partage du savoir, une sorte de veille collective : partagez vos recherches, vos trouvailles, vos passions et même ce qui vous fait vibrer ou vous révolte.\n\nCe partage fonctionne dans les deux sens grâce à la recherche et à la page [Découvrir](https://www.tidy.cards/discover) où vous trouverez les collections créées par des personnes passionnées à l’autre bout du monde.\n\nSur [TidyCards](https://www.tidy.cards) plus besoin de rechercher pendant des heures les sites les plus pertinents sur votre thème préféré, quelqu’un a sans doute déjà creusé le sujet.\n\nEt si ce n’est pas le cas, [rejoignez-nous](https://www.tidy.cards/signin;mode=signup) dès maintenant et créez une collection."
         },

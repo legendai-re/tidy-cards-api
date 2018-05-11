@@ -147,7 +147,7 @@
         "my_collections_title": "My collections",
         "favorite_collections_title": "Favorites"
     },
-    "profile_public":{
+    "profile_public": {
         "no_bio": "This user doesn’t have a description yet…",
         "empty": "Sorry, there is nothing to show. This user has no public collections…"
     },
@@ -225,17 +225,17 @@
         "favorite_title": "Favorites",
         "my_favorite_title": "Favorites",
         "favorite_by_title": "{0}’s favorite collections",
-        "visibility":{
+        "visibility": {
             "title": "Visibility",
-            "PRIVATE":{
+            "PRIVATE": {
                 "title": "Only me",
                 "subtitle": "Only me"
             },
-            "PUBLIC":{
+            "PUBLIC": {
                 "title": "Public",
                 "subtitle": "Anyone can see this"
             },
-            "UNINDEXED":{
+            "UNINDEXED": {
                 "title": "Unindexed",
                 "subtitle": "People with the link"
             }
@@ -281,7 +281,7 @@
         "caption_placeholder": "Enter a caption here to describe the collection. Keep it simple and short…",
         "visibility_dropdown_title": "Who should see this?"
     },
-    "object":{
+    "object": {
         "collection": "Collection",
         "collection_plur": "Collections",
         "user": "User",
@@ -310,7 +310,18 @@
         "whoops_exclamation": "Whoops!",
         "congrats": "Congrats"
     },
-    "page":{
+    "page": {
+        "error": {
+            "title": "There is nothing here…",
+            "what_happened": "What happened?",
+            "content_not_found": "There is no collection with id:",
+            "content_not_found_fav": "This collection doesn’t exist anymore or is now private… You can delete it from your favorites if you want.",
+            "button": {
+              "back_dashboard": "Back to the Dashboard",
+              "back_discover": "Go to the Discover page",
+              "remove_fav": "Remove from favorites"
+            }
+        },
         "about": {
             "title": "About",
             "content": "<h3 class=’mb-4’ style=’text-align:center;’>What is TidyCards?</h3><p class=’lead’>[TidyCards](https://www.tidy.cards) is a web application that allows you to easily organize and share your links! Whether articles, videos, tweets or any kinds of content.</p>\n\nYou have dozens of folders of bookmarks and it’s a mess? Create a collection: set a title, a description, an image and then add your links. You can also add a comment. So you will easily find back your favorite sites.\n\nBut why go through so many steps? [TidyCards](https://www.tidy.cards) is not only about yourself. You can also share your collections with the whole world.\n\nThe heart of [TidyCards](https://www.tidy.cards) is the knowledge sharing, a kind of collective intelligence: share your research, your discoveries, your hobbies even things that shock or revolt you.\n\nThis sharing works in both ways: thanks to the search feature and the [Discover](https://www.tidy.cards/discover) page, where you will find the collections created by passionate people on the other side of the world.\n\nOn [TidyCards](https://www.tidy.cards) you don’t have to search for hours the most relevant websites about your favorite theme, someone has probably already dug the topic.\n\nAnd if not, [join us](https://www.tidy.cards/signin;mode=signup) now and create a collection."
