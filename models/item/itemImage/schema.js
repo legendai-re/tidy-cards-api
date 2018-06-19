@@ -1,23 +1,21 @@
-module.exports = function getItemImageSchema(Schema) {
-
-    return new Schema({
-        createdAt: { type: Date },
-        updatedAt: { type: Date },
-        url: {
-            type: String,
-            required: true,
-            validate: {
-                validator: function(v) {
-                    return (v.length <= 10000);
-                },
-                message: '{VALUE} is not an url'
-            }
+module.exports = function getItemImageSchema (Schema) {
+  return new Schema({
+    createdAt: { type: Date },
+    updatedAt: { type: Date },
+    url: {
+      type: String,
+      required: true,
+      validate: {
+        validator: function (v) {
+          return (v.length <= 10000)
         },
-        host: {
-            type: String,
-            required: false
-        },
-        _user: { type: String, ref: 'User' }
-    });
-
-};
+        message: '{VALUE} is not an url'
+      }
+    },
+    host: {
+      type: String,
+      required: false
+    },
+    _user: { type: String, ref: 'User' }
+  })
+}

@@ -1,5 +1,5 @@
 module.exports = {
-    localSignup: require('./localSignup'),
-    updatePassword: require('./updatePassword'),
-    unlinkSocialAccount: require('./unlinkSocialAccount')
+  localSignup: require('./localSignup'),
+  updatePassword: require('./updatePassword'),
+  unlinkSocialAccount: require('./unlinkSocialAccount')
 }

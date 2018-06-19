@@ -1,4 +1,4 @@
 module.exports = {
-    checkItemContent: require( './checkItemContent'),
-    create: require('./create')
-};
+  checkItemContent: require('./checkItemContent'),
+  create: require('./create')
+}

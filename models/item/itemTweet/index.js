@@ -1,15 +1,14 @@
-let mongoose    = require('mongoose');
-let Schema      = mongoose.Schema;
+let mongoose = require('mongoose')
+let Schema = mongoose.Schema
 
-let ItemTweetSchema = require('./schema')(Schema);
+let ItemTweetSchema = require('./schema')(Schema)
 
-ItemTweetSchema.pre('save', function(next) {
-    if(!this.createdAt)
-        this.createdAt = new Date();
-    this.updatedAt = Date();
-    next();
-});
+ItemTweetSchema.pre('save', function (next) {
+  if (!this.createdAt) { this.createdAt = new Date() }
+  this.updatedAt = Date()
+  next()
+})
 
-ItemTweet = mongoose.model('ItemTweet', ItemTweetSchema);
+ItemTweet = mongoose.model('ItemTweet', ItemTweetSchema)
 
-exports.itemTweetModel = ItemTweet;
+exports.itemTweetModel = ItemTweet

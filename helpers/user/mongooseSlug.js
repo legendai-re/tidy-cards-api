@@ -1,15 +1,14 @@
-let extend = require('extend');
+let extend = require('extend')
 
-function defaultURLSlugGeneration(text, separator) {
-  let slug = text.toLowerCase().replace(/([^a-z0-9\-\_]+)/g, separator).replace(new RegExp(separator + '{2,}', 'g'), separator);
+function defaultURLSlugGeneration (text, separator) {
+  let slug = text.toLowerCase().replace(/([^a-z0-9\-\_]+)/g, separator).replace(new RegExp(separator + '{2,}', 'g'), separator)
   if (slug.substr(-1) === separator) {
-    slug = slug.substr(0, slug.length - 1);
+    slug = slug.substr(0, slug.length - 1)
   }
-  return slug;
+  return slug
 }
 
-function removeDiacritics(str) {
-
+function removeDiacritics (str) {
   let defaultDiacriticsRemovalMap = [
     {base: 'A', letters: /[\u0041\u24B6\uFF21\u00C0\u00C1\u00C2\u1EA6\u1EA4\u1EAA\u1EA8\u00C3\u0100\u0102\u1EB0\u1EAE\u1EB4\u1EB2\u0226\u01E0\u00C4\u01DE\u1EA2\u00C5\u01FA\u01CD\u0200\u0202\u1EA0\u1EAC\u1EB6\u1E00\u0104\u023A\u2C6F]/g},
     {base: 'AA', letters: /[\uA732]/g},
@@ -95,13 +94,13 @@ function removeDiacritics(str) {
     {base: 'x', letters: /[\u0078\u24E7\uFF58\u1E8B\u1E8D]/g},
     {base: 'y', letters: /[\u0079\u24E8\uFF59\u1EF3\u00FD\u0177\u1EF9\u0233\u1E8F\u00FF\u1EF7\u1E99\u1EF5\u01B4\u024F\u1EFF]/g},
     {base: 'z', letters: /[\u007A\u24E9\uFF5A\u017A\u1E91\u017C\u017E\u1E93\u1E95\u01B6\u0225\u0240\u2C6C\uA763]/g}
-  ];
+  ]
 
   for (let i = 0; i < defaultDiacriticsRemovalMap.length; i++) {
-    str = str.replace(defaultDiacriticsRemovalMap[i].letters, defaultDiacriticsRemovalMap[i].base);
+    str = str.replace(defaultDiacriticsRemovalMap[i].letters, defaultDiacriticsRemovalMap[i].base)
   }
 
-  return str;
+  return str
 }
 
 let defaultOptions = {
@@ -118,103 +117,103 @@ let defaultOptions = {
   index_unique: true,
   index_required: false,
   index_sparse: false
-};
+}
 
-module.exports = function(slugFields, options) {
-  options = extend(true, {}, defaultOptions, options);
+module.exports = function (slugFields, options) {
+  options = extend(true, {}, defaultOptions, options)
 
   if (slugFields.indexOf(' ') > -1) {
-    slugFields = slugFields.split(' ');
+    slugFields = slugFields.split(' ')
   }
 
-  return (function(schema) {
+  return function (schema) {
     if (options.addField) {
-      let schemaField = {};
-      schemaField[options.field] = {type: options.index_type, default: options.index_default, trim: options.index_trim, index: options.index, unique: options.index_unique, required: options.index_required, sparse: options.index_sparse};
-      schema.add(schemaField);
+      let schemaField = {}
+      schemaField[options.field] = {type: options.index_type, default: options.index_default, trim: options.index_trim, index: options.index, unique: options.index_unique, required: options.index_required, sparse: options.index_sparse}
+      schema.add(schemaField)
     }
 
-    schema.methods.ensureUniqueSlug = function(slug, cb) {
-      if (!options.index_unique) return cb(null, slug);
+    schema.methods.ensureUniqueSlug = function (slug, cb) {
+      if (!options.index_unique) return cb(null, slug)
       let doc = this,
-          model = doc.constructor,
-          slugLimited = (options.maxLength && slug.length === options.maxLength),
-          q = {},
-          fields = {};
+        model = doc.constructor,
+        slugLimited = (options.maxLength && slug.length === options.maxLength),
+        q = {},
+        fields = {}
 
-      q._id = {$ne: doc._id};
-      q[options.field] = new RegExp('^' + (slugLimited ? slug.substr(0, slug.length - 2) : slug));
-      fields[options.field] = 1;
-      model.find(q, fields).exec(function(e, docs) {
-        if (e) return cb(e);
-        else if (!docs.length) return cb(null, slug);
+      q._id = {$ne: doc._id}
+      q[options.field] = new RegExp('^' + (slugLimited ? slug.substr(0, slug.length - 2) : slug))
+      fields[options.field] = 1
+      model.find(q, fields).exec(function (e, docs) {
+        if (e) return cb(e)
+        else if (!docs.length) return cb(null, slug)
         else {
-          let max = docs.reduce(function(max, doc) {
-            let docSlug = doc.get(options.field, String);
-            let count = 1;
+          let max = docs.reduce(function (max, doc) {
+            let docSlug = doc.get(options.field, String)
+            let count = 1
             if (docSlug !== slug) {
-              count = docSlug.match(new RegExp((slugLimited ? slug.substr(0, slug.length - 2) : slug) + options.separator + '([0-9]+)$'));
-              count = ((count instanceof Array) ? parseInt(count[1]) : 0) + 1;
+              count = docSlug.match(new RegExp((slugLimited ? slug.substr(0, slug.length - 2) : slug) + options.separator + '([0-9]+)$'))
+              count = ((count instanceof Array) ? parseInt(count[1]) : 0) + 1
             }
-            return (count > max) ? count : max;
-          }, 0);
+            return (count > max) ? count : max
+          }, 0)
 
-          if (max === 1) max++; // avoid slug-1, rather do slug-2
+          if (max === 1) max++ // avoid slug-1, rather do slug-2
 
-          let suffix = options.separator + max;
+          let suffix = options.separator + max
 
-          if (options.maxLength) return cb(null, slug.substr(0, options.maxLength - suffix.length) + suffix);
-          else return cb(null, slug + suffix);
+          if (options.maxLength) return cb(null, slug.substr(0, options.maxLength - suffix.length) + suffix)
+          else return cb(null, slug + suffix)
         }
-      });
+      })
     };
 
-    schema.statics.findBySlug = function(slug, fields, additionalOptions, cb) {
-      let q = {};
-      q[options.field] = slug;
-      return this.findOne(q, fields, additionalOptions, cb);
+    schema.statics.findBySlug = function (slug, fields, additionalOptions, cb) {
+      let q = {}
+      q[options.field] = slug
+      return this.findOne(q, fields, additionalOptions, cb)
     };
 
-    schema.pre('validate', function(next) {
-      let doc = this;
-      let currentSlug = doc.get(options.field, String);
-      if (!doc.isNew && !options.update && currentSlug) return next();
+    schema.pre('validate', function (next) {
+      let doc = this
+      let currentSlug = doc.get(options.field, String)
+      if (!doc.isNew && !options.update && currentSlug) return next()
 
-      let slugFieldsModified = doc.isNew;
-      let toSlugify = '';
+      let slugFieldsModified = doc.isNew
+      let toSlugify = ''
       if (slugFields instanceof Array) {
         for (let i = 0; i < slugFields.length; i++) {
-          let slugField = slugFields[i];
-          if (doc.isModified(slugField)) slugFieldsModified = true;
-          let slugPart = doc.get(slugField, String);
-          if (slugPart) toSlugify += slugPart + ' ';
+          let slugField = slugFields[i]
+          if (doc.isModified(slugField)) slugFieldsModified = true
+          let slugPart = doc.get(slugField, String)
+          if (slugPart) toSlugify += slugPart + ' '
         }
-        toSlugify = toSlugify.substr(0, toSlugify.length - 1);
+        toSlugify = toSlugify.substr(0, toSlugify.length - 1)
       } else {
-        if (doc.isModified(slugFields)) slugFieldsModified = true;
-        toSlugify = doc.get(slugFields, String);
+        if (doc.isModified(slugFields)) slugFieldsModified = true
+        toSlugify = doc.get(slugFields, String)
       }
 
-      if (!slugFieldsModified && currentSlug) return next();
+      if (!slugFieldsModified && currentSlug) return next()
 
-      let newSlug = options.generator(removeDiacritics(toSlugify), options.separator);
+      let newSlug = options.generator(removeDiacritics(toSlugify), options.separator)
 
       if (!newSlug.length && options.index_sparse) {
-        doc.set(options.field, undefined);
-        return next();
+        doc.set(options.field, undefined)
+        return next()
       }
 
-      if (options.maxLength) newSlug = newSlug.substr(0, options.maxLength);
+      if (options.maxLength) newSlug = newSlug.substr(0, options.maxLength)
 
-      doc.ensureUniqueSlug(newSlug, function(e, finalSlug) {
-        if (e) return next(e);
+      doc.ensureUniqueSlug(newSlug, function (e, finalSlug) {
+        if (e) return next(e)
         //only create a slug when you create a account from facebook, twitter, google..
-        if(!doc.username)
-          doc.set(options.field, finalSlug);
-        doc.markModified(options.field, finalSlug); // sometimes required :)
-        next();
-      });
+        if (!doc.username)
+          {doc.set(options.field, finalSlug);}
+        doc.markModified(options.field, finalSlug) // sometimes required :)
+        next()
+      })
 
-    });
-  });
-};
+    })
+  };
+}

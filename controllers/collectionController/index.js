@@ -1,12 +1,12 @@
-let deleteOne = require('./deleteOne');
-let getOne = require('./getOne');
+let deleteOne = require('./deleteOne')
+let getOne = require('./getOne')
 
-function init(itemController){
-    deleteOne.init(itemController);    
+function init (itemController) {
+  deleteOne.init(itemController)    
 }
 
 module.exports = {
-    init: init,
-    deleteOne: deleteOne.deleteOne,
-    getOne: getOne
+  init: init,
+  deleteOne: deleteOne.deleteOne,
+  getOne: getOne
 }
