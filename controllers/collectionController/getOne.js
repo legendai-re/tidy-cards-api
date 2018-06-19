@@ -13,6 +13,10 @@ module.exports = function getOne(collection_id, params, currentUser, callback) {
 
 	q.populate('_thumbnail');
     q.populate({
+        path: '_collaborators',
+        populate: { path: '_avatar' }
+    });
+    q.populate({
         path: '_author',
         populate: { path: '_avatar' }
     });

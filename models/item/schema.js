@@ -52,14 +52,15 @@ module.exports = function getItemSchema(Schema) {
             required: true,
             default: itemTypes.URL.id
         },
+        position: {type: Number},
+
+        //Relations
+        _author : { type: String, ref: 'User' },
         _content: {
             type: Schema.Types.Mixed,
             required: false,
         },
-
-        position: {type: Number},
-
         _collection: { type: String, ref: 'Collection' },
     });
 
-}
+};

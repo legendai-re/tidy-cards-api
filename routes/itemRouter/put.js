@@ -6,10 +6,10 @@ module.exports = function put (req, res) {
     let models          = require('../../models');
     let itemContentController = require('../../controllers/itemController/itemContentController');
 
-    models.Item.findById(req.params.item_id).populate('_collection').exec(function(err, item){
+    models.Item.findById(req.params.item_id).populate({path:'_collection', populate: {path: '_collaborators'}}).populate("_author").exec(function(err, item){
         if(err) {console.log(err); res.sendStatus(500); return;}
         if(!item) {res.status(404).send({ error: "cannot find item with id: "+req.params.item_id }); return;}
-        if(item._collection._author.toString() !== req.user._id.toString()) {res.status(401).send({ error: "only the author of the collection can update item" }); return;}
+        if(!item._collection.haveEditRights(req.user)) {res.status(401).send({ error: "only the author or collab of the collection can update item" }); return;}
 
         if(req.body.updatePosition && typeof req.body.position !== 'undefined'){
             updatePosition(item, req.body.position)

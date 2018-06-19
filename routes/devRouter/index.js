@@ -13,4 +13,9 @@ router.route('/logs/:filename')
         require('./getLogs')(req, res);
     });
 
+router.route('/setItemsAuthor')
+    .get(isGranted('ROLE_ADMIN'), function(req, res) {
+        require('./setItemsAuthor')(req, res);
+    });
+
 module.exports = router;

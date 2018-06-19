@@ -81,6 +81,7 @@ module.exports = function getCollectionSchema(Schema) {
         _rootCollection : { type: String, ref: 'Collection' },
         _parent : { type: String, ref: 'Collection' },
 	    _author : { type: String, ref: 'User' },
+        _collaborators: [{ type: String, ref: 'User' }],
 	    _thumbnail : { type: String, ref: 'Image' },
 	},{
         toObject: {
@@ -91,4 +92,4 @@ module.exports = function getCollectionSchema(Schema) {
         }
     });
 
-}
+};

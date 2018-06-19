@@ -13,8 +13,6 @@ module.exports = function checkItemContent(user, itemType, itemContent, finalCal
         checkItemByType(user, itemType, itemContent, function (err, user, itemContent){
             if(err) return finalCallback(err);
             if(!itemContent) return finalCallback("itemContent : cannot find itemContent");
-            if(itemContent._user.toString() !== user._id.toString())
-                return finalCallback("itemContent : this item do not belong to the current account");
             return finalCallback(null, itemContent)
         });
     }

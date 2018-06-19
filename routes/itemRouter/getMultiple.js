@@ -42,6 +42,11 @@ module.exports = function getMultiple (req, res) {
                 q.populate(rq.populate);
             }
 
+            q.populate({
+                path: '_author',
+                populate: { path: '_avatar' }
+            });
+
             q.exec(function(err, items){
                 if (err) {console.log(err); res.sendStatus(500); return;}
                 for(let i in items){
@@ -63,6 +68,11 @@ module.exports = function getMultiple (req, res) {
             if(rq.populate){
                 q.populate(rq.populate);
             }
+
+            q.populate({
+                path: '_author',
+                populate: { path: '_avatar' }
+            });
 
             if(rq.skip)
                 q.skip(parseInt(rq.skip));

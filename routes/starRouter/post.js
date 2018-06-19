@@ -7,7 +7,7 @@ module.exports = function post (req, res) {
         res.status(400).send({ error: 'some required parameters was not provided'});
         res.end();
     }else{
-        models.Collection.findById(req.body._collection, function(err, collection){
+        models.Collection.findById(req.body._collection).populate('_collaborators').exec(function(err, collection){
             if(err) {console.log(err); res.sendStatus(500); return;}
             if(!collection) {res.status(400).send({ error: "cannot find collection with id: "+req.body._collection }); return;}
             if(collection.visibility == visibility.PRIVATE.id) {res.status(400).send({ error: "cannot star a private collection" }); return;}

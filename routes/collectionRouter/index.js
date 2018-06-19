@@ -89,4 +89,9 @@ router.route('/:collection_id')
         require('./delete')(req, res);
     });
 
+router.route('/:collection_id/collaborators')
+    .put(isGranted('ROLE_USER'), function(req, res) {
+        require('./putCollaborator')(req, res);
+    });
+
 module.exports = router;

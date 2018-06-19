@@ -58,7 +58,24 @@ CollectionSchema.methods.addItem = function addItem(item, callback) {
             callback(err, item);
         });
     });
-}
+};
+
+CollectionSchema.methods.isCollaborator = function isCollaborator(user) {
+    for(let i = 0; i<this._collaborators.length; i++) {
+        if (this._collaborators[i]._id.toString() === user._id.toString())
+            return true;
+    }
+    return false;
+};
+
+CollectionSchema.methods.haveEditRights = function haveEditRights(user) {
+    let authorId;
+    if(this._author._id == undefined)
+        authorId = this._author;
+    else
+        authorId = this._author._id;
+    return authorId.toString() === user._id.toString() || this.isCollaborator(user);
+};
 
 Collection = mongoose.model('Collection', CollectionSchema);
 

@@ -26,14 +26,16 @@ module.exports = function create (user, collectionId, displayMode, description, 
         item.title = title;
 
     // check if the collection passed as parameter belong to the currentUser
-    m.Collection.findById(collectionId, function(err, collection){
+    m.Collection.findById(collectionId).populate('_collaborators').exec(function(err, collection){
         if(err) {logger.error(err); return callback(new m.ApiResponse(err, 500));}
 
         if(!collection)
             return callback(new m.ApiResponse("cannot find collection with id: "+collectionId, 400));
 
-        if(collection._author.toString() !== user._id.toString())
-            return callback(new m.ApiResponse("only the author of the collection can add item", 401));
+        if(!collection.haveEditRights(user))
+            return callback(new m.ApiResponse("only the author or collab of the collection can add item", 401));
+
+        item._author = user;
 
         // if the itemContent have already been created
         if(itemContent && typeOk(itemType)){

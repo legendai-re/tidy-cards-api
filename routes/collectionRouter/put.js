@@ -5,12 +5,12 @@ module.exports = function put (req, res) {
     let displayMode = require('../../models/collection/displayMode.json');
     let models      = require('../../models');
 
-    q = models.Collection.findById(req.params.collection_id);
+    q = models.Collection.findById(req.params.collection_id).populate("_collaborators");
 
 	q.exec(function(err, collection) {
         if (err) {console.log(err); res.sendStatus(500); return;}
         if(!collection) {res.status(404).send({ error: 'cannot find collection with id: '+req.params.collection_id}); return;}
-        if(collection._author == req.user._id || req.user.isGranted('ROLE_ADMIN')){
+        if(collection.haveEditRights(req.user) || req.user.isGranted('ROLE_ADMIN')){
             if(req.user.isGranted('ROLE_ADMIN')){
                 collection.featuredAt = req.body.isFeatured ? new Date() : null;
                 collection.isFeatured = req.body.isFeatured;

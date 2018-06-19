@@ -2,7 +2,7 @@ module.exports = function (req, res) {
 
     let models          = require('../../models');
 
-    models.Star.findById(req.params.star_id).populate('_collection').exec(function(err, star){
+    models.Star.findById(req.params.star_id).populate({path: '_collection', populate: {path: '_collaborators'}}).exec(function(err, star){
         if(err) {console.log(err); res.sendStatus(500); return;}
         if(!star) {console.log(err); res.sendStatus(400); return;}
         if(star._user != req.user._id) { res.status(401).send({error: "this star do not belong to you"}); return; }
