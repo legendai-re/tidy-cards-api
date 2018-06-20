@@ -94,4 +94,9 @@ router.route('/:collection_id/collaborators')
     require('./putCollaborator')(req, res)
   })
 
+router.route('/:collection_id/collaborators/:collaborator_id')
+  .delete(isGranted('ROLE_USER'), function (req, res) {
+    require('./deleteCollaborator')(req, res)
+  })
+
 module.exports = router

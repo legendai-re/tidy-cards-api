@@ -19,10 +19,14 @@ module.exports = function getMultiple (req, res) {
   };
 
   function checkCollectionStateAndVisibility (callback) {
-    models.Collection.findOne({_id: rq._collection}, function (err, collection) {
+    models.Collection.findOne({_id: rq._collection}).populate('_collaborators').exec(function (err, collection) {
       if (err) { console.log(err); res.sendStatus(500); return }
       if (!collection || collection.lifeState == lifeStates.ARCHIVED.id) { return res.sendStatus(404) }
-      if (collection.visibility == visibility.PRIVATE.id && (!req.user || collection._author != req.user._id)) { return res.sendStatus(401) }
+      var collectionIsPrivate = collection.visibility === visibility.PRIVATE.id
+      var userIsAuthor = (!!req.user && String(req.user._id) === String(collection._author))
+      var userIsCollaborator = (!!req.user && collection.isCollaborator(req.user))
+      // if collection is private, and current currentUser is not the author or collaborator
+      if (collectionIsPrivate && (!userIsAuthor && !userIsCollaborator)) { return res.sendStatus(401) }
       callback()
     })
   }

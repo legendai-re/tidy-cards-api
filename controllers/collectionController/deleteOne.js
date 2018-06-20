@@ -15,7 +15,9 @@ function init (_itemController) {
  * be called again in deleteItem() (from itemController) when the item type is COLLECTION.
  */
 function deleteOne (currentUser, collectionId, callback) {
-  m.Collection.findById(collectionId).exec(function (err, collection) {
+  let q = m.Collection.findById(collectionId)
+  q.populate({path: '_collaborators'})
+  q.exec(function (err, collection) {
     if (err) { logger.error(err); return callback(new m.ApiResponse(err, 500)) }
     if (!collection) { return callback(new m.ApiResponse('cannot find collection with id: ' + collectionId, 400)) }
     if (collection._author != currentUser._id) { return callback(new m.ApiResponse('only the author of the collection can delete it', 401)) }
@@ -78,10 +80,10 @@ function deleteItems (currentUser, collection, callback) {
  * Retrieve the MY_COLLECTION customSort and remove the id of the collection inside it.
  */
 function removeCollectionFromCustomSort (collection, callback) {
-  m.CustomSort.findOne({ _user: collection._author, type: sortTypes.MY_COLLECTIONS.id}, function (err, customSort) {
+  m.CustomSort.findOne({ _user: collection._author, type: sortTypes.MY_COLLECTIONS.id }, function (err, customSort) {
     if (err) { logger.error(err); return callback(err) }
     if (!customSort) { return callback('cannot find custom sort object') }
-    m.CustomSort.update({ _id: customSort._id}, { $pull: { ids: collection._id } }, function (err, result) {
+    m.CustomSort.update({ _id: customSort._id }, { $pull: { ids: collection._id } }, function (err, result) {
       if (err) { logger.error(err) }
       return callback(err)
     })
