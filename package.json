@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha tests",
+    "test": "mocha tests --timeout 15000",
     "doc": "apidoc -i ./ js -o doc -e node_modules",
     "heroku-postbuild": "cd tidy-cards-web-app && npm install"
   },
@@ -38,7 +38,7 @@
     "heroku-ssl-redirect": "0.0.4",
     "jsdoc": "^3.4.2",
     "jsdom": "^9.4.1",
-    "mongoose": "^4.13.11",
+    "mongoose": "^5.1.6",
     "mongoose-url-slugs": "^0.2.1",
     "morgan": "^1.9.0",
     "multer": "^1.1.0",

@@ -25,9 +25,16 @@ module.exports = function getOne (collection_id, params, currentUser, callback) 
 
     let _authorId = collection._author._id ? collection._author._id : collection._author
 
-    // if collection no more active or private, and current currentUser is not the author
-    if ((collection.lifeState != lifeStates.ACTIVE.id) || (collection.visibility == visibility.PRIVATE.id && (!currentUser || String(currentUser._id) != _authorId))) {
+    var collectionIsActive = collection.lifeState === lifeStates.ACTIVE.id
+    var collectionIsPrivate = collection.visibility === visibility.PRIVATE.id
+    var userIsAuthor = (!!currentUser && String(currentUser._id) === String(_authorId))
+    var userIsCollaborator = (!!currentUser && collection.isCollaborator(currentUser))
+
+    // if collection no more active or private, and current currentUser is not the author or collaborator
+    if (!collectionIsActive || (collectionIsPrivate && (!userIsAuthor && !userIsCollaborator))) {
       if (currentUser) {
+        // even if the user do not have access to the collection
+        // we return the star so the user can unstar it
         getStar(currentUser, collection, function (err, star) {
           if (err) { logger.error(err); return callback(new m.ApiResponse(err, 500)) }
           return callback(new m.ApiResponse(null, 401, {_star: star}))
