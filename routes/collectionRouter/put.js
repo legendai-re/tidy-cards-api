@@ -53,10 +53,10 @@ module.exports = function put (req, res) {
   }
 
   function updatePosition (collection, newPosition) {
-    models.CustomSort.findOne({ _user: collection._author, type: sortTypes.MY_COLLECTIONS.id}, function (err, customSort) {
+    models.CustomSort.findOne({ _user: req.user._id, type: sortTypes.MY_COLLECTIONS.id }, function (err, customSort) {
       if (err) { console.log(err); res.sendStatus(500); return }
       // remove id of collection
-      models.CustomSort.update({ _id: customSort._id}, { $pull: { ids: collection._id } }, function (err, result) {
+      models.CustomSort.update({ _id: customSort._id }, { $pull: { ids: collection._id } }, function (err, result) {
         if (err) { console.log(err); res.sendStatus(500); return }
         // add id at the new position
         models.CustomSort.update({_id: customSort._id}, { $push: { ids: { $each: [ collection._id ], $position: newPosition } } }, function (err, result) {
