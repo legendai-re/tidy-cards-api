@@ -9,6 +9,6 @@
         "_id": 2,
         "name": "COLLECTION_THUMBNAIL",
         "path":"col_thumb",
-        "sizes": [{"x":300, "y":250}, {"x":1000, "y":400}]
+        "sizes": [{"x":96, "y":96}, {"x":300, "y":250}, {"x":1000, "y":400}]
     }
 }

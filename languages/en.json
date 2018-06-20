@@ -2,13 +2,63 @@
     "lang_id": "en",
     "app_name": "tidycards",
     "app_name_capitals": "TidyCards",
+    "icon": {
+        "info": {
+            "filled": "info",
+            "border": "info"
+        },
+        "more": {
+            "filled": "more_vert",
+            "border": "more_vert"
+        },
+        "favorite": {
+            "filled": "favorite",
+            "border": "favorite_border"
+        },
+        "comment": {
+            "filled": "mode_comment",
+            "border": "mode_comment"
+        },
+        "featured": {
+            "filled": "stars",
+            "border": "stars"
+        },
+        "play": {
+            "filled": "play_circle_filled",
+            "border": "play_circle_outline"
+        },
+        "visibility": {
+            "filled": "visibility",
+            "border": "visibility"
+        },
+        "private_collection": {
+            "filled": "lock",
+            "border": "lock"
+        },
+        "unindexed_collection": {
+            "filled": "visibility_off",
+            "border": "visibility_off"
+        },
+        "upload": {
+            "filled": "cloud_upload",
+            "border": "cloud_upload"
+        },
+        "done": {
+            "filled": "done",
+            "border": "done_outline"
+        },
+        "waiting": {
+            "filled": "loop",
+            "border": "loop"
+        }
+    },
     "header": {
         "search_placeholder": "Search on TidyCards…",
         "search_result_for": "Results for",
         "search_no_result_for": "Sorry. There is no results for",
         "search_no_idea_row_1": "No idea?",
         "search_no_idea_row_2": "You can visit the",
-        "search_no_idea_row_3": "discover page",
+        "search_no_idea_row_3": "Discover page",
         "dashboard_title": "Dashboard",
         "discover_title": "Discover",
         "about_title": "About",
@@ -95,10 +145,10 @@
     },
     "dashboard": {
         "my_collections_title": "My collections",
-        "favorite_collections_title": "My favorite collections"
+        "favorite_collections_title": "Favorites"
     },
-    "profile_public":{
-        "no_bio": "This user doesn't have a description yet…",
+    "profile_public": {
+        "no_bio": "This user doesn’t have a description yet…",
         "empty": "Sorry, there is nothing to show. This user has no public collections…"
     },
     "profile_private": {
@@ -133,34 +183,59 @@
         "google_unlink_button": "Unlink Google",
         "security_title": "Security",
         "security_subtitle": "Change my security settings",
-        "security_change_pwd": "Change my password",
+        "security_change_pwd": "Password",
+        "security_change_pwd_desc": "Change your password or recover your current one.",
         "security_current_pwd": "Current password",
         "security_new_pwd": "New password",
-        "security_re_new_pwd": "Repeat new password",
-        "security_recover_pwd": "Recover my password",
+        "security_re_new_pwd": "Verify password",
+        "security_recover_pwd": "Forgot your password?",
         "security_set_pwd": "Set a password"
     },
     "collection": {
+        "modal": {
+          "title_placeholder": "Title",
+          "caption_placeholder": "Enter a caption here to describe the collection. Keep it simple and short…",
+          "visibility_dropdown_title": "Who should see this?",
+          "new": {
+            "title": "New collection"
+          },
+          "edit": {
+            "title": "Edit collection"
+          },
+          "delete": {
+            "title": "Delete this collection?",
+            "caption": "Do you really want to delete this collection?",
+            "button": "Delete this collection"
+          }
+        },
+        "action": {
+          "upload_img": "Upload an image",
+          "replace_img": "Replace image",
+          "remove_img": "Remove image"
+        },
+        "card_form": {
+          "title_placeholder": "Create a collection…"
+        },
         "my_title": "My collections",
-        "belongs_to_title": "{0}'s collections",
+        "belongs_to_title": "{0}’s collections",
         "featured_title": "Featured",
         "popular_title": "Trending collections",
         "last_title": "Last collections",
         "last_public_title": "Last public collections",
-        "favorite_title": "Favorite collections",
-        "my_favorite_title": "My favorite collections",
-        "favorite_by_title": "{0}'s favorite collections",
-        "visibility":{
+        "favorite_title": "Favorites",
+        "my_favorite_title": "Favorites",
+        "favorite_by_title": "{0}’s favorite collections",
+        "visibility": {
             "title": "Visibility",
-            "PRIVATE":{
+            "PRIVATE": {
                 "title": "Only me",
                 "subtitle": "Only me"
             },
-            "PUBLIC":{
+            "PUBLIC": {
                 "title": "Public",
                 "subtitle": "Anyone can see this"
             },
-            "UNINDEXED":{
+            "UNINDEXED": {
                 "title": "Unindexed",
                 "subtitle": "People with the link"
             }
@@ -170,22 +245,23 @@
         "new_item_button": "New item",
         "first_item_button": "Add my first item",
         "first_item_caption": "Use the button bellow to add an item to your collection. It can be a link or a caption without link.",
-        "by_title": "A collection by",
+        "by_title": "Created by",
         "empty_title": "Whoops, this collection is empty",
         "empty_caption": "Unfortunately there is nothing in this collection yet, please make a try later.",
         "list_end": "You’ve reached the end of the list…",
-        "item_list_end": "You reached the end of the collection…",
-        "delete_title": "Delete this collection?",
-        "delete_caption": "Do you really want to delete this collection?",
-        "delete_button_yes": "Delete this collection"
+        "item_list_end": "You reached the end of the collection…"
     },
-    "item":{
+    "item": {
         "caption": "Caption",
         "no_title": "No title",
         "new_title": "Add an item to your collection",
-        "update_title": "Update an item",
+        "update_title": "Edit item",
+        "fetching_preview": "Fetching preview…",
+        "invalid_url": "Invalid URL",
+        "preview_title": "Item preview",
+        "display_mode_title": "Format",
         "new_placeholder_title": "Title",
-        "new_placeholder_description": "Paste your link or start writing...",
+        "new_placeholder_description": "Paste your link or start writing…",
         "delete_title": "Delete this item?",
         "delete_caption": "Do you really want to delete this item?",
         "delete_button_yes": "Delete this item",
@@ -196,28 +272,35 @@
             "LARGE": "Large"
         },
         "display_tip_title": "Pro tip:",
-        "display_tip_desc": "You can change the display format of this item by clicking on the bottom icon that appear when you hover it."
+        "display_tip_desc": "You can change the display format of this item by clicking on the format buttons that appear when you hover it."
     },
     "collection_create": {
-        "title_placeholder": "Create a collection…",
+        "modal_title": "New collection",
+        "create_title_placeholder": "",
+        "title_placeholder": "Title",
         "caption_placeholder": "Enter a caption here to describe the collection. Keep it simple and short…",
-        "visibility_dropdow_title": "Who should see this?"
+        "visibility_dropdown_title": "Who should see this?"
     },
-    "object":{
+    "object": {
         "collection": "Collection",
         "collection_plur": "Collections",
         "user": "User",
-        "user_plur": "Users"
+        "user_plur": "Users",
+        "favorite": "Favorite",
+        "favorite_plur": "Favorites"
     },
     "action": {
-        "see_all": "See all",
+        "see_all": "See more",
         "save": "Save",
+        "update": "Update",
         "add": "Add",
         "cancel": "Cancel",
+        "discard": "Discard changes",
         "update": "Update",
         "create": "Create",
         "edit": "Edit",
         "delete": "Delete",
+        "archive": "Archive",
         "loading": "Loading…",
         "load_more": "Load more…"
     },
@@ -228,21 +311,38 @@
         "whoops_exclamation": "Whoops!",
         "congrats": "Congrats"
     },
-    "page":{
+    "page": {
+        "error": {
+            "title": "There is nothing here…",
+            "what_happened": "What happened?",
+            "content_not_found": "There is no collection with id:",
+            "content_not_found_user": "There is no user with username:",
+            "content_not_found_fav": "This collection doesn’t exist anymore or is now private… You can delete it from your favorites if you want.",
+            "button": {
+              "back_dashboard": "Back to the Dashboard",
+              "back_discover": "Go to the Discover page",
+              "remove_fav": "Remove from favorites"
+            }
+        },
         "about": {
             "title": "About",
-            "content": "##### [TidyCards](https://www.tidy.cards) is a web application that allows you to easily organize and share your links! Whether articles, videos, tweets or any kinds of content.\n\nYou have dozens of folders of bookmarks and it's a mess? Create a collection: set a title, a description, an image and then add your links. You can also add a comment. So you will easily find back your favorite sites.\n\nBut why go through so many steps? [TidyCards](https://www.tidy.cards) is not only about yourself. You can also share your collections with the whole world.\n\nThe heart of [TidyCards](https://www.tidy.cards) is the knowledge sharing, a kind of collective intelligence: share your research, your discoveries, your hobbies even things that shock or revolt you.\n\nThis sharing works in both ways: thanks to the search feature and the [Discover](https://www.tidy.cards/discover) page, where you will find the collections created by passionate people on the other side of the world.\n\nOn [TidyCards](https://www.tidy.cards) you don't have to search for hours the most relevant websites about your favorite theme, someone has probably already dug the topic.\n\nAnd if not, [join us](https://www.tidy.cards/signin;mode=signup) now and create a collection."
+            "content": "<h3 class=’mb-4’ style=’text-align:center;’>What is TidyCards?</h3><p class=’lead’>[TidyCards](https://www.tidy.cards) is a web application that allows you to easily organize and share your links! Whether articles, videos, tweets or any kinds of content.</p>\n\nYou have dozens of folders of bookmarks and it’s a mess? Create a collection: set a title, a description, an image and then add your links. You can also add a comment. So you will easily find back your favorite sites.\n\nBut why go through so many steps? [TidyCards](https://www.tidy.cards) is not only about yourself. You can also share your collections with the whole world.\n\nThe heart of [TidyCards](https://www.tidy.cards) is the knowledge sharing, a kind of collective intelligence: share your research, your discoveries, your hobbies even things that shock or revolt you.\n\nThis sharing works in both ways: thanks to the search feature and the [Discover](https://www.tidy.cards/discover) page, where you will find the collections created by passionate people on the other side of the world.\n\nOn [TidyCards](https://www.tidy.cards) you don’t have to search for hours the most relevant websites about your favorite theme, someone has probably already dug the topic.\n\nAnd if not, [join us](https://www.tidy.cards/signin;mode=signup) now and create a collection."
         },
         "contact": {
             "title": "Contact us",
-            "content": "#### Contact us\nYou'd like to share your ideas, report a bug or just say hello?",
+            "content": "#### Contact us\nYou’d like to share your ideas, report a bug or just say hello?",
             "contact_btn": "hi@tidy.cards"
         },
         "team": {
             "title": "Team"
         },
         "terms": {
-            "title": "Terms"
+            "title": "Terms of Service",
+            "title_short": "Terms"
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "title_short": "Privacy"
         }
     }
 }

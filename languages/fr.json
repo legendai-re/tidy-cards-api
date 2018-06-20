@@ -2,13 +2,63 @@
     "lang_id": "fr",
     "app_name": "tidycards",
     "app_name_capitals": "TidyCards",
+    "icon": {
+        "info": {
+            "filled": "info",
+            "border": "info"
+        },
+        "more": {
+            "filled": "more_vert",
+            "border": "more_vert"
+        },
+        "favorite": {
+            "filled": "star",
+            "border": "star_border"
+        },
+        "comment": {
+            "filled": "mode_comment",
+            "border": "mode_comment"
+        },
+        "featured": {
+            "filled": "stars",
+            "border": "stars"
+        },
+        "play": {
+            "filled": "play_circle_filled",
+            "border": "play_circle_outline"
+        },
+        "visibility": {
+            "filled": "visibility",
+            "border": "visibility"
+        },
+        "private_collection": {
+            "filled": "lock",
+            "border": "lock"
+        },
+        "unindexed_collection": {
+            "filled": "visibility_off",
+            "border": "visibility_off"
+        },
+        "upload": {
+            "filled": "cloud_upload",
+            "border": "cloud_upload"
+        },
+        "done": {
+            "filled": "done",
+            "border": "done_outline"
+        },
+        "waiting": {
+            "filled": "loop",
+            "border": "loop"
+        }
+    },
     "header": {
         "search_placeholder": "Rechercher sur TidyCards…",
         "search_result_for": "Résultats pour",
-        "search_no_result_for": "Désolé, nous n'avons trouvé aucun résultat pour",
-        "search_no_idea_row_1": "Pas d'idée ?",
-        "search_no_idea_row_2": "Vous pouvez visiter la page",
-        "search_no_idea_row_3": "Découvrir",
+        "search_no_result_for": "Désolé, nous n’avons trouvé aucun résultat pour",
+        "search_no_idea_row_1": "Pas d’idée ?",
+        "search_no_idea_row_2": "Vous pouvez visiter la",
+        "search_no_idea_row_3": "page Découvrir",
         "dashboard_title": "Tableau de bord",
         "discover_title": "Découvrir",
         "about_title": "À propos",
@@ -19,8 +69,8 @@
         "logout_menu": "Se déconnecter",
         "powered_by": "Propulsé avec",
         "jumbotron": {
-            "slogan": "TidyCards, vos liens méritent d'être partagés",
-            "description_line_1": "TidyCards vous permet d'organiser et de partager facilement vos liens !",
+            "slogan": "TidyCards, vos liens méritent d’être partagés",
+            "description_line_1": "TidyCards vous permet d’organiser et de partager facilement vos liens !",
             "description_line_2": "Que ce soient des articles, des vidéos, des tweets ou toutes sortes de contenus.",
             "about_button": "À propos de TidyCards"
         }
@@ -38,20 +88,20 @@
       "enter_email_username": "Entrez votre mail ou pseudonyme",
       "search": "Rechercher",
       "found": "Nous avons trouvé les informations suivantes associées à votre compte.",
-      "not_found": "Impossible de trouver un utilisateur avec ce nom d'utilisateur ou adresse mail :",
+      "not_found": "Impossible de trouver un utilisateur avec ce nom d’utilisateur ou adresse mail :",
       "enter_new_password": "Choisissez un mot de passe",
       "new_password": "Nouveau mot de passe",
       "new_password_repeat": "Répéter",
       "update_password": "Mettre à jour",
       "send_instructions": "Envoyer les instructions par mail",
       "error": "Erreur lors de la tentative de réinitialisation du mot de passe",
-      "not_you": "Ce n'est pas vous ?",
-      "email_sent": "Un lien pour réinitialiser votre mot de passe a été envoyé à votre adresse e-mail. Ce lien n'est valide que pendant 24 heures. Vous ne pouvez plus faire de nouvelle demande pendant 24 heures."
+      "not_you": "Ce n’est pas vous ?",
+      "email_sent": "Un lien pour réinitialiser votre mot de passe a été envoyé à votre adresse e-mail. Ce lien n’est valide que pendant 24 heures. Vous ne pouvez plus faire de nouvelle demande pendant 24 heures."
     },
     "auth": {
         "signin_title": "Rejoindre TidyCards",
         "signin_button": "Se connecter",
-        "signup_button": "S'inscrire",
+        "signup_button": "S’inscrire",
         "all_signin_options": "Retour aux options",
         "signin_caption": "Connectez-vous pour partager vos passions avec le monde.",
         "signup_caption": "Rejoignez la communauté pour partager vos passions avec le monde.",
@@ -59,27 +109,27 @@
         "signin_facebook_title": "Se connecter avec Facebook",
         "signin_twitter_title": "Se connecter avec Twitter",
         "signin_google_title": "Se connecter avec Google",
-        "signup_mail_title": "S'inscrire avec une adresse mail",
-        "signup_facebook_title": "S'inscrire avec Facebook",
-        "signup_twitter_title": "S'inscrire avec Twitter",
-        "signup_google_title": "S'inscrire avec Google",
-        "username_placeholder": "Nom d'utilisateur",
+        "signup_mail_title": "S’inscrire avec une adresse mail",
+        "signup_facebook_title": "S’inscrire avec Facebook",
+        "signup_twitter_title": "S’inscrire avec Twitter",
+        "signup_google_title": "S’inscrire avec Google",
+        "username_placeholder": "Nom d’utilisateur",
         "email_placeholder": "Adresse e-mail",
         "password_placeholder": "Mot de passe",
         "password_repeat_placeholder": "Répéter le mot de passe",
         "password_lost": "Mot de passe oublié ?",
         "not_member_title": "Nouveau sur TidyCards ?",
         "already_member_title": "Vous êtes déjà inscrit ?",
-        "signup_today_button": "S'inscrire",
+        "signup_today_button": "S’inscrire",
         "status": {
           "signin_attempt": "Tentative de connexion…",
           "error_wrong": "Mot de passe ou pseudo/mail incorrects.",
           "error_too_many_attempt": "Trop de tentatives de connexion, veuillez patienter.",
           "error_unknown": "Erreur inconnue, réessayer plus tard.",
           "validation_progress": "Validation en cours…",
-          "username_avalaible": "Nom d'utilisateur disponible",
-          "username_not_avalaible": "Nom d'utilisateur non disponible",
-          "username_invalid": "Nom d'utilisateur invalide",
+          "username_avalaible": "Nom d’utilisateur disponible",
+          "username_not_avalaible": "Nom d’utilisateur non disponible",
+          "username_invalid": "Nom d’utilisateur invalide",
           "email_avalaible": "Adresse mail disponible",
           "email_not_avalaible": "Adresse mail non disponible",
           "email_invalid": "Adresse mail invalide",
@@ -89,30 +139,30 @@
         }
     },
     "discover": {
-        "featured_title": "Sélection",
+        "featured_title": "En vedette",
         "popular_title": "Collections tendances",
         "last_title": "Dernières collections"
     },
     "dashboard": {
         "my_collections_title": "Mes collections",
-        "favorite_collections_title": "Mes collections favorites"
+        "favorite_collections_title": "Favoris"
     },
-    "profile_public":{
-        "no_bio": "Cet utilisateur n'a pas encore de description…",
-        "empty": "Désolé, mais il n'y a rien a afficher. Cet utilisateur n'a aucune collections publiques…"
+    "profile_public": {
+        "no_bio": "Cet utilisateur n’a pas encore de description…",
+        "empty": "Désolé, mais il n’y a rien a afficher. Cet utilisateur n’a aucune collections publiques…"
     },
     "profile_private": {
         "bio_placeholder": "Ajouter une description ici…",
         "account_title": "Compte",
         "account_subtitle": "Modifier mes paramètres de compte.",
-        "username_row_title": "Mon nom d'utilisateur",
-        "username_edit_button": "Modifier mon nom d'utilisateur",
+        "username_row_title": "Mon nom d’utilisateur",
+        "username_edit_button": "Modifier mon nom d’utilisateur",
         "email_row_title": "Mon email",
         "email_edit_button": "Modifier mon email",
         "email_confirmation_state_no": "non comfirmée",
         "email_confirmation_state_yes": "comfirmée",
-        "email_confirmation_info": "Un email a été envoyé à {0}. Veuillez vérifier vos emails pour confirmer l'adresse.",
-        "email_confirmation_resend": "Renvoyer l'email.",
+        "email_confirmation_info": "Un email a été envoyé à {0}. Veuillez vérifier vos emails pour confirmer l’adresse.",
+        "email_confirmation_resend": "Renvoyer l’email.",
         "language_row_title": "Langue",
         "connections_title": "Connections",
         "connections_subtitle": "Gérer les applications liées à mon compte",
@@ -133,35 +183,60 @@
         "google_unlink_button": "Révoquer Google",
         "security_title": "Sécurité",
         "security_subtitle": "Modifier mes paramètres de sécurité.",
-        "security_change_pwd": "Modifier mon mot de passe",
+        "security_change_pwd": "Mot de passe",
+        "security_change_pwd_desc": "Modifiez votre mot de passe ou récupérez votre mot de passe actuel.",
         "security_current_pwd": "Mot de passe actuel",
         "security_new_pwd": "Nouveau mot de passe",
-        "security_re_new_pwd": "Répéter le nouveau mot de passe",
-        "security_recover_pwd": "Récupérer mon mot de passe",
+        "security_re_new_pwd": "Vérifiez le mot de passe",
+        "security_recover_pwd": "Mot de passe oublié ?",
         "security_set_pwd": "Définir un mot de passe"
     },
     "collection": {
+        "modal": {
+          "title_placeholder": "Titre",
+          "caption_placeholder": "Ajouter une courte légende pour décrire votre collection…",
+          "visibility_dropdown_title": "Qui peut la voir ?",
+          "new": {
+            "title": "Nouvelle collection"
+          },
+          "edit": {
+            "title": "Modifier la collection"
+          },
+          "delete": {
+            "title": "Supprimer la collection?",
+            "caption": "Voulez-vous vraiment supprimer cette collection ?",
+            "button": "Supprimer la collection"
+          }
+        },
+        "action": {
+          "upload_img": "Importer une image",
+          "replace_img": "Remplacer l’image",
+          "remove_img": "Supprimer l’image"
+        },
+        "card_form": {
+          "title_placeholder": "Créer une collection…"
+        },
         "my_title": "Mes collections",
         "belongs_to_title": "Les collections de {0}",
-        "featured_title": "Sélection",
+        "featured_title": "En vedette",
         "popular_title": "Collections tendances",
         "last_title": "Dernières collections",
         "last_public_title": "Dernières collections publiques",
-        "favorite_title": "Collections favorites",
-        "my_favorite_title": "Mes collections favorites",
-        "favorite_by_title": "Les collections favorites de {0}",
-        "visibility":{
+        "favorite_title": "Favoris",
+        "my_favorite_title": "Favoris",
+        "favorite_by_title": "{0} collections favorites",
+        "visibility": {
             "title": "Visibilité",
-            "PRIVATE":{
+            "PRIVATE": {
                 "title": "Moi uniquement",
                 "subtitle": "Moi uniquement"
             },
-            "PUBLIC":{
+            "PUBLIC": {
                 "title": "Public",
                 "subtitle": "Visible par tout le monde"
             },
-            "UNINDEXED":{
-                "title": "Non indexées",
+            "UNINDEXED": {
+                "title": "Non indexée",
                 "subtitle": "Seulement les personnes possédant le lien"
             }
         },
@@ -170,24 +245,25 @@
         "new_item_button": "Nouvel objet",
         "first_item_button": "Ajouter mon premier objet",
         "first_item_caption": "Utilisez le bouton ci-dessous pour ajouter un objet à votre collection. Cela peut être un lien ou seulement du texte.",
-        "by_title": "Une collection par",
+        "by_title": "Créée par",
         "empty_title": "Oups, cette collection est vide",
-        "empty_caption": "Malheureusement il n'y a rien dans cette collection pour le moment, réessayez plus tard.",
+        "empty_caption": "Malheureusement il n’y a rien dans cette collection pour le moment, réessayez plus tard.",
         "list_end": "Vous avez atteint la fin de cette liste…",
-        "item_list_end": "Vous avez atteint la fin de cette collection…",
-        "delete_title": "Supprimer cette collection ?",
-        "delete_caption": "Voullez-vous vraiment supprimer cette collection ?",
-        "delete_button_yes": "Supprimer cette collection"
+        "item_list_end": "Vous avez atteint la fin de cette collection…"
     },
-    "item":{
+    "item": {
         "caption": "Légende",
         "no_title": "Sans titre",
         "new_title": "Ajouter un objet à votre collection",
-        "update_title": "Mettre à jour un objet",
+        "update_title": "Modifier l’objet",
+        "fetching_preview": "Récupération de l’aperçu…",
+        "invalid_url": "URL invalide",
+        "preview_title": "Prévisualisation",
+        "display_mode_title": "Format",
         "new_placeholder_title": "Titre",
         "new_placeholder_description": "Collez un lien ou commencez à écrire...",
         "delete_title": "Supprimer cet objet ?",
-        "delete_caption": "Voullez-vous vraiment supprimer cet objet ?",
+        "delete_caption": "Voulez-vous vraiment supprimer cet objet ?",
         "delete_button_yes": "Supprimer cet objet",
         "markdown_supported": "Mise en page Markdown supportée",
         "display_modes": {
@@ -196,28 +272,35 @@
             "LARGE": "Grand"
         },
         "display_tip_title": "Astuce :",
-        "display_tip_desc": "Vous pouvez changer le format d'affichage de cet objet en cliquant sur l'icône du bas qui apparaît lorsque vous le survolez."
+        "display_tip_desc": "Vous pouvez changer le format d’affichage de cet objet en cliquant sur les boutons de format qui apparaissent lorsque vous le survolez."
     },
     "collection_create": {
-        "title_placeholder": "Créer une collection…",
+        "modal_title": "Nouvelle collection",
+        "create_title_placeholder": "Créer une collection…",
+        "title_placeholder": "Titre",
         "caption_placeholder": "Ajouter une courte légende pour décrire votre collection…",
-        "visibility_dropdow_title": "Qui peut la voir ?"
+        "visibility_dropdown_title": "Qui peut la voir ?"
     },
-    "object":{
+    "object": {
         "collection": "Collection",
         "collection_plur": "Collections",
         "user": "Utilisateur",
-        "user_plur": "Utilisateurs"
+        "user_plur": "Utilisateurs",
+        "favorite": "Favori",
+        "favorite_plur": "Favoris"
     },
     "action": {
-        "see_all": "Voir toutes",
-        "save": "Enregister",
+        "see_all": "Voir plus",
+        "save": "Sauvegarder",
+        "update": "Mettre à jour",
         "add": "Ajouter",
         "cancel": "Annuler",
+        "discard": "Annuler les modifications",
         "update": "Mettre à jour",
         "create": "Créer",
         "edit": "Modifier",
         "delete": "Supprimer",
+        "archive": "Archiver",
         "loading": "Chargement…",
         "load_more": "Charger plus…"
     },
@@ -228,10 +311,22 @@
         "whoops_exclamation": "Oups !",
         "congrats": "Bravo"
     },
-    "page":{
-        "about":{
+    "page": {
+        "error": {
+            "title": "Il n’y a rien ici…",
+            "what_happened": "Que s’est-il passé ?",
+            "content_not_found": "Il n’y a aucune collection avec l’id :",
+            "content_not_found_user": "Il n’y a aucun utilisateur avec le pseudonyme :",
+            "content_not_found_fav": "Cette collection n’existe plus ou est maintenant privée… Vous pouvez la supprimer de vos favoris si vous le souhaitez.",
+            "button": {
+              "back_dashboard": "Retour sur le Tableau de bord",
+              "back_discover": "Voir la page Découvrir",
+              "remove_fav": "Supprimer des favoris"
+            }
+        },
+        "about": {
             "title": "À propos",
-            "content": "##### [TidyCards](https://www.tidy.cards) est une application web qui vous permet d’organiser et de partager facilement vos liens ! Que ce soient des articles, des vidéos, des tweets ou toutes sortes de contenus.\n\nVous avez des dizaines de dossiers de favoris et vous ne vous y retrouvez plus ? Créez une collection : ajoutez-lui un titre, une description et une image puis ajoutez vos liens. Vous pouvez également leur ajouter un commentaire. Ainsi vous retrouverez facilement vos sites préférés.\n\nMais pourquoi se donner tant de mal ? [TidyCards](https://www.tidy.cards) ce n'est pas que pour soi. Vous pouvez également partager vos collections avec le reste du monde.\n\nLe cœur de [TidyCards](https://www.tidy.cards) c'est le partage du savoir, une sorte de veille collective : partagez vos recherches, vos trouvailles, vos passions et même ce qui vous fait vibrer ou vous révolte.\n\nCe partage fonctionne dans les deux sens grâce à la recherche et à la page [Découvrir](https://www.tidy.cards/discover) où vous trouverez les collections créées par des personnes passionnées à l'autre bout du monde.\n\nSur [TidyCards](https://www.tidy.cards) plus besoin de rechercher pendant des heures les sites les plus pertinents sur votre thème préféré, quelqu’un a sans doute déjà creusé le sujet.\n\nEt si ce n’est pas le cas, [rejoignez-nous](https://www.tidy.cards/signin;mode=signup) dès maintenant et créez une collection."
+            "content": "<h3 class=’mb-4’ style=’text-align:center;’>TidyCards, c’est quoi ?</h3><p class=’lead’>[TidyCards](https://www.tidy.cards) est une application web qui vous permet d’organiser et de partager facilement vos liens ! Que ce soient des articles, des vidéos, des tweets ou toutes sortes de contenus.</p>\n\nVous avez des dizaines de dossiers de favoris et vous ne vous y retrouvez plus ? Créez une collection : ajoutez-lui un titre, une description et une image puis ajoutez vos liens. Vous pouvez également leur ajouter un commentaire. Ainsi vous retrouverez facilement vos sites préférés.\n\nMais pourquoi se donner tant de mal ? [TidyCards](https://www.tidy.cards) ce n’est pas que pour soi. Vous pouvez également partager vos collections avec le reste du monde.\n\nLe cœur de [TidyCards](https://www.tidy.cards) c’est le partage du savoir, une sorte de veille collective : partagez vos recherches, vos trouvailles, vos passions et même ce qui vous fait vibrer ou vous révolte.\n\nCe partage fonctionne dans les deux sens grâce à la recherche et à la page [Découvrir](https://www.tidy.cards/discover) où vous trouverez les collections créées par des personnes passionnées à l’autre bout du monde.\n\nSur [TidyCards](https://www.tidy.cards) plus besoin de rechercher pendant des heures les sites les plus pertinents sur votre thème préféré, quelqu’un a sans doute déjà creusé le sujet.\n\nEt si ce n’est pas le cas, [rejoignez-nous](https://www.tidy.cards/signin;mode=signup) dès maintenant et créez une collection."
         },
         "contact": {
             "title": "Contactez-nous",
@@ -239,10 +334,15 @@
             "contact_btn": "hi@tidy.cards"
         },
         "team": {
-            "title": "L'équipe"
+            "title": "L’équipe"
         },
         "terms": {
-            "title": "Conditions d’utilisation"
+            "title": "Conditions d’utilisation",
+            "title_short": "C.G.U."
+        },
+        "privacy": {
+            "title": "Politique de confidentialité",
+            "title_short": "Confidentialité"
         }
     }
 }
