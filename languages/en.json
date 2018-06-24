@@ -228,8 +228,9 @@
         "visibility": {
             "title": "Visibility",
             "PRIVATE": {
-                "title": "Only me",
-                "subtitle": "Only me"
+                "title": "Private",
+                "subtitle": "Only collaborators can see this",
+                "subtitle_me": "Only me can see this"
             },
             "PUBLIC": {
                 "title": "Public",
@@ -237,7 +238,7 @@
             },
             "UNINDEXED": {
                 "title": "Unindexed",
-                "subtitle": "People with the link"
+                "subtitle": "People with the link can see this"
             }
         },
         "item_sing": "item",
@@ -263,6 +264,10 @@
             "title": "Collaborators ({0})",
             "author": "Author",
             "collaborator": "Collaborator"
+          },
+          "leave": {
+            "title": "Do you really want to leave this collection?",
+            "content": "You will no longer be able to update this collection. If the collection if private you will not even be able to access to it."
           },
           "search": {
             "empty": "There is no result…"
@@ -319,6 +324,7 @@
         "cancel": "Cancel",
         "discard": "Discard changes",
         "close": "Close",
+        "leave": "Leave",
         "update": "Update",
         "create": "Create",
         "edit": "Edit",

@@ -228,8 +228,9 @@
         "visibility": {
             "title": "Visibilité",
             "PRIVATE": {
-                "title": "Moi uniquement",
-                "subtitle": "Moi uniquement"
+                "title": "Privée",
+                "subtitle": "Visible par les collaborateurs",
+                "subtitle_me": "Uniquement visible par moi"
             },
             "PUBLIC": {
                 "title": "Public",
@@ -237,7 +238,7 @@
             },
             "UNINDEXED": {
                 "title": "Non indexée",
-                "subtitle": "Seulement les personnes possédant le lien"
+                "subtitle": "Visible par les personnes possédant le lien"
             }
         },
         "item_sing": "objet",
@@ -263,6 +264,10 @@
             "title": "Collaborateurs ({0})",
             "author": "Auteur",
             "collaborator": "Collaborateur"
+          },
+          "leave": {
+            "title": "Voulez-vous vraiment quitter cette collection?",
+            "content": "Vous ne pourrez plus mettre à jour cette collection. Si la collection est privée, vous ne pourrez plus y accéder."
           },
           "search": {
             "empty": "Il n'y a aucun résultat…"
@@ -319,6 +324,7 @@
         "cancel": "Annuler",
         "discard": "Annuler les modifications",
         "close": "Fermer",
+        "leave": "Quitter",
         "update": "Mettre à jour",
         "create": "Créer",
         "edit": "Modifier",
