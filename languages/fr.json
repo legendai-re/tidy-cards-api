@@ -12,8 +12,8 @@
             "border": "more_vert"
         },
         "favorite": {
-            "filled": "star",
-            "border": "star_border"
+            "filled": "favorite",
+            "border": "favorite_border"
         },
         "comment": {
             "filled": "mode_comment",
@@ -246,6 +246,28 @@
         "first_item_button": "Ajouter mon premier objet",
         "first_item_caption": "Utilisez le bouton ci-dessous pour ajouter un objet à votre collection. Cela peut être un lien ou seulement du texte.",
         "by_title": "Créée par",
+        "created_by": {
+          "one": "Créée par {0}",
+          "two": "Créée par {0} et {1}",
+          "three": "Créée par {0}, {1} et {2}",
+          "more": "Créée par {0}, {1} et {2}"
+        },
+        "collaborators": {
+          "actions": {
+            "manage": "Gérer les collaborateurs",
+            "leave": "Quitter cette collection",
+            "search": "Ajouter des collaborateurs par nom ou mail…",
+            "remove": "Retirer des collaborateurs"
+          },
+          "manage": {
+            "title": "Collaborateurs ({0})",
+            "author": "Auteur",
+            "collaborator": "Collaborateur"
+          },
+          "search": {
+            "empty": "Il n'y a aucun résultat…"
+          }
+        },
         "empty_title": "Oups, cette collection est vide",
         "empty_caption": "Malheureusement il n’y a rien dans cette collection pour le moment, réessayez plus tard.",
         "list_end": "Vous avez atteint la fin de cette liste…",
@@ -302,10 +324,12 @@
         "delete": "Supprimer",
         "archive": "Archiver",
         "loading": "Chargement…",
-        "load_more": "Charger plus…"
+        "load_more": "Charger plus…",
+        "invite": "Inviter"
     },
     "word": {
         "date_on": "le",
+        "and": "et",
         "or": "ou",
         "with_email": "avec un mail",
         "whoops_exclamation": "Oups !",

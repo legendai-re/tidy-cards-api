@@ -246,6 +246,28 @@
         "first_item_button": "Add my first item",
         "first_item_caption": "Use the button bellow to add an item to your collection. It can be a link or a caption without link.",
         "by_title": "Created by",
+        "created_by": {
+          "one": "Created by {0}",
+          "two": "Created by {0} and {1}",
+          "three": "Created by {0}, {1} and {2}",
+          "more": "Created by {0}, {1} and {2}"
+        },
+        "collaborators": {
+          "actions": {
+            "manage": "Manage collaborators",
+            "leave": "Leave this collection",
+            "search": "Add collaborators by name or email…",
+            "remove": "Remove from collaborators"
+          },
+          "manage": {
+            "title": "Collaborators ({0})",
+            "author": "Author",
+            "collaborator": "Collaborator"
+          },
+          "search": {
+            "empty": "There is no result…"
+          }
+        },
         "empty_title": "Whoops, this collection is empty",
         "empty_caption": "Unfortunately there is nothing in this collection yet, please make a try later.",
         "list_end": "You’ve reached the end of the list…",
@@ -302,10 +324,12 @@
         "delete": "Delete",
         "archive": "Archive",
         "loading": "Loading…",
-        "load_more": "Load more…"
+        "load_more": "Load more…",
+        "invite": "Invite"
     },
     "word": {
         "date_on": "on",
+        "and": "and",
         "or": "or",
         "with_email": "with email",
         "whoops_exclamation": "Whoops!",
