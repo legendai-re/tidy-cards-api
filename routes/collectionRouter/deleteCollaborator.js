@@ -29,6 +29,7 @@ module.exports = function put (req, res) {
       if (!user) { return res.status(404).send({error: 'cannot find user with id: ' + req.params.collaborator_id}) }
       // remove the user id from the collection _collaborators[]
       collection._collaborators.remove(user)
+      collection.collaboratorsCount--
       collection.save(function (err) {
         if (err) { console.log(err); return res.sendStatus(500) };
         // remove the collection id from the user custom sort

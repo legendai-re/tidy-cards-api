@@ -57,6 +57,10 @@ module.exports = function getCollectionSchema (Schema) {
       type: Number,
       default: 0
     },
+    collaboratorsCount: {
+      type: Number,
+      default: 0
+    },
     starsCount: {
       type: Number,
       default: 0

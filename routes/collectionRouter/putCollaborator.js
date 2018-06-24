@@ -30,6 +30,7 @@ module.exports = function put (req, res) {
           // avoid to add the same collabotaror multiple times
           if (!collection.isCollaborator(user)) {
             collection._collaborators.push(user)
+            collection.collaboratorsCount++
             collection.save(function (err) {
               if (err) { console.log(err); return res.sendStatus(500) };
               addCollectionToTheUserCustomSort(collection, user, function (err) {
