@@ -267,7 +267,7 @@
           },
           "leave": {
             "title": "Do you really want to leave this collection?",
-            "content": "You will no longer be able to update this collection. If the collection if private you will not even be able to access to it."
+            "content": "You will no longer be able to update this collection. If the collection if private you will not be able to access to it."
           },
           "search": {
             "empty": "There is no result…"

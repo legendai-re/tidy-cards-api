@@ -20,6 +20,11 @@ module.exports = function getMultiple (req, res) {
         path: '_author',
         populate: { path: '_avatar' }
       })
+      q.populate({
+        path: '_collaborators',
+        options: { limit: 2 },
+        populate: { path: '_avatar' }
+      })
       q.exec(function (err, collections) {
         if (err) console.log(err)
         for (let i in collections) {
@@ -54,6 +59,11 @@ module.exports = function getMultiple (req, res) {
         path: '_thumbnail'
       }
     })
+    q.populate({
+      path: '_collaborators',
+      options: { limit: 2 },
+      populate: { path: '_avatar' }
+    })
 
     q.exec(function (err, stars) {
       if (err) { console.log(err); res.sendStatus(500); return }
@@ -77,6 +87,11 @@ module.exports = function getMultiple (req, res) {
       q.populate('_thumbnail')
       q.populate({
         path: '_author',
+        populate: { path: '_avatar' }
+      })
+      q.populate({
+        path: '_collaborators',
+        options: { limit: 2 },
         populate: { path: '_avatar' }
       })
 
