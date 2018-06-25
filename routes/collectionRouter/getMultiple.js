@@ -60,9 +60,12 @@ module.exports = function getMultiple (req, res) {
       }
     })
     q.populate({
-      path: '_collaborators',
-      options: { limit: 2 },
-      populate: { path: '_avatar' }
+      path: '_collection',
+      populate: {
+        path: '_collaborators',
+        options: { limit: 2 },
+        populate: { path: '_avatar' }
+      }
     })
 
     q.exec(function (err, stars) {

@@ -3,11 +3,11 @@ let emailConfirmation = require('../email/email-confirmation')
 
 function update (user, email, callback) {
   generateToken(function (err, token) {
-    if (err) return callback(err)
+    if (err) return callback(err, user)
     updateUserEmailAndToken(user, email, token, function (err, user) {
-      if (err) return callback(err)
+      if (err) return callback(err, user)
       emailConfirmation.send(user, function (err, success) {
-        if (err) return callback(err)
+        if (err) return callback(err, user)
         user.emailConfirmationToken = ''
         return callback(null, user)
       })

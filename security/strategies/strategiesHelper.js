@@ -40,7 +40,7 @@ let createUser = function (req, profile, accessToken, strategy, callback) {
         // if no email
         if (profileEmail != '') {
           updateEmail.update(newUser, profileEmail, function (err, newUser) {
-            if (err) { return callback(err) }
+            if (err) { console.log(err) }
             avatar.save(function (err) {
               if (err) { return callback(err) }
               newUser._avatar = avatar
