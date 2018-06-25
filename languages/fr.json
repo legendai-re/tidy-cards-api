@@ -332,7 +332,8 @@
         "archive": "Archiver",
         "loading": "Chargement…",
         "load_more": "Charger plus…",
-        "invite": "Inviter"
+        "invite": "Inviter",
+        "accept": "Accepter"
     },
     "word": {
         "date_on": "le",
@@ -341,6 +342,12 @@
         "with_email": "avec un mail",
         "whoops_exclamation": "Oups !",
         "congrats": "Bravo"
+    },
+    "flash": {
+        "cookies_consent": {
+          "content": "Ce site utilise des cookies pour vous assurer la meilleure expérience sur notre site.",
+          "learn_more": "En savoir plus ›"
+        }
     },
     "page": {
         "error": {
