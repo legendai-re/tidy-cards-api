@@ -16,7 +16,7 @@
     "start": "node server.js",
     "test": "mocha tests --timeout 15000",
     "doc": "apidoc -i ./ js -o doc -e node_modules",
-    "heroku-postbuild": "cd tidy-cards-web-app && npm install"
+    "heroku-postbuild": "cd tidy-cards-web-app && npm install -f"
   },
   "dependencies": {
     "algoliasearch": "^3.29.0",
