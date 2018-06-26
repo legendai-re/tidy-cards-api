@@ -245,7 +245,7 @@
         "item_plur": "items",
         "new_item_button": "New item",
         "first_item_button": "Add my first item",
-        "first_item_caption": "Use the button bellow to add an item to your collection. It can be a link or a caption without link.",
+        "first_item_caption": "Use the button bellow to add an item to this collection. It can be a link or a caption without link.",
         "by_title": "Created by",
         "created_by": {
           "one": "Created by {0}",
@@ -281,7 +281,7 @@
     "item": {
         "caption": "Caption",
         "no_title": "No title",
-        "new_title": "Add an item to your collection",
+        "new_title": "Add an item to this collection",
         "update_title": "Edit item",
         "fetching_preview": "Fetching preview…",
         "invalid_url": "Invalid URL",

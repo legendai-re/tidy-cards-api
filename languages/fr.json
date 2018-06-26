@@ -194,7 +194,7 @@
     "collection": {
         "modal": {
           "title_placeholder": "Titre",
-          "caption_placeholder": "Ajouter une courte légende pour décrire votre collection…",
+          "caption_placeholder": "Ajouter une courte légende pour décrire cette collection…",
           "visibility_dropdown_title": "Qui peut la voir ?",
           "new": {
             "title": "Nouvelle collection"
@@ -245,7 +245,7 @@
         "item_plur": "objets",
         "new_item_button": "Nouvel objet",
         "first_item_button": "Ajouter mon premier objet",
-        "first_item_caption": "Utilisez le bouton ci-dessous pour ajouter un objet à votre collection. Cela peut être un lien ou seulement du texte.",
+        "first_item_caption": "Utilisez le bouton ci-dessous pour ajouter un objet à cette collection. Cela peut être un lien ou seulement du texte.",
         "by_title": "Créée par",
         "created_by": {
           "one": "Créée par {0}",
@@ -281,7 +281,7 @@
     "item": {
         "caption": "Légende",
         "no_title": "Sans titre",
-        "new_title": "Ajouter un objet à votre collection",
+        "new_title": "Ajouter un objet à cette collection",
         "update_title": "Modifier l’objet",
         "fetching_preview": "Récupération de l’aperçu…",
         "invalid_url": "URL invalide",
@@ -305,7 +305,7 @@
         "modal_title": "Nouvelle collection",
         "create_title_placeholder": "Créer une collection…",
         "title_placeholder": "Titre",
-        "caption_placeholder": "Ajouter une courte légende pour décrire votre collection…",
+        "caption_placeholder": "Ajouter une courte légende pour décrire cette collection…",
         "visibility_dropdown_title": "Qui peut la voir ?"
     },
     "object": {
