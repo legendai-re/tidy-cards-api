@@ -117,4 +117,17 @@ router.route('/helpers/confirm-email/:confirmation_token')
     require('./putConfirmEmail')(req, res)
   })
 
+/**
+   * @api {put} /api/users/invite/:email Invite someone with email
+   * @apiParam {String} email Email of the user to invite
+   * @apiPermission ROLE_USER
+   * @apiName PutInviteUser
+   * @apiGroup User
+   * @apiSuccess {boolean} success True if email confirmation succeed, else false.
+   */
+router.route('/invite/:email')
+  .put(isGranted('ROLE_USER'), function(req, res){
+    require('./putInvite')(req, res)
+  })
+  
 module.exports = router
