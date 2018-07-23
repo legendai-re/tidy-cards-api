@@ -276,7 +276,22 @@
         "empty_title": "Oups, cette collection est vide",
         "empty_caption": "Malheureusement il n’y a rien dans cette collection pour le moment, réessayez plus tard.",
         "list_end": "Vous avez atteint la fin de cette liste…",
-        "item_list_end": "Vous avez atteint la fin de cette collection…"
+        "item_list_end": "Vous avez atteint la fin de cette collection…",
+        "footer": {
+          "share": {
+            "title": "Vous aimez ce que vous voyez ?",
+            "content": "Sauvegardez cette collection dans vos favoris ou partagez-la avec le monde !",
+            "add": "Ajouter aux favoris",
+            "added": "Ajouté aux favoris",
+            "people": {
+              "one": "personne a ajouté cette collection à ses favoris",
+              "more": "personnes ont ajouté cette collection à leurs favoris"
+            }
+          },
+          "author": {
+            "collab": "En collaboration avec"
+          }
+        }
     },
     "item": {
         "caption": "Légende",

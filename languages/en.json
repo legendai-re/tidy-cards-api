@@ -276,7 +276,22 @@
         "empty_title": "Whoops, this collection is empty",
         "empty_caption": "Unfortunately there is nothing in this collection yet, please make a try later.",
         "list_end": "You’ve reached the end of the list…",
-        "item_list_end": "You reached the end of the collection…"
+        "item_list_end": "You reached the end of the collection…",
+        "footer": {
+          "share": {
+            "title": "Like what you see?",
+            "content": "Save this collection in your favorites or share it with the world!",
+            "add": "Add to favorites",
+            "added": "Added to favorites",
+            "people": {
+              "one": "person added this collection to their favorites",
+              "more": "people added this collection to their favorites"
+            }
+          },
+          "author": {
+            "collab": "In collaboration with"
+          }
+        }
     },
     "item": {
         "caption": "Caption",
