@@ -3,6 +3,10 @@
     "app_name": "tidycards",
     "app_name_capitals": "TidyCards",
     "icon": {
+        "add": {
+            "filled": "add",
+            "border": "add"
+        },
         "info": {
             "filled": "info",
             "border": "info"
@@ -46,6 +50,10 @@
         "done": {
             "filled": "done",
             "border": "done_outline"
+        },
+        "settings": {
+            "filled": "settings",
+            "border": "settings"
         },
         "waiting": {
             "filled": "loop",
@@ -140,11 +148,27 @@
         }
     },
     "discover": {
-        "featured_title": "En vedette",
-        "popular_title": "Collections tendances",
-        "last_title": "Dernières collections"
+        "page_title": "Découvrir",
+        "page_caption": "Explorez et découvrez les collections les plus populaires sur TidyCards.",
+        "featured_title": "Notre sélection",
+        "popular_title": "Tendances",
+        "last_title": "Récents"
+    },
+    "featured": {
+      "page_title": "Notre sélection",
+      "page_caption": "Découvrez de superbes collections choisies par l’équipe de TidyCards."
+    },
+    "latest": {
+      "page_title": "Collections récentes",
+      "page_caption": "Découvrez les dernières collections publiées sur TidyCards."
+    },
+    "trending": {
+      "page_title": "Collections tendances",
+      "page_caption": "Découvrez les collections les plus populaires publiées sur TidyCards."
     },
     "dashboard": {
+        "page_title": "Tableau de bord",
+        "page_caption": "Créez, organisez et collaborez sur vos collections.",
         "my_collections_title": "Mes collections",
         "favorite_collections_title": "Favoris"
     },
@@ -242,9 +266,12 @@
                 "subtitle": "Visible par les personnes possédant le lien"
             }
         },
-        "item_sing": "objet",
-        "item_plur": "objets",
-        "new_item_button": "Nouvel objet",
+        "item_sing": "lien",
+        "item_plur": "liens",
+        "new_item_button": "Nouveau lien",
+        "new_item_first_action": "Cliquez ici ou entre les liens pour ajouter un lien…",
+        "new_item_action": "Cliquez ici pour ajouter un lien…",
+        "options": "Options",
         "first_item_button": "Ajouter mon premier objet",
         "first_item_caption": "Utilisez le bouton ci-dessous pour ajouter un objet à cette collection. Cela peut être un lien ou seulement du texte.",
         "by_title": "Créée par",
