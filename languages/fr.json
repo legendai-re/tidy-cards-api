@@ -172,6 +172,10 @@
         "my_collections_title": "Mes collections",
         "favorite_collections_title": "Favoris"
     },
+    "settings": {
+        "page_title": "Paramètres du compte",
+        "page_caption": "Gérez tous les paramètres de votre compte depuis cette page."
+    },
     "profile_public": {
         "no_bio": "Cet utilisateur n’a pas encore de description…",
         "empty": "Désolé, mais il n’y a rien a afficher. Cet utilisateur n’a aucune collections publiques…"
@@ -180,15 +184,37 @@
         "bio_placeholder": "Ajouter une description ici…",
         "account_title": "Compte",
         "account_subtitle": "Modifier mes paramètres de compte.",
-        "username_row_title": "Mon nom d’utilisateur",
+        "profile_title": "Editer le profil",
+        "thumbnail_row_title": "Photo de profil",
+        "update_account_button": "Mettre à jour le compte",
+        "name_row_title": "Nom",
+        "bio_row_title": "Bio",
+        "username_row_title": "Nom d’utilisateur",
+        "username_row_span": "(seulement des lettres, des chiffres et des tirets)",
         "username_edit_button": "Modifier mon nom d’utilisateur",
-        "email_row_title": "Mon email",
+        "email_row_title": "Adresse mail",
         "email_edit_button": "Modifier mon email",
-        "email_confirmation_state_no": "non comfirmée",
-        "email_confirmation_state_yes": "comfirmée",
-        "email_confirmation_info": "Un email a été envoyé à {0}. Veuillez vérifier vos emails pour confirmer l’adresse.",
-        "email_confirmation_resend": "Renvoyer l’email.",
+        "email_confirmation_state_no": "non confirmée",
+        "email_confirmation_state_yes": "confirmée",
+        "email_confirmation_info": "Veuillez vérifier vos emails pour confirmer l’adresse mail…",
+        "email_confirmation_resend": "Renvoyer le mail",
         "language_row_title": "Langue",
+        "password_title": "Changer le mot de passe",
+        "password_new": "Nouveau mot de passe",
+        "password_confirmation": "Confirmation mot de passe",
+        "password_current": "Mot de passe actuel",
+        "password_lost": "Mot de passe oublié?",
+        "accounts_title": "Connecter des comptes",
+        "accounts_subtitle": "La vérification de votre compte en associant vos comptes Facebook, Twitter ou Google augmente les chances d’acceptation de vos collections et de leur promotion dans la communauté.",
+        "accounts_disclaimer": "Nous ne publions rien sur vos réseaux sociaux en votre nom.",
+        "accounts_facebook": "Facebook",
+        "accounts_connect_facebook": "Associer Facebook",
+        "accounts_twitter": "Twitter",
+        "accounts_connect_twitter": "Associer Twitter",
+        "accounts_google": "Google",
+        "accounts_connect_google": "Associer Google",
+        "accounts_disconnect": "Dissocier",
+
         "connections_title": "Connections",
         "connections_subtitle": "Gérer les applications liées à mon compte",
         "facebook_row_title": "Connecter Facebook",
@@ -299,7 +325,7 @@
             "content": "Vous ne pourrez plus mettre à jour cette collection. Si la collection est privée, vous ne pourrez plus y accéder."
           },
           "search": {
-            "empty": "Il n'y a aucun résultat…"
+            "empty": "Il n’y a aucun résultat…"
           }
         },
         "empty_title": "Oups, cette collection est vide",
