@@ -148,11 +148,11 @@
         }
     },
     "discover": {
-        "page_title": "Discover",
-        "page_caption": "Explore and discover the most popular collections on TidyCards.",
-        "featured_title": "From our pick",
-        "popular_title": "Trending",
-        "last_title": "Last collections"
+      "page_title": "Discover",
+      "page_caption": "Explore and discover the most popular collections on TidyCards.",
+      "featured_title": "From our pick",
+      "popular_title": "Trending",
+      "last_title": "Last collections"
     },
     "featured": {
       "page_title": "From our pick",
@@ -294,6 +294,8 @@
         },
         "item_sing": "item",
         "item_plur": "items",
+        "note_sing": "note",
+        "note_plur": "notes",
         "new_item_button": "New item",
         "new_item_first_action": "Click here to add your first item…",
         "new_item_action": "Click here to add an item…",

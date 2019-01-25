@@ -294,6 +294,8 @@
         },
         "item_sing": "lien",
         "item_plur": "liens",
+        "note_sing": "note",
+        "note_plur": "notes",
         "new_item_button": "Nouveau lien",
         "new_item_first_action": "Cliquez ici pour ajouter votre premier lien…",
         "new_item_action": "Cliquez ici pour ajouter un lien…",
