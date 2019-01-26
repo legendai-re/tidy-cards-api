@@ -62,7 +62,18 @@
         "waiting": {
             "filled": "loop",
             "border": "loop"
+        },
+        "whatshot": {
+            "filled": "whatshot",
+            "border": "whatshot"
         }
+    },
+    "hero": {
+      "hero_title": "You’re a critical thinker? Become a curator.",
+      "hero_caption": "TidyCards allows you to easily organize and make connections between your links! Whether articles, publications, videos, tweets or any kinds of content.",
+      "hero_signup": "Signup today",
+      "hero_about": "About TidyCards",
+      "hero_discover": "Discover collections"
     },
     "header": {
         "search_placeholder": "Search on TidyCards…",
@@ -77,6 +88,7 @@
         "about_title": "About",
         "search_title": "Search",
         "signin_title": "Sign in",
+        "signup_title": "Sign up",
         "profile_menu": "Profile/Settings",
         "admin_menu": "Admin",
         "logout_menu": "Logout",
@@ -133,7 +145,7 @@
         "password_lost": "Forgot password?",
         "not_member_title": "Are you new to TidyCards?",
         "already_member_title": "Already have an account?",
-        "signup_today_button": "Sign up today",
+        "signup_today_button": "Sign up",
         "status": {
           "signin_attempt": "Attempting to connect…",
           "error_wrong": "Wrong password or username/email",

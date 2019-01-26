@@ -62,7 +62,18 @@
         "waiting": {
             "filled": "loop",
             "border": "loop"
+        },
+        "whatshot": {
+            "filled": "whatshot",
+            "border": "whatshot"
         }
+    },
+    "hero": {
+      "hero_title": "Vous avez un esprit critique ? Devenez curateur.",
+      "hero_caption": "TidyCards vous permet d’organiser et créer des connexions entre vos liens ! Que ce soient des articles, des vidéos ou toutes sortes de contenus.",
+      "hero_signup": "S’inscrire",
+      "hero_about": "À propos de TidyCards",
+      "hero_discover": "Découvrir des collections"
     },
     "header": {
         "search_placeholder": "Rechercher sur TidyCards…",
@@ -76,7 +87,8 @@
         "latest_title": "Récents",
         "about_title": "À propos",
         "search_title": "Rechercher",
-        "signin_title": "Accédez à votre compte",
+        "signin_title": "Se connecter",
+        "signup_title": "S’inscrire",
         "profile_menu": "Profil/Paramètres",
         "admin_menu": "Admin",
         "logout_menu": "Se déconnecter",
