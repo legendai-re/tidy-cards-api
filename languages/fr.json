@@ -7,6 +7,10 @@
             "filled": "add",
             "border": "add"
         },
+        "close": {
+            "filled": "close",
+            "border": "close"
+        },
         "info": {
             "filled": "info",
             "border": "info"
