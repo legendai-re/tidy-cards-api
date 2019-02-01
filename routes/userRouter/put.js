@@ -9,9 +9,13 @@ module.exports = function put (req, res) {
     if (err) { console.log(err); res.sendStatus(500); return }
     if (!user) { res.status(404).send({ error: 'cannot find user with id: ' + req.params.user_id }); return }
     if (user._id.equals(req.user._id)) {
-      if (req.body.username) { updateUsername(user) } else if (req.body.email) { preUpdateEmail(user) } else { updateProfile(user) }
+      if (req.body.email) {
+        preUpdateEmail(user)
+      } else {
+        updateProfile(user)
+      }
     } else {
-        	res.sendStatus(401)
+      res.sendStatus(401)
     }
   })
 
@@ -19,6 +23,11 @@ module.exports = function put (req, res) {
     user.name = (req.body.name || user.name)
     user.bio = (req.body.bio || user.bio)
     if (req.body.language && availableLanguages.indexOf(req.body.language) > -1) { user.language = req.body.language.toLowerCase() }
+
+    if (req.body.username) {
+      updateUsername(user)
+    }
+
     if (req.body._avatar && req.body._avatar._id) {
       models.Image.checkIfOwner(req.body._avatar._id, user, function (err, isOwner) {
         if (err) { console.log(err); res.sendStatus(500); return }
@@ -39,7 +48,6 @@ module.exports = function put (req, res) {
       if (err) { console.log(err); res.sendStatus(500); return }
       if (alreadyExistUser) return res.status(422).send({ error: 'cannot update username: already takken' })
       user.username = req.body.username
-      saveUser(user)
     })
   }
 
