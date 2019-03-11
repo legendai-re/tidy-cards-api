@@ -3,23 +3,23 @@
 
   <head>
     <title><%= collection.title %> | TidyCards</title>
-    <meta name="theme-color" content="#6B5DFF">
+    <meta name="theme-color" content="#FFFFFF">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="fb:app_id" content="572975739556621" />
     <meta property="og:title" content="<%= collection.title %> | TidyCards" />
-    <meta property="og:url" content="http://www.tidy.cards/c/<%= collection._id %>" />
+    <meta property="og:url" content="https://www.tidy.cards/c/<%= collection._id %>" />
     <meta property="og:type" content="article" />
     <meta property="article:author" content="<%= collection._author.name %>" />
     <meta property="og:description" content="<%= collection.bio %>" />
     <%if (collection._thumbnail != undefined) { %>
     <meta property="og:image" content="<%= env.IMAGES_URL + env.IMAGES_FOLDER + '/col_thumb/s300x250/' + collection._thumbnail._id + '.' + collection._thumbnail.mime %>" />
     <% } else { %>
-    <meta property="og:image" content="assets/img/favicon.png" />
+    <meta property="og:image" content="https://www.tidy.cards/assets/img/favicon.png" />
     <% } %>
     <meta property="author" content="<%= collection._author.name %>">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="https://www.tidy.cards/assets/img/favicon.png">
   </head>
 
   <body>
