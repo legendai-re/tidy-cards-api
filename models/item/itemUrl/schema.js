@@ -34,6 +34,22 @@ module.exports = function getItemUrlSchema (Schema) {
       type: String,
       required: false
     },
+    label1: {
+      type: String,
+      required: false
+    },
+    value1: {
+      type: String,
+      required: false
+    },
+    label2: {
+      type: String,
+      required: false
+    },
+    value2: {
+      type: String,
+      required: false
+    },
     author: {
       type: String,
       required: false
@@ -46,6 +62,9 @@ module.exports = function getItemUrlSchema (Schema) {
       type: String,
       required: false
     },
-    _user: { type: String, ref: 'User' }
+    _user: {
+      type: String,
+      ref: 'User'
+    }
   })
 }

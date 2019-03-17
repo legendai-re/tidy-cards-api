@@ -7,6 +7,42 @@
             "filled": "add",
             "border": "add"
         },
+        "edit": {
+            "filled": "edit",
+            "border": "edit"
+        },
+        "delete": {
+            "filled": "delete",
+            "border": "delete_outline"
+        },
+        "copy": {
+            "filled": "insert_link",
+            "border": "insert_link"
+        },
+        "open": {
+            "filled": "call_made",
+            "border": "call_made"
+        },
+        "update": {
+            "filled": "loop",
+            "border": "loop"
+        },
+        "checked": {
+            "filled": "check",
+            "border": "check"
+        },
+        "link": {
+            "filled": "link",
+            "border": "link"
+        },
+        "bookmark": {
+            "filled": "bookmark",
+            "border": "bookmark"
+        },
+        "embed": {
+            "filled": "code",
+            "border": "code"
+        },
         "close": {
             "filled": "close",
             "border": "close"
@@ -32,8 +68,8 @@
             "border": "stars"
         },
         "play": {
-            "filled": "play_circle_filled",
-            "border": "play_circle_outline"
+            "filled": "play_arrow",
+            "border": "play_arrow"
         },
         "visibility": {
             "filled": "visibility",
@@ -382,6 +418,10 @@
         "delete_caption": "Voulez-vous vraiment supprimer cet objet ?",
         "delete_button_yes": "Supprimer cet objet",
         "markdown_supported": "Mise en page Markdown supportée",
+        "no_description": "Il n'y a pas de description…",
+        "created_at": "Ajouté par {0}",
+        "updated_at": "Mise à jour le {0}",
+        "updated_today_at": "Mise à jour à {0}",
         "display_modes": {
             "SMALL": "Petit",
             "MEDIUM": "Moyen",
@@ -423,7 +463,17 @@
         "loading": "Chargement…",
         "load_more": "Charger plus…",
         "invite": "Inviter",
-        "accept": "Accepter"
+        "accept": "Accepter",
+        "copy_link": "Copier le lien",
+        "view_original": "Voir l'original",
+        "orginal": "Original",
+        "update_preview": "Mettre à jour",
+        "switch": {
+          "title": "Changer de format",
+          "small": "Lien",
+          "medium": "Carte",
+          "large": "Intégration"
+        }
     },
     "word": {
         "date_on": "le",

@@ -3,8 +3,7 @@
     "id": "URL",
     "available_display_modes": [
       "SMALL",
-      "MEDIUM",
-      "LARGE"
+      "MEDIUM"
     ],
     "default_display_mode": "MEDIUM"
   },
@@ -20,6 +19,7 @@
     "id": "YOUTUBE",
     "available_display_modes": [
       "SMALL",
+      "MEDIUM",
       "LARGE"
     ],
     "default_display_mode": "LARGE"

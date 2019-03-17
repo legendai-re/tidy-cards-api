@@ -7,6 +7,42 @@
             "filled": "add",
             "border": "add"
         },
+        "edit": {
+            "filled": "edit",
+            "border": "edit"
+        },
+        "delete": {
+            "filled": "delete",
+            "border": "delete_outline"
+        },
+        "copy": {
+            "filled": "insert_link",
+            "border": "insert_link"
+        },
+        "open": {
+            "filled": "call_made",
+            "border": "call_made"
+        },
+        "update": {
+            "filled": "loop",
+            "border": "loop"
+        },
+        "checked": {
+            "filled": "check",
+            "border": "check"
+        },
+        "link": {
+            "filled": "link",
+            "border": "link"
+        },
+        "bookmark": {
+            "filled": "bookmark",
+            "border": "bookmark"
+        },
+        "embed": {
+            "filled": "code",
+            "border": "code"
+        },
         "close": {
             "filled": "close",
             "border": "close"
@@ -32,8 +68,8 @@
             "border": "stars"
         },
         "play": {
-            "filled": "play_circle_filled",
-            "border": "play_circle_outline"
+            "filled": "play_arrow",
+            "border": "play_arrow"
         },
         "visibility": {
             "filled": "visibility",
@@ -382,6 +418,10 @@
         "delete_caption": "Do you really want to delete this item?",
         "delete_button_yes": "Delete this item",
         "markdown_supported": "Styling with Markdown is supported",
+        "no_description": "There is no description…",
+        "created_at": "Added by {0}",
+        "updated_at": "Last update on {0}",
+        "updated_today_at": "Last update at {0}",
         "display_modes": {
             "SMALL": "Small",
             "MEDIUM": "Medium",
@@ -423,7 +463,17 @@
         "loading": "Loading…",
         "load_more": "Load more…",
         "invite": "Invite",
-        "accept": "Accept"
+        "accept": "Accept",
+        "copy_link": "Copy Link",
+        "view_original": "View Original",
+        "orginal": "Original",
+        "update_preview": "Update Preview",
+        "switch": {
+          "title": "Change Format",
+          "small": "Link",
+          "medium": "Bookmark",
+          "large": "Embed"
+        }
     },
     "word": {
         "date_on": "on",
