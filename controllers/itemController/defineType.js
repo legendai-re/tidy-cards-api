@@ -20,7 +20,7 @@ function simpleGetIsImage (url) {
 }
 
 function getIsTweet (url) {
-  let p = /^(?:https?:\/\/)?(?:www\.)?twitter\.com\/(\w+)\/status(es)?\/(\d{18})(\/)?$/
+  let p = /^(?:https?:\/\/)?(?:www\.)?twitter\.com\/(\w+)\/status(es)?\/(\d{18,19})(\/)?$/
   return !!(url.match(p))
 }
 
