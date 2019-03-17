@@ -43,6 +43,10 @@
             "filled": "code",
             "border": "code"
         },
+        "collaborators": {
+            "filled": "people",
+            "border": "people"
+        },
         "close": {
             "filled": "close",
             "border": "close"
@@ -54,6 +58,10 @@
         "more": {
             "filled": "more_vert",
             "border": "more_vert"
+        },
+        "drag": {
+            "filled": "drag_indicator",
+            "border": "drag_indicator"
         },
         "favorite": {
             "filled": "favorite",
@@ -74,6 +82,10 @@
         "visibility": {
             "filled": "visibility",
             "border": "visibility"
+        },
+        "public_collection": {
+            "filled": "public",
+            "border": "public"
         },
         "private_collection": {
             "filled": "lock",
@@ -405,6 +417,7 @@
     },
     "item": {
         "caption": "Caption",
+        "tweeted_by": "Tweeted by {0}",
         "no_title": "No title",
         "new_title": "Add an item to this collection",
         "update_title": "Edit item",
@@ -419,8 +432,8 @@
         "delete_button_yes": "Delete this item",
         "markdown_supported": "Styling with Markdown is supported",
         "no_description": "There is no description…",
-        "created_at": "Added by {0}",
-        "updated_at": "Last update on {0}",
+        "created_by": "Added by {0}",
+        "updated_on": "Last update on {0}",
         "updated_today_at": "Last update at {0}",
         "display_modes": {
             "SMALL": "Small",
@@ -435,7 +448,7 @@
         "create_title_placeholder": "",
         "title_placeholder": "Title",
         "caption_placeholder": "Enter a caption here to describe the collection. Keep it simple and short…",
-        "visibility_dropdown_title": "Who should see this?"
+        "visibility_dropdown_title": "Change visibility"
     },
     "object": {
         "collection": "Collection",
@@ -466,14 +479,17 @@
         "accept": "Accept",
         "copy_link": "Copy Link",
         "view_original": "View Original",
-        "orginal": "Original",
+        "original": "Original",
         "update_preview": "Update Preview",
+        "open_tab": "Open in New Tab",
         "switch": {
           "title": "Change Format",
           "small": "Link",
           "medium": "Bookmark",
           "large": "Embed"
-        }
+        },
+        "drag": "<span>Drag</span> to move",
+        "click": "<span>Click</span> to open menu"
     },
     "word": {
         "date_on": "on",

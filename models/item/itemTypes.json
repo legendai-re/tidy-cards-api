@@ -28,6 +28,7 @@
     "id": "TWEET",
     "available_display_modes": [
       "SMALL",
+      "MEDIUM",
       "LARGE"
     ],
     "default_display_mode": "LARGE"

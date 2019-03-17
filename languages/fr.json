@@ -43,6 +43,10 @@
             "filled": "code",
             "border": "code"
         },
+        "collaborators": {
+            "filled": "people",
+            "border": "people"
+        },
         "close": {
             "filled": "close",
             "border": "close"
@@ -54,6 +58,10 @@
         "more": {
             "filled": "more_vert",
             "border": "more_vert"
+        },
+        "drag": {
+            "filled": "drag_indicator",
+            "border": "drag_indicator"
         },
         "favorite": {
             "filled": "favorite",
@@ -74,6 +82,10 @@
         "visibility": {
             "filled": "visibility",
             "border": "visibility"
+        },
+        "public_collection": {
+            "filled": "public",
+            "border": "public"
         },
         "private_collection": {
             "filled": "lock",
@@ -419,8 +431,8 @@
         "delete_button_yes": "Supprimer cet objet",
         "markdown_supported": "Mise en page Markdown supportée",
         "no_description": "Il n'y a pas de description…",
-        "created_at": "Ajouté par {0}",
-        "updated_at": "Mise à jour le {0}",
+        "created_by": "Ajouté par {0}",
+        "updated_on": "Mise à jour le {0}",
         "updated_today_at": "Mise à jour à {0}",
         "display_modes": {
             "SMALL": "Petit",
@@ -435,7 +447,7 @@
         "create_title_placeholder": "Créer une collection…",
         "title_placeholder": "Titre",
         "caption_placeholder": "Ajouter une courte légende pour décrire cette collection…",
-        "visibility_dropdown_title": "Qui peut la voir ?"
+        "visibility_dropdown_title": "Changer la visibilité"
     },
     "object": {
         "collection": "Collection",
@@ -466,14 +478,17 @@
         "accept": "Accepter",
         "copy_link": "Copier le lien",
         "view_original": "Voir l'original",
-        "orginal": "Original",
+        "original": "Original",
         "update_preview": "Mettre à jour",
+        "open_tab": "Ouvrir dans un nouvel onglet",
         "switch": {
           "title": "Changer de format",
           "small": "Lien",
           "medium": "Carte",
           "large": "Intégration"
-        }
+        },
+        "drag": "<span>Glissez</span> pour déplacer",
+        "click": "<span>Cliquez</span> pour ouvrir le menu"
     },
     "word": {
         "date_on": "le",
