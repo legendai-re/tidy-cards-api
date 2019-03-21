@@ -15,6 +15,10 @@
             "filled": "delete",
             "border": "delete_outline"
         },
+        "leave": {
+            "filled": "directions_run",
+            "border": "directions_run"
+        },
         "copy": {
             "filled": "insert_link",
             "border": "insert_link"
@@ -326,6 +330,7 @@
         },
         "action": {
           "upload_img": "Upload an image",
+          "uploading_img": "Importing…",
           "replace_img": "Replace image",
           "remove_img": "Remove image"
         },
