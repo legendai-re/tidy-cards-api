@@ -21,7 +21,7 @@ module.exports = function createItemYoutube (url, user, callback) {
       let response = JSON.parse(str)
       let itemYoutube = new models.ItemYoutube()
       itemYoutube.url = 'https://youtu.be/' + videoId
-      itemYoutube.embedUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1'
+      itemYoutube.embedUrl = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1'
       itemYoutube.videoId = videoId
       if (response.items && response.items[0]) { itemYoutube.snippet = response.items[0].snippet }
       itemYoutube._user = user._id
