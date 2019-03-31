@@ -68,32 +68,41 @@ let tmpPath = 'helpers/image-uploader/tmp-uploads/';
  * AWS with the function awsUpload(). When all images are uploaded, call the callback
  */
 function afterUpload(image, callback){
-    let r = request(image.baseUrl + '/' + imagesTypes[image.type].path + '/s' + 'original' + '/' + image._id + '.' + image.mime)
-                .pipe(fs.createWriteStream(tmpPath +'original/'+ image._id + '.' + image.mime ))
-                .on('error', (e) => {console.log("pipe error");console.log(e); return callback(err);})
+  let r = request(image.baseUrl + '/' + imagesTypes[image.type].path + '/s' + 'original' + '/' + image._id + '.' + image.mime)
+          .pipe(fs.createWriteStream(tmpPath +'original/'+ image._id + '.' + image.mime ))
+          .on('error', (e) => {console.log("pipe error");console.log(e); return callback(err);})
 
-    r.on('finish', () => {
-        gm(tmpPath +'original/'+ image._id + '.' +image.mime)
-            .identify(function (err, data) {
-                if (err) {console.log(err); return callback(err);}
-                let sizes = imagesTypes[image.type].sizes;
-                async.times(sizes.length, function(n, next) {
-                    gm(tmpPath +'original/'+ image._id + '.' + image.mime)
-                    .thumb(sizes[n].x,sizes[n].y, tmpPath +sizes[n].x+'x'+sizes[n].y+ '/'+ image._id + '.' +image.mime, 70, function(err, stdout, stderr, command){
-                        awsUpload(image, sizes[n].x+'x'+sizes[n].y, function(err){
-                            next(err);
-                        });
-                    })
-                }, function(err, results) {
-                    if(err){
-                        console.log(err);
-                        return callback(err);
-                    }
-                    fs.unlink(tmpPath + 'original/'+ image._id + '.' + image.mime, function(err){if(err)console.log(err)});
-                    callback(null);
-                });
+  r.on('finish', () => {
+    gm(tmpPath +'original/'+ image._id + '.' +image.mime)
+    .identify(function (err, data) {
+      if (err) {
+        console.log(err); return callback(err);
+      }
+      let sizes = imagesTypes[image.type].sizes;
+      async.times(sizes.length, function(n, next) {
+        gm(tmpPath +'original/'+ image._id + '.' + image.mime)
+        .gravity("Center")
+        .thumb(
+          sizes[n].x,
+          sizes[n].y,
+          tmpPath + sizes[n].x + 'x' + sizes[n].y + '/'+ image._id + '.' +image.mime,
+          75,
+          function(err, stdout, stderr, command){
+            awsUpload(image, sizes[n].x+'x'+sizes[n].y, function(err){
+                next(err);
             });
+          }
+        )
+      }, function(err, results) {
+        if(err){
+          console.log(err);
+          return callback(err);
+        }
+        fs.unlink(tmpPath + 'original/'+ image._id + '.' + image.mime, function(err){if(err)console.log(err)});
+        callback(null);
+      });
     });
+  });
 }
 
 /**
