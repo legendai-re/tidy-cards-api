@@ -33,9 +33,9 @@ module.exports = function createItemUrl (url, user, callback) {
       if (img === '' || img === null || img === undefined) {
         img = $('meta[property="twitter:image:src"]').attr('content')
       }
-      // if (img === '' || img === null || img === undefined) {
-      //   img = $('img').first().attr('src')
-      // }
+      if (img === '' || img === null || img === undefined) {
+        img = $('img').first().attr('src')
+      }
 
       if (img !== '' && img !== null && img !== undefined) {
         if (!(img.substring(0, 7) === 'http://' || img.substring(0, 8) === 'https://')) {
@@ -48,13 +48,32 @@ module.exports = function createItemUrl (url, user, callback) {
         itemUrl.image = img
       }
 
-      itemUrl.title = $('meta[property="og:title"]').attr('content')
-      if (itemUrl.title === '' || itemUrl.title === null || itemUrl.title === undefined) {
-        itemUrl.title = $('meta[property="twitter:title"]').attr('content')
+      // itemUrl.title = $('meta[property="og:title"]').attr('content')
+      // if (itemUrl.title === '' || itemUrl.title === null || itemUrl.title === undefined) {
+      //   itemUrl.title = $('meta[property="twitter:title"]').attr('content')
+      // }
+      // if (itemUrl.title === '' || itemUrl.title === null || itemUrl.title === undefined) {
+      //   itemUrl.title = $('title').text()
+      // }
+      //
+      if ($('meta[property="og:title"]').length > 0) {
+        title = $('meta[property="og:title"]').attr('content');
+      } else if ($('meta[property="twitter:title"]').length > 0) {
+        title = $('meta[property="twitter:title"]').attr('content');
+      } else if ($('meta[name="title"]').length > 0) {
+        title = $('meta[name="title"]').attr('content');
+      } else if ($('meta[property="title"]').length > 0) {
+        title = $('meta[property="title"]').attr('content');
+      } else {
+        title = $("title").text();
       }
-      if (itemUrl.title === '' || itemUrl.title === null || itemUrl.title === undefined) {
-        itemUrl.title = $('title').html()
-      }
+
+      itemUrl.title = title;
+      // console.log(itemUrl.title);
+      // console.log($('meta[name="title"]').length);
+      // console.log($('meta[name="title"]').attr('content'));
+      // console.log($('meta[property="title"]').length);
+      // console.log($('meta[property="title"]').attr('content'));
 
       itemUrl.description = $('meta[property="og:description"]').attr('content')
       if (itemUrl.description === '' || itemUrl.description === null || itemUrl.description === undefined) {
@@ -93,7 +112,7 @@ module.exports = function createItemUrl (url, user, callback) {
       }
 
       itemUrl.type = $('meta[property="og:type"]').attr('content')
-      
+
       itemUrl.site_name = $('meta[property="og:site_name"]').attr('content')
 
       itemUrl.save(function (err) {
